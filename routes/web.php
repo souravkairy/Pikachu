@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'Front eend astese';
 });
+
+
+Route::get('/admin-dashboard', 'App\Http\Controllers\backEnd\Admin\DashboardController@index');
