@@ -7,5 +7,12 @@ use Illuminate\Http\Request;
 
 class MailController extends Controller
 {
-    //
+    public function contact_inbox()
+    {
+        echo "cm";
+    }
+    public function contact_sent()
+    {
+        echo "cs";
+    }
 }
