@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend/index');
 });
-
 Route::get('/registartion', 'App\Http\Controllers\backEnd\User\RegistrationController@index');
 Route::get('/admin-dashboard', 'App\Http\Controllers\backEnd\Admin\DashboardController@index');
 
