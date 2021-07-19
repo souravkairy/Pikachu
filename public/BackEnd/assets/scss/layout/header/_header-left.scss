@@ -4,10 +4,10 @@
     align-items: center;
 	
 	.dashboard_bar {
-		font-size: 28px;
+		font-size: 30px;
 		font-weight: 600;
 		color:$black;
-		@include respond('laptop') {
+		@include respond('tab-land') {
 			font-size: 24px;
 		}
 		@include respond('phone-land') {
@@ -21,25 +21,17 @@
         min-height: 40px;
         border-color: transparent;
         color: $dark!important;
-        border-top-left-radius: 0.375rem;
-        border-bottom-left-radius: 0.375rem;
-		border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-top-right-radius: 0.375rem;
+        border-bottom-right-radius: 0.375rem;
         box-shadow: none;
-		padding: 10px 20px;
-		font-size: 16px;
-		border: 1px solid #ebebeb;
-		border-width: 1px 0px 1px 1px;
-		font-weight: 300;
-			
         @include respond('desktop') {
             // margin-top: 3px;
         }
         @at-root [direction="rtl"] & {
-            border-top-right-radius: 0.375rem;
-            border-bottom-right-radius: 0.375rem;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+            border-top-left-radius: 0.375rem;
+            border-bottom-left-radius: 0.375rem;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
         }
         &:focus,
         &:active,
@@ -74,9 +66,6 @@
         display: flex;
         align-items: center;
         height: 100%;
-		@include respond('phone-land') {
-			display:none;
-		}
         .dropdown-menu {
             box-shadow: none;
            
@@ -84,21 +73,18 @@
         }
         .search_icon {
             background: $body-bg !important;
-            height: 56px;
-            padding: 15px 20px 15px 0 !important;
-            border-top-right-radius: 0.375rem;
-            border-bottom-right-radius: 0.375rem;
-			border: 1px solid #ebebeb;
-			border-width: 1px 1px 1px 0;
-			
+            height: 40px;
+            padding: 8px 0 8px 15px !important;
+            border-top-left-radius: 0.375rem;
+            border-bottom-left-radius: 0.375rem;
             i {
                 font-size: 24px;
                 color: $dark;
 				line-height: 1;
             }
-			@include respond('tab-land') {
-				height: 41px;
-				padding: 8px 15px 8px 0 !important;
+			@include respond('phone-land') {
+				border-radius: 4px;
+				padding: 8px 10px !important;
 			}
         }
         @include custommq($max: 767px) {
@@ -133,11 +119,10 @@
             border-top-right-radius: 5rem;
             border-bottom-right-radius: 5rem;
             @include custommq($min: 768px) {
-				left: 0;
-				top: 0;
-				transform: none;
-				display: block;
-				position: unset;
+                left: 34px;
+                top: 0;
+                transform: translateY(50%);
+                display: block;
             }
         }
     }

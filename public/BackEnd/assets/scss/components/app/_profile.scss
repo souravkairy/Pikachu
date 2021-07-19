@@ -28,13 +28,13 @@
 	}
 }
 [direction="rtl"]{
-    .profile .photo-content .profile-photo {
-		left: auto;
-		right: 50px;
-	}
+    
 	.profile .profile-photo {
-		left:auto;
-		right: 30px;
+		left: auto;
+		right: 0;
+		margin-right: 0;
+		margin-left: 15px;
+		
 		@include respond('tab-land') {
 			right: 15px;
 		}
@@ -128,7 +128,9 @@
                 border-bottom: .20px solid $primary;
                 color: $primary;
             }
-
+			@include respond ('phone'){
+				margin-right:0px;
+			}
         }
         
     }
@@ -159,6 +161,41 @@
         font-weight: 400;
         margin: 15px 0;
     }
+	.btn-social{
+		font-size: 20px;
+		height: 55px;
+		display:inline-block;
+		padding: 0;
+		text-align:center;
+		border-radius:$radius;
+		color:$white;
+		width: 55px;
+		line-height: 54px;
+		&.facebook{
+			background-color: #3B5998;
+		}
+		&.google-plus{
+			background-color: #DE4E43;
+		}
+		&.linkedin{
+			background-color: #007BB6;
+		}
+		&.instagram{
+			background-color: #8A5A4E;
+		}
+		&.twitter{
+			background-color: #1EA1F3;
+		}
+		&.youtube{
+			background-color: #CE201F;
+		}
+		&.whatsapp{
+			background-color: #01C854;
+		}
+		i{
+			margin:0!important;
+		}
+	}
     
 }  
 .profile-uoloaded-post{

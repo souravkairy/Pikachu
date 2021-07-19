@@ -1,36 +1,78 @@
 //style for all basic tables
 .table {
-	
-	@include respond('tab-land') {
-		font-size: 0.875rem !important;
-	}
+	color:
 	strong{
 		color:$dark;
 	}
-    td {
+    th, td {
         border-color: $border;
 		padding: 12px 9px;
 		
-		@at-root [data-theme-version="dark"] & {
+        @at-root [data-theme-version="dark"] & {
             border-color: $d-border;
         }
     }
-	&.shadow-hover tr:hover{
+	&.table-striped tbody tr:nth-of-type(odd),
+	&.table-hover tr:hover{
+	    background-color:$l-bg;
+		
+		@at-root [data-theme-version="dark"] & {
+            background-color: $d-bg;
+        }
+	}
+
+	&.shadow-hover tbody tr:hover{
 	    background-color:$white;
 		box-shadow: 0 0px 30px rgba($primary, 0.15);
 		@at-root [data-theme-version="dark"] & {
             background-color: $d-bg;
         }
 	}
+	&.tr-rounded{
+		tr{
+			td,th{
+				&:first-child{
+					border-radius:15px 0 0 15px;
+				}
+				&:last-child{
+					border-radius:0 15px 15px 0;
+				}
+			}
+		}
+	}
+	&.bg-primary-hover{
+		th,td{
+			border:none;
+			font-weight:500;
+		}
+		td{
+			color:$black;
+		}
+		th{
+			color:#6C6C6C;
+		}
+		tr:hover{
+			td,th{
+				background:$primary;
+				color:$white!important;
+			}
+		}	
+	}	
 	&.bg-secondary-hover{
 		th,td{
 			border:none;
 			font-weight:500;
 		}
+		td{
+			color:$black;
+		}
+		th{
+			color:#6C6C6C;
+		}
 		tr:hover{
-			background:$secondary;
 			td,th{
-				color:$white!important;
+				background:rgba($secondary,0.1);
+				color:$secondary!important;
 			}
 		}	
 	}	
@@ -39,9 +81,33 @@
 			border:none;
 			font-weight:500;
 		}
+		td{
+			color:$black;
+		}
+		th{
+			color:#6C6C6C;
+		}
 		tr:hover{
-			background:$info;
 			td,th{
+				background:#374C98;
+				color:$white!important;
+			}
+		}	
+	}	
+	&.bg-success-hover{
+		th,td{
+			border:none;
+			font-weight:500;
+		}
+		td{
+			color:$black;
+		}
+		th{
+			color:#6C6C6C;
+		}
+		tr:hover{
+			td,th{
+				background:$success;
 				color:$white!important;
 			}
 		}	
@@ -51,16 +117,54 @@
 			border:none;
 			font-weight:500;
 		}
+		td{
+			color:$black;
+		}
+		th{
+			color:#6C6C6C;
+		}
 		tr:hover{
-			background:$warning;
 			td,th{
+				background:$warning;
 				color:$white!important;
 			}
 		}	
 	}	
-
+	&.bg-danger-hover{
+		th,td{
+			border:none;
+			font-weight:500;
+		}
+		td{
+			color:$black;
+		}
+		th{
+			color:#6C6C6C;
+		}
+		tr:hover{
+			td,th{
+				background:$danger;
+				color:$white!important;
+			}
+		}	
+	}	
+	&.border-no{
+		td{
+			border:0;
+		}
+	}
+	&.short-one{
+		tr{
+			td,th{
+				&:first-child{
+					width:60px!important;
+				}
+			}
+		}
+	}
     thead th {
         border-bottom-width: 1px;
+        text-transform: uppercase;
         // color: $dark ;
         font-size: 14px;
         font-weight: 600;
@@ -225,6 +329,8 @@
     }
 }
 
+
+
 .card-table{
 	th, td{
         &:first-child{
@@ -241,7 +347,6 @@
 		}
     }
 }
-
 
 
 

@@ -47,3 +47,21 @@
         }
     }
 }
+
+// Show Pass
+.show-pass{
+	cursor:pointer;
+	
+	.fa-eye{
+		display:none;
+	}
+	
+	&.active{
+		.fa-eye-slash{
+			display:none;
+		}
+		.fa-eye{
+			display:inline-block;
+		}
+	}
+}

@@ -40,7 +40,7 @@
 	}
 	.nav{
 	    padding: 1rem 1rem 0 1rem;
-		background:$primary;
+		background:$secondary;
 		border: 0;
 		justify-content: space-between;
 			
@@ -54,7 +54,7 @@
 				background:transparent;
 				color: #fff;
 				opacity: 1;
-				border-color: #fff;
+				border-color: $danger;
 			}
 		}
 	}
@@ -314,6 +314,7 @@
 			padding: 10px 0;
 			height: 50px;
 			border: 0;
+			resize:none;
 		}
 		.btn{
 			font-size: 18px;

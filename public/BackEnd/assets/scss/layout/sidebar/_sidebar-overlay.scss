@@ -1,7 +1,42 @@
 [data-sidebar-style="overlay"] {
     .deznav {
         left: -100%;
-        @at-root [direction="rtl"]#{&} {
+        @include transitionMedium;
+		
+		.metismenu{
+			& > li {
+				padding: 0 20px;
+				& > a {
+					font-size: 16px;
+					padding: 20px 20px;
+					color: #7f7184;
+					border-radius: 0.75rem;
+					-webkit-transition: all 0.5s;
+					-ms-transition: all 0.5s;
+					transition: all 0.5s;
+				}
+				&:hover > a,
+				&.mm-active > a {
+					background: $primary;
+					color:$white;
+					box-shadow:0 12px 15px 0 rgba($primary, 0.13);
+					i{
+						color:$white;
+					}
+				}
+				
+			}
+			ul a{
+			    padding-top: .5rem;
+				padding-bottom: .5rem;
+				position: relative;
+				font-size: 15px;
+				padding-left: 4.5rem;
+			}
+		}
+		
+		
+		@at-root [direction="rtl"]#{&} {
             left: auto;
             right: -100%;
         }

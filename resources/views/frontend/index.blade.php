@@ -1,606 +1,1944 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="M_Adnan">
-<title>PIKACHU - A Goal</title>
 
-<!-- Bootstrap Core CSS -->
-<link href="{{asset('FrontEnd/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap 5 CSS -->
-<link href="{{asset('FrontEnd/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <!--====== Title ======-->
+    <title>PIKACHU -- Grab Your Profit</title>
 
-<!-- Custom CSS -->
-<link href="{{asset('FrontEnd/assets/css/main.css')}}" rel="stylesheet">
-<link href="{{asset('FrontEnd/assets/css/style.css')}}" rel="stylesheet">
-<link href="{{asset('FrontEnd/assets/css/responsive.css')}}" rel="stylesheet">
-<link href="{{asset('FrontEnd/assets/fonts/flaticon.css')}}" rel="stylesheet">
-<link href="{{asset('FrontEnd/assets/css/ionicons.min.css')}}" rel="stylesheet">
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{{asset('FrontEnd/assets/images/favicon.ico')}}" type="image/png">
 
-<!-- JavaScripts -->
-<script src="{{asset('FrontEnd/assets/js/modernizr.js')}}"></script>
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/bootstrap.min.css')}}">
 
-<!-- Online Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Montserrat:300,400,500,600,700,800" rel="stylesheet">
-<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css')}}" rel="stylesheet">
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/all.css')}}">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')}}"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')}}"></script>
-<![endif]-->
+    <!--====== nice select css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/nice-select.css')}}">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/slick.css')}}">
+
+    <!--====== Swiper css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/swiper.min.css')}}">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/default.css')}}">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/style.css')}}">
+
 
 </head>
+
 <body>
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+        <div class="header-nav">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="navigation">
+                            <nav class="navbar navbar-expand-lg navbar-light ">
+                                <a class="navbar-brand" href="index.html"><img src="{{asset('FrontEnd/assets/images/logo.png')}}" alt=""></a>
+                                <!-- logo -->
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button> <!-- navbar toggler -->
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="position-center-center">
-    <div class="ldr"></div>
-  </div>
-</div>
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                    <ul class="navbar-nav m-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#about">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#about">About</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#Benefits">Benefits</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#Packages">Packages</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#Roadmap">Roadmap</a>
+                                        </li>
+                                        {{-- <li class="nav-item">
+                                            <a class="nav-link" href="#">downloads</a>
+                                        </li> --}}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#Faqs">Faqs</a>
+                                        </li>
 
-<!-- Wrap -->
-<div id="wrap">
-
-  <!-- header -->
-  <header class="sticky">
-    <div class="container">
-
-      <!-- Logo -->
-      <div class="logo"> <a href="index.html"><img class="img-responsive" src="{{asset('FrontEnd/assets/images/logo2.png')}}" alt="" ></a> </div>
-      <nav class="navbar ownmenu navbar-expand-lg ">
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="nav">
-            <li class="scroll active"><a href="#hme">Home</a></li>
-            <li class="scroll"> <a href="#about">About </a> </li>
-            <li class="scroll"> <a href="#token">Token</a> </li>
-            <li class="scroll"> <a href="#activity">Activity</a> </li>
-            <li class="scroll"> <a href="#roadmap">Road Map</a> </li>
-            <li class="scroll"> <a href="#team">Team</a> </li>
-            <li class="scroll"> <a href="#contact">Contact</a> </li>
-          </ul>
+                                    </ul>
+                                </div> <!-- navbar collapse -->
+                                <div class="navbar-btn d-none d-sm-flex">
+                                    <ul>
+                                        <li><a class="main-btn" href="login.html">login</a></li>
+                                        <li><a class="main-btn-2 main-btn" href="singup.html">signup</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div> <!-- navigation -->
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
+    </header>
 
-    </div>
-    <div class="clearfix"></div>
-  </header>
+    <!--====== HEADER PART ENDS ======-->
 
-  <!-- HOME MAIN  -->
-  <section class="simple-head" data-stellar-background-ratio="0.5" id="hme">
-    <!-- Particles -->
-    <div id="particles-js"></div>
-    <div class="position-center-center">
-      <div class="container text-center">
-        <h1>Build a new kind of Decentralized </h1>
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-        <a href="{!!url('/registartion')!!}" class="btn">Join Us</a> <a href="#." class="btn btn-inverse">View White Paper</a> </div>
-    </div>
-  </section>
+    <!--====== BANNER PART START ======-->
 
-  <!-- Content -->
-  <div id="content">
-
-    <!-- Why Choose Us -->
-    <section class="why-choose padding-top-150 padding-bottom-150" id="about">
-      <div class="container">
-
-        <!-- Why Choose Us  ROW-->
-        <div class="row">
-          <div class="col-md-7 margin-top-60">
-
-            <!-- Tittle -->
-            <div class="heading margin-bottom-20">
-              <h6 class="margin-bottom-10">The world’s only enterprise blockchain solution for global payments</h6>
-              <h4>Best Blockchain &amp; Better Than Any Blockchain</h4>
+    <section class="banner-area bg_cover" style="background-image: url({{asset('FrontEnd/assets/images/banner-bg.jpg')}}); height:850px">
+        <div class="container" id="particles-js">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-8">
+                    <div class="banner-content text-center">
+                        <h1 class="title">Introducing The First Global Cryptofunding Platform</h1>
+                        <ul>
+                            <li><a class="main-btn main-btn-2" href="#about">Know More</a></li>
+                            <li><a class="main-btn" href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-            <p>Cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-            <div class="ultra-ser"> <span><span class="name"> Webicode &nbsp; - &nbsp;</span> <span>Ceo/Founder Chain</span></span> </div>
-            <a class="vid-btn margin-top-30 popup-youtube" href="https://www.youtube.com/watch?v=7e90gBu4pas"><i class="fas fa-play-circle"></i> Watch Video <br>
-            <span>How it work</span></a> </div>
-
-          <!-- Image -->
-          <div class="col-md-5 text-right"> <img src="{{asset('FrontEnd/assets/images/chain-img.png')}}" alt="Why Choose Us Image" > </div>
         </div>
 
-        <!-- Services ROW -->
-        <div class="row">
+        <div class="social">
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-medium"></i></a></li>
+                <li><a href="#"><i class="fal fa-paper-plane"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
 
-          <!-- Services -->
-          <div class="col-md-4">
-            <div class="ib-icon"> <i class="flaticon-smartphone"></i> </div>
-            <div class="ib-info">
-              <h4 class="h6">Peer-to-Peer Transactions</h4>
-              <p>Contrary to popular belief , Lorem Ipsum is not simply random text. It has roots in a piece</p>
-            </div>
-          </div>
-
-          <!-- Services -->
-          <div class="col-md-4">
-            <div class="ib-icon"> <i class="flaticon-flat-world-map"></i> </div>
-            <div class="ib-info">
-              <h4 class="h6">Borderless Payments</h4>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem not simply random accusantium</p>
-            </div>
-          </div>
-
-          <!-- Services -->
-          <div class="col-md-4">
-            <div class="ib-icon"> <i class="flaticon-secure-shield"></i> </div>
-            <div class="ib-info">
-              <h4 class="h6">Fully Protection</h4>
-              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p>
-            </div>
-          </div>
-
-          <!-- Services -->
-          <div class="col-md-4">
-            <div class="ib-icon"> <i class="flaticon-credit-card"></i> </div>
-            <div class="ib-info">
-              <h4 class="h6">Smart Money</h4>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
-            </div>
-          </div>
-
-          <!-- Services -->
-          <div class="col-md-4">
-            <div class="ib-icon"> <i class="flaticon-wallet"></i> </div>
-            <div class="ib-info">
-              <h4 class="h6">Secure Wallet</h4>
-              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece</p>
-            </div>
-          </div>
-
-          <!-- Services -->
-          <div class="col-md-4">
-            <div class="ib-icon"> <i class="flaticon-money"></i> </div>
-            <div class="ib-info">
-              <h4 class="h6">Easy To buy & Sell</h4>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
-            </div>
-          </div>
+            </ul>
         </div>
-      </div>
     </section>
 
-    <!-- Token Distribution -->
-    <section class="distri drk padding-top-150 padding-bottom-150 " id="token">
-      <div class="container">
-        <div class="row">
+    <!--====== BANNER PART ENDS ======-->
 
-          <!-- Token  -->
-          <div class="col-lg-7">
-            <h3>Token Distribution</h3>
-            <p>ICO Crypto token will be released on the basis of Ethereum and Bitocin platform. It’s compatibility of the token with third-party services wallets, exchanges etc, and provides easy-to-use integration.</p>
+    <!--====== CRYPTEN FEATURES PART START ======-->
 
-            <!-- Progress -->
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="150"><span>9,000,000 <small>50%</small></span> </div>
+    <section class="crypten-features-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="crypten-features-item text-center mt-30">
+                        <img src="{{asset('FrontEnd/assets/images/icon/features-icon-1.png')}}" alt="icon">
+                        <h3 class="title">Powerful Technology</h3>
+                        <p>A versatile framework combining Ethereum-based technology with powerful tools and
+                            applications.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="crypten-features-item text-center mt-30">
+                        <img src="{{asset('FrontEnd/assets/images/icon/features-icon-2.png')}}" alt="icon">
+                        <h3 class="title">Provably Fair</h3>
+                        <p>A versatile framework combining Ethereum-based technology with powerful tools and
+                            applications.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="crypten-features-item text-center mt-30 item-3">
+                        <img src="{{asset('FrontEnd/assets/images/icon/features-icon-3.png')}}" alt="icon">
+                        <h3 class="title">Trusted Globally</h3>
+                        <p>A versatile framework combining Ethereum-based technology with powerful tools and
+                            applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--====== CRYPTEN FEATURES PART ENDS ======-->
+
+    <!--====== CRYPTEN TRADE PART START ======-->
+
+    <section class="crypten-trade-area pt-190" id="Benefits">
+        <div class="item-1">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="crypten-trade-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/benefits-1.png')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="crypten-trade-content">
+                            <span>what is PIKACHU</span>
+                            <h3 class="title">A Secure Platform for ICO and Cryptocurrency Trade</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, ipsa.
+                                 Atque illum vel quasi eos ut officia ad cum praesentium, voluptatem consequuntur eveniet nemo, veniam, aut quia perferendis officiis. Commodi!</p>
+                            <div class="trade-item mt-30">
+                                <img src="{{asset('FrontEnd/assets/images/icon/trade-icon-1.png')}}" alt="">
+                                <h5 class="title">Our Mission</h5>
+                                <p>We’ve always been on the vestibulum fermentum veli non placerat aecenase in hen
+                                    quisque quis.</p>
+                            </div>
+                            <div class="trade-item mt-30">
+                                <img src="{{asset('FrontEnd/assets/images/icon/trade-icon-2.png')}}" alt="">
+                                <h5 class="title">Our Vision</h5>
+                                <p>We’ve always been on the vestibulum fermentum veli non placerat aecenase in hen
+                                    quisque quis.</p>
+                            </div>
+                            <div class="trade-item mt-30">
+                                <img src="{{asset('FrontEnd/assets/images/icon/trade-icon-3.png')}}" alt="">
+                                <h5 class="title">The Future</h5>
+                                <p>We’ve always been on the vestibulum fermentum veli non placerat aecenase in hen
+                                    quisque quis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="crypten-color">
+                <img src="{{asset('FrontEnd/assets/images/shape/color-bg.png')}}" alt="">
+            </div>
+        </div>
+        <div class="item-1 item-2 mt-180" id="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-1 order-2">
+                        <div class="crypten-trade-content">
+                            <span>about us</span>
+                            <h3 class="title">Based Around A Global Community Network</h3>
+                            <p>Our community is consisted of people from around the globe and that’s in hendrerit justo
+                                quisque quis rhoncus exeget semper semlamat lobortis velit estibulum ante ipsum primis
+                                in faucibus orcie luctus et ultrices posuere cubilia curae ed dignissim leo lorema
+                                imenum mauris vestibulum et maecenas vitae urna aced.</p>
+                            <div class="trade-about-follow mt-30">
+                                <h4 class="title">Follow us</h4>
+                                <p>You don’t want to miss any updates vestibulum fermentum velit non placerat aecenase
+                                    in hendrerit justo quisque quis:</p>
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-medium"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-paper-plane"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-btc"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-github"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-2 order-1">
+                        <div class="crypten-trade-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/benefits-2.png')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="crypten-color">
+                <img src="{{asset('FrontEnd/assets/images/shape/color-bg-2.png')}}" alt="">
+            </div>
+        </div>
+        <div class="item-1 mt-165">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="crypten-trade-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/benefits-3.png')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="crypten-trade-content">
+                            <span>contracts</span>
+                            <h3 class="title">Generating Secure and Adaptive Smart Contracts</h3>
+                            <p>The contracts on our platform not only ellentesque vestibulum rmentum velit non placerat
+                                aecenase in hendrerit justo quisque quis rhoncus huge exeget semper semlamat lobortis
+                                velit estibulum ante.</p>
+                            <div class="trade-contracts mt-30">
+                                <i class="far fa-check-double"></i>
+                                <p>Always 100% secureKrcie luctus et ultrices posuere cubilia curae ed dignissim leo
+                                    lorema imenum mauris vestibulum exeget semper mat belit estibulum ante ipsum primis.
+                                </p>
+                            </div>
+                            <div class="trade-contracts mt-30">
+                                <i class="far fa-check-double"></i>
+                                <p>No comprosise on authenticity krcie luctus et ultrices posuere cubilia curae ed
+                                    dignissim leo lorema imenum.</p>
+                            </div>
+                            <div class="trade-contracts mt-30">
+                                <i class="far fa-check-double"></i>
+                                <p>You’ll find our contacracts to be uctus et ultrices posuere cubilia curae ed
+                                    dignissim leo lorema imenum mauris vestibulum exeget semper mat kelit estibulum ante
+                                    ipsum primis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="crypten-color">
+                <img src="{{asset('FrontEnd/assets/images/shape/color-bg.png')}}" alt="">
+            </div>
+        </div>
+        <div class="item-1 item-4 mt-185">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="crypten-trade-content">
+                            <span>automation</span>
+                            <h3 class="title">Scalable, Fast and Ultra Secure Transactions</h3>
+                            <p>The contracts on our platform not only ellentesque vestibulum rmentum velit non placerat
+                                aecenase in hendrerit justo quisque quis rhoncus huge exeget semper semlamat lobortis
+                                velit estibulum ante.</p>
+                            <div class="trade-contracts mt-30">
+                                <i class="far fa-check-double"></i>
+                                <p>Always 100% secureKrcie luctus et ultrices posuere cubilia curae ed dignissim leo
+                                    lorema imenum mauris vestibulum exeget semper mat belit estibulum ante ipsum primis.
+                                </p>
+                            </div>
+                            <div class="trade-contracts mt-30">
+                                <i class="far fa-check-double"></i>
+                                <p>No comprosise on authenticity krcie luctus et ultrices posuere cubilia curae ed
+                                    dignissim leo lorema imenum.</p>
+                            </div>
+                            <div class="trade-contracts mt-30">
+                                <i class="far fa-check-double"></i>
+                                <p>You’ll find our contacracts to be uctus et ultrices posuere cubilia curae ed
+                                    dignissim leo lorema imenum mauris vestibulum exeget semper mat kelit estibulum ante
+                                    ipsum primis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="crypten-trade-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/benefits-4.png')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="crypten-color">
+                <img src="{{asset('FrontEnd/assets/images/shape/color-bg-2.png')}}" alt="">
+            </div>
+        </div>
+        <div class="item-1 mt-185 mb-195">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="crypten-trade-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/benefits-5.png')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="crypten-trade-content">
+                            <span>Tokenization</span>
+                            <h3 class="title">Powerful and Absolutely Secure Tokenization</h3>
+                            <p>Crypten is one of the highly rated secure platfrom for ICO and any type of in hendrerit
+                                justo quisque quis rhons exeget semper semlamat lobortis velit estibulum ante ipsum
+                                primis in faucibus.</p>
+                            <div class="trade-item mt-30">
+                                <img src="{{asset('FrontEnd/assets/images/icon/trade-icon-4.png')}}" alt="">
+                                <h5 class="title">100% Secure</h5>
+                                <p>Yellentesque vestibulum fermentum velit non placerat aecenase in hendrerit justo
+                                    quisque quis.</p>
+                            </div>
+                            <div class="trade-item mt-30">
+                                <img src="{{asset('FrontEnd/assets/images/icon/trade-icon-3.png')}}" alt="">
+                                <h5 class="title">Automated</h5>
+                                <p>Bellentesque vestibulum fermentum velit non placerat aecenase in hendrerit justo
+                                    quisque quis.</p>
+                            </div>
+                            <div class="trade-item mt-30">
+                                <img src="{{asset('FrontEnd/assets/images/icon/trade-icon-5.png')}}" alt="">
+                                <h5 class="title">encryption</h5>
+                                <p>Tellentesque vestibulum fermentum velit non placerat aecenase in hendrerit justo
+                                    quisque quis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="crypten-color">
+                <img src="{{asset('FrontEnd/assets/images/shape/color-bg.png')}}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!--====== CRYPTEN TRADE PART ENDS ======-->
+
+    <!--====== BENEFITS PART START ======-->
+
+    <section class="banefits-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-title text-center">
+                        <span>benefits </span>
+                        <h3 class="title">Get to Know Our Ecosystem’s Key Features & Benefits</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-9">
+                    <div class="banefits-item mt-30">
+                        <img src="{{asset('FrontEnd/assets/images/icon/banefits-1.png')}}" alt="icon">
+                        <h4 class="title">Simplicity</h4>
+                        <p>User-friendly app and account creation, intuitive also for casual bettors.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-9">
+                    <div class="banefits-item mt-30">
+                        <img src="{{asset('FrontEnd/assets/images/icon/banefits-2.png')}}" alt="icon">
+                        <h4 class="title">Unique Features</h4>
+                        <p>From betting on local teams to joining our exclusive High Roller Club.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-9">
+                    <div class="banefits-item mt-30">
+                        <img src="{{asset('FrontEnd/assets/images/icon/banefits-3.png')}}" alt="icon">
+                        <h4 class="title">Social Engagement</h4>
+                        <p>Community boost via player competition, chat, achievement and badges.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-9">
+                    <div class="banefits-item mt-30">
+                        <img src="{{asset('FrontEnd/assets/images/icon/banefits-4.png')}}" alt="icon">
+                        <h4 class="title">Safe & Transparent </h4>
+                        <p>Smart Contracts shield funds and bets from manipulation.</p>
+                    </div>
+                </div>
             </div>
             <div class="row">
-              <div class="col">
-                <h6> Now Distribution</h6>
-                <span>2,000,000</span> </div>
-              <div class="col">
-                <h6> 99,910</h6>
-                <span>ETH Received</span> </div>
-              <div class="col">
-                <h6> 99,910</h6>
-                <span>BTC Received</span> </div>
+                <div class="col-lg-12">
+                    <div class="banefits-btn text-center pt-100">
+                        <ul>
+                            <li><a class="main-btn main-btn-2" href="#">Whitepaper</a></li>
+                            <li><a class="main-btn" href="#">buy tokens</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <!-- CountdownEnd -->
-            <div class="countdown">
-              <h6>Current Distribution Section End  150/350</h6>
-              <!-- Countdown-->
-              <ul class="row">
-                <!-- Days -->
-                <li class="col-md-3">
-                  <article> <span class="days">00</span>
-                    <p class="days_ref">Days</p>
-                  </article>
-                </li>
-                <!-- Hours -->
-                <li class="col-md-3">
-                  <article> <span class="hours">00</span>
-                    <p class="hours_ref">Hours</p>
-                  </article>
-                </li>
-                <!-- Mintes -->
-                <li class="col-md-3">
-                  <article><span class="minutes">00</span>
-                    <p class="minutes_ref">Minutes</p>
-                  </article>
-                </li>
-                <!-- Seconds -->
-                <li class="col-md-3">
-                  <article><span class="seconds">00</span>
-                    <p class="seconds_ref">Seconds</p>
-                  </article>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Total Distribution -->
-          <div class="col-lg-5">
-            <h3>Total Distribution Section End <b>350/350</b></h3>
-            <p>ICO Crypto token will be released on the basis of Ethereum and Bitocin platform.</p>
-            <div class="countdown-all">
-
-              <!-- Countdown -->
-              <ul class="row">
-                <!-- Days -->
-                <li class="col-md-3">
-                  <article> <span class="days">00</span>
-                    <p class="days_ref">Days</p>
-                  </article>
-                </li>
-                <!-- Hours -->
-                <li class="col-md-3">
-                  <article> <span class="hours">00</span>
-                    <p class="hours_ref">Hours</p>
-                  </article>
-                </li>
-                <!-- Mintes -->
-                <li class="col-md-3">
-                  <article><span class="minutes">00</span>
-                    <p class="minutes_ref">Minutes</p>
-                  </article>
-                </li>
-                <!-- Seconds -->
-                <li class="col-md-3">
-                  <article><span class="seconds">00</span>
-                    <p class="seconds_ref">Seconds</p>
-                  </article>
-                </li>
-              </ul>
-              <a href="#." class="btn">Join Us</a> <a href="#." class="btn btn-inverse">Buy Now</a>
-
-              <!-- Buy Option -->
-              <div class="card-info"> <i class="fab  fa-bitcoin"></i> <i class="fab  fa-cc-discover"></i> <i class="fab  fa-cc-visa"></i> <i class="fab  fa-cc-mastercard"></i> </div>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="banefits-color">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-3.png')}}" alt="">
+        </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
     </section>
 
-    <!-- Development -->
-    <section class="dev-activ text-center padding-top-150 padding-bottom-150" id="activity">
-      <div class="container">
-        <div class="sm-intro">
-          <h2>Development Activity</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nibh dolor, efficitur eget pharetra ac, cursus sed sapien. Cras posuere ligula ut blandit varius. </p>
-        </div>
-        <ul class="row margin-top-50 margin-bottom-50">
-          <li class="col"> <i class="flaticon-rotate"></i> <span><span class="counter">4</span> hrs Ago</span>
-            <p>Last Update</p>
-          </li>
-          <li class="col"><i class="flaticon-building"></i> <span><span class="counter">10</span> Days Ago</span>
-            <p>Last Block Found</p>
-          </li>
-          <li class="col"><i class="flaticon-money-1"></i> <span><span class="counter">45057</span>+</span>
-            <p>Contributions</p>
-          </li>
-          <li class="col"><i class="flaticon-team"></i> <span  class="counter">80</span>
-            <p>Team Members</p>
-          </li>
-        </ul>
-        <a href="#." class="btn">Start on GitHub</a> <a href="#." class="btn btn-inverse">White Paper</a> </div>
-    </section>
+    <!--====== BENEFITS PART ENDS ======-->
 
-    <!-- ABOUT -->
-    <section class="about light-bg">
-      <!-- Right Background -->
-      <div class="main-page-section half_left_layout">
-        <div class="main-half-layout half_right_layout"> </div>
+    <!--====== TOKEN SALE PART START ======-->
 
-        <!-- Left Content -->
-        <div class="main-half-layout-container half_right_layout">
-          <div class="about-us-con">
-            <h3>Growing Global Network</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nibh dolor, efficitur eget pharetra ac, cursus sed sapien. Cras posuere ligula ut blandit varius. </p>
-            <ul class="count-info row">
-              <li class="col"> <span class="counter">5000</span><span>+</span>
-                <p>Customers</p>
-              </li>
-              <li class="col"> <span class="counter">750</span><span>+</span>
-                <p>Deploying</p>
-              </li>
-            </ul>
-            <a href="#." class="btn">White Paper</a> <a href="#." class="btn btn-inverse">Find an Exchange</a> </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Road Map -->
-    <section class="road-map padding-top-150 padding-bottom-50" id="roadmap">
-      <div class="container-fluid">
-        <h2>Our Main Road Map</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nibh dolor, efficitur eget pharetra ac, cursus sed sapien. Cras posuere ligula ut blandit varius. </p>
-
-        <!-- Road List -->
-        <ul class="edu-list margin-top-50">
-
-          <!-- Jan 2018 -->
-          <li> <span>January  2018</span>
-            <h5>January Road Map Tittle</h5>
-            <p>1st Prize for Best Illustration Artist</p>
-          </li>
-          <!-- Feb 2018 -->
-          <li> <span>February  2018</span>
-            <h5>February  Road Map Tittle</h5>
-            <p>1st Prize for Best Illustration Artist</p>
-          </li>
-          <!-- March 2018 -->
-          <li> <span>March 2018</span>
-            <h5>March Road Map Tittle</h5>
-            <p>Site of The Month</p>
-          </li>
-          <!-- April 2018 -->
-          <li> <span>April 2018</span>
-            <h5>April Map Tittle</h5>
-            <p>Best CSS Portfolio Website</p>
-          </li>
-
-          <!-- March 2018 -->
-          <li> <span>May 2018</span>
-            <h5>March Road Map Tittle</h5>
-            <p>Site of The Month</p>
-          </li>
-          <!-- April 2018 -->
-          <li> <span>June 2018</span>
-            <h5>April Map Tittle</h5>
-            <p>Best CSS Portfolio Website</p>
-          </li>
-          <!-- July 2018 -->
-          <li> <span>July 2018</span>
-            <h5>July Road Map Tittle</h5>
-            <p>1st Prize for Best Illustration Artist</p>
-          </li>
-          <!-- August 2018 -->
-          <li> <span>August 2018</span>
-            <h5>August Road Map Tittle</h5>
-            <p>1st Prize for Best Illustration Artist</p>
-          </li>
-          <!-- September 2018 -->
-          <li> <span>September 2018</span>
-            <h5>September Road Map Tittle</h5>
-            <p>Site of The Month</p>
-          </li>
-          <!-- October 2018 -->
-          <li> <span>October 2018</span>
-            <h5>October Map Tittle</h5>
-            <p>Best CSS Portfolio Website</p>
-          </li>
-
-          <!-- November 2018 -->
-          <li> <span>November 2018</span>
-            <h5>November Road Map Tittle</h5>
-            <p>Site of The Month</p>
-          </li>
-          <!-- December 2018 -->
-          <li> <span>December 2018</span>
-            <h5>December Map Tittle</h5>
-            <p>Best CSS Portfolio Website</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Team Members -->
-    <section class="team style-2 padding-top-150 padding-bottom-150" id="team">
-      <div class="container">
-        <div class="heading text-center">
-          <h2>Our Senior Team Leads </h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nibh dolor, efficitur eget pharetra ac, cursus sed sapien. Cras posuere ligula ut blandit varius. </p>
-        </div>
-        <ul class="team-small">
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-          <li><img  src="{{asset('FrontEnd/assets/images/team.png')}}" alt=""><a class="hover" href="#.">John Doe </a></li>
-      </ul>
-      </div>
-    </section>
-
-    <!-- Team Members -->
-    <section class="light-bg padding-top-150 padding-bottom-150" id="team">
-      <div class="container">
-        <div class="heading text-center">
-          <h2>Frequently asked questions</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nibh dolor, efficitur eget pharetra ac, cursus sed sapien. Cras posuere ligula ut blandit varius. </p>
-        </div>
-        <!-- FAQS -->
-        <div class="row">
-          <div class="col-md-6">
-
-            <!-- According Style 1 -->
-            <div class="panel-group accordion" id="accordion">
-
-              <!-- According 1 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed"> What is ICO ?</a> </h4>
+    <section class="token-sale-area" id="Packages">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-title text-center">
+                        <span>Packages</span>
+                        <h3 class="title">Packages Rounds</h3>
+                    </div>
                 </div>
-                <div id="collapseOne" class="panel-collapse collapse in">
-                  <div class="panel-body"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nibh dolor, efficitur eget pharetra ac, cursus sed sapien. Cras posuere ligula ut blandit varius. </div>
-                </div>
-              </div>
-
-              <!-- According 2 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed"> Why The Best ICO BlockChain</a> </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse">
-                  <div class="panel-body"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </div>
-                </div>
-              </div>
-
-              <!-- According 3 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed"> What is ICO Blockchain</a> </h4>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse">
-                  <div class="panel-body"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </div>
-                </div>
-              </div>
-
-              <!-- According 4 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour" class="collapsed"> Best Crypto in this world</a> </h4>
-                </div>
-                <div id="collapsefour" class="panel-collapse collapse">
-                  <div class="panel-body"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-
-            <!-- According Style 1 -->
-            <div class="panel-group accordion" id="accordion">
-
-              <!-- According 1 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne-1" class="collapsed"> Our Mission</a> </h4>
+            <div class="row token-sale-active">
+                <div class="col-lg-3">
+                    <div class="token-sale-item mt-30 text-center">
+                        <div class="circle-1">
+                            <strong></strong>
+                        </div>
+                        <span>Pre sale</span>
+                        <p>35% bonus</p>
+                        <div class="item">
+                            <ul>
+                                <li>21 AUG</li>
+                                <li>31 AUG</li>
+                            </ul>
+                            <ul>
+                                <li>2018</li>
+                                <li>2018</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="token-sale-start mt-20">
+                        <span>START</span>
+                        <p>Soft Cap $2M</p>
+                    </div>
                 </div>
-                <div id="collapseOne-1" class="panel-collapse collapse">
-                  <div class="panel-body"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </div>
+                <div class="col-lg-3">
+                    <div class="token-sale-item mt-30 text-center">
+                        <div class="circle-1">
+                            <strong></strong>
+                        </div>
+                        <span>Stage 1</span>
+                        <p>30% bonus</p>
+                        <div class="item">
+                            <ul>
+                                <li>21 AUG</li>
+                                <li>31 AUG</li>
+                            </ul>
+                            <ul>
+                                <li>2018</li>
+                                <li>2018</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <!-- According 2 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo-1" class="collapsed"> Our Services</a> </h4>
+                <div class="col-lg-3">
+                    <div class="token-sale-item mt-30 text-center">
+                        <div class="circle-3">
+                            <strong></strong>
+                        </div>
+                        <span>Stage 2</span>
+                        <p>25% bonus</p>
+                        <div class="item">
+                            <ul>
+                                <li>21 AUG</li>
+                                <li>31 AUG</li>
+                            </ul>
+                            <ul>
+                                <li>2018</li>
+                                <li>2018</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="token-sale-start mt-20">
+                        <span>Stage 2</span>
+                        <p>hard Cap $5M</p>
+                    </div>
                 </div>
-                <div id="collapseTwo-1" class="panel-collapse collapse">
-                  <div class="panel-body"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </div>
+                <div class="col-lg-3">
+                    <div class="token-sale-item mt-30 text-center">
+                        <div class="circle-4">
+                            <strong></strong>
+                        </div>
+                        <span>Stage 3</span>
+                        <p>20% bonus</p>
+                        <div class="item">
+                            <ul>
+                                <li>21 AUG</li>
+                                <li>31 AUG</li>
+                            </ul>
+                            <ul>
+                                <li>2018</li>
+                                <li>2018</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <!-- According 3 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree-1" class="collapsed"> Block Chain Into</a> </h4>
+                <div class="col-lg-3">
+                    <div class="token-sale-item mt-30 text-center">
+                        <div class="circle-3">
+                            <strong></strong>
+                        </div>
+                        <span>Stage 4</span>
+                        <p>15% bonus</p>
+                        <div class="item">
+                            <ul>
+                                <li>21 AUG</li>
+                                <li>31 AUG</li>
+                            </ul>
+                            <ul>
+                                <li>2018</li>
+                                <li>2018</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="token-sale-start mt-20">
+                        <span>Stage 4</span>
+                        <p>hard Cap $10M</p>
+                    </div>
                 </div>
-                <div id="collapseThree-1" class="panel-collapse collapse">
-                  <div class="panel-body"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </div>
+                <div class="col-lg-3">
+                    <div class="token-sale-item mt-30 text-center">
+                        <div class="circle-4">
+                            <strong></strong>
+                        </div>
+                        <span>Stage 5</span>
+                        <p>10% bonus</p>
+                        <div class="item">
+                            <ul>
+                                <li>21 AUG</li>
+                                <li>31 AUG</li>
+                            </ul>
+                            <ul>
+                                <li>2018</li>
+                                <li>2018</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <!-- According 4 -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour-1" class="collapsed"> Crypto Currency FAQS</a> </h4>
-                </div>
-                <div id="collapsefour-1" class="panel-collapse collapse">
-                  <div class="panel-body"> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </div>
-                </div>
-              </div>
             </div>
-          </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="token-sale-btn d-flex justify-content-center mt-50">
+                        <ul>
+                            <li><a class="main-btn main-btn-2" href="#">Whitepaper</a></li>
+                            <li><a class="main-btn main-btn-3" href="#">tech paper</a></li>
+                            <li><a class="main-btn" href="#">buy tokens</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
     </section>
 
-    <!-- Join our community -->
-    <section class="community-sec padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="sm-intro">
-              <h2>Join our community</h2>
-              <ul class="socials">
-                <li><a href="#."><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#."><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#."><i class="fab fa-github"></i></a></li>
-                <li><a href="#."><i class="fab fa-telegram"></i></a></li>
-                <li><a href="#."><i class="fab fa-gitter"></i></a></li>
-                <li><a href="#."><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#."><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="#."><i class="fab fa-youtube"></i></a></li>
-              </ul>
+    <!--====== TOKEN SALE PART ENDS ======-->
+
+    <!--====== STAKEHOLDERS PART START ======-->
+
+    <section class="stakeholders-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-title text-center">
+                        <span>Earnings</span>
+                        <h3 class="title">Profit Distribution</h3>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="news-letter">
-              <h2>Subscribe to our newsletter</h2>
-              <form>
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">SEND</button>
-              </form>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="stakeholders-btn mt-30">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                            aria-orientation="vertical">
+                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                                role="tab" aria-controls="v-pills-home" aria-selected="true">Total Profit</a>
+                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                                role="tab" aria-controls="v-pills-profile" aria-selected="false">Referal Bonous Level-1</a>
+                            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
+                                role="tab" aria-controls="v-pills-messages" aria-selected="false">Referal Bonous Level-2</a>
+                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+                                role="tab" aria-controls="v-pills-settings" aria-selected="false">Referal Bonous Level-3</a>
+                            <a class="nav-link" id="v-pills-5-tab" data-toggle="pill" href="#v-pills-5" role="tab"
+                                aria-controls="v-pills-5" aria-selected="false">Limitations</a>
+                        </div>
+                    </div>
+                    <div class="stakeholders-price">
+                        <ul>
+                            <li>
+                                <span>Price Now</span>
+                                <p>1 BC = 2 $</p>
+                            </li>
+                            <li>
+                                <span>Total Supply Limit</span>
+                                <p>36 000 000 BC</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab">
+                            <div class="stakeholders-thumb mt-55">
+                                <img src="{{asset('FrontEnd/assets/images/stakeholders-1.png')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                            aria-labelledby="v-pills-profile-tab">
+                            <div class="stakeholders-thumb mt-55">
+                                <img src="{{asset('FrontEnd/assets/images/stakeholders-2.png')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                            aria-labelledby="v-pills-messages-tab">
+                            <div class="stakeholders-thumb mt-55">
+                                <img src="{{asset('FrontEnd/assets/images/stakeholders-3.png')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                            aria-labelledby="v-pills-settings-tab">
+                            <div class="stakeholders-thumb mt-55">
+                                <img src="{{asset('FrontEnd/assets/images/stakeholders-4.png')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-5-tab">
+                            <div class="stakeholders-thumb mt-55">
+                                <img src="{{asset('FrontEnd/assets/images/stakeholders-5.png')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
     </section>
-  </div>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="container">
-      <div class="parthner">
-        <h6>Partnered with Innovative Globally</h6>
-        <ul>
-          <li><a href="#."><img src="{{asset('FrontEnd/assets/images/c-mg-1.png')}}" alt=""></a></li>
-          <li><a href="#."><img src="{{asset('FrontEnd/assets/images/c-mg-2.png')}}" alt=""></a></li>
-          <li><a href="#."><img src="{{asset('FrontEnd/assets/images/c-mg-3.png')}}" alt=""></a></li>
-          <li><a href="#."><img src="{{asset('FrontEnd/assets/images/c-mg-1.png')}}" alt=""></a></li>
-          <li><a href="#."><img src="{{asset('FrontEnd/assets/images/c-mg-2.png')}}" alt=""></a></li>
-          <li><a href="#."><img src="{{asset('FrontEnd/assets/images/c-mg-3.png')}}" alt=""></a></li>
-          <li><a href="#."><img src="{{asset('FrontEnd/assets/images/c-mg-1.png')}}" alt=""></a></li>
-          <li><a href="#."><img src="{{asset('FrontEnd/assets/images/c-mg-2.png')}}" alt=""></a></li>
-        </ul>
-      </div>
-    </div>
+    <!--====== STAKEHOLDERS PART ENDS ======-->
 
-    <!-- Rights -->
-    <div class="rights">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <p>© 2018 ICO Crypto BlockChain. All Rights Reserved. Webicode.com</p>
-          </div>
-          <div class="col-md-6 text-right"> <a href="#.">Faqs </a> <a href="#.">Terms & Conditions </a> <a href="#.">Contact Us</a> </div>
+    <!--====== DOCUMENTS PART START ======-->
+
+    <section class="documents-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center">
+                        <span>documents </span>
+                        <h3 class="title">Download & Read Our Crypto Documents</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6 col-sm-7">
+                    <div class="documents-item mt-30">
+                        <div class="documents-top">
+                            <h3 class="title">White <br> Paper</h3>
+                            <img src="{{asset('FrontEnd/assets/images/icon/download.png')}}" alt="">
+                        </div>
+                        <div class="documents-thumb text-center">
+                            <img src="{{asset('FrontEnd/assets/images/documents-1.png')}}" alt="">
+                            <a class="main-btn" href="#">download</a>
+                            <div class="documents-hover-image">
+                                <img src="{{asset('FrontEnd/assets/images/documents-5.png')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-7">
+                    <div class="documents-item mt-30">
+                        <div class="documents-top">
+                            <h3 class="title">one <br> Pager</h3>
+                            <img src="{{asset('FrontEnd/assets/images/icon/download.png')}}" alt="">
+                        </div>
+                        <div class="documents-thumb text-center">
+                            <img src="{{asset('FrontEnd/assets/images/documents-2.png')}}" alt="">
+                            <a class="main-btn" href="#">download</a>
+                            <div class="documents-hover-image">
+                                <img src="{{asset('FrontEnd/assets/images/documents-6.png')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-7">
+                    <div class="documents-item mt-30">
+                        <div class="documents-top">
+                            <h3 class="title">Tech <br> Paper</h3>
+                            <img src="{{asset('FrontEnd/assets/images/icon/download.png')}}" alt="">
+                        </div>
+                        <div class="documents-thumb text-center">
+                            <img src="{{asset('FrontEnd/assets/images/documents-3.png')}}" alt="">
+                            <a class="main-btn" href="#">download</a>
+                            <div class="documents-hover-image">
+                                <img src="{{asset('FrontEnd/assets/images/documents-7.png')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-7">
+                    <div class="documents-item mt-30">
+                        <div class="documents-top">
+                            <h3 class="title">privacy <br> policy</h3>
+                            <img src="{{asset('FrontEnd/assets/images/icon/download.png')}}" alt="">
+                        </div>
+                        <div class="documents-thumb text-center">
+                            <img src="{{asset('FrontEnd/assets/images/documents-4.png')}}" alt="">
+                            <a class="main-btn" href="#">download</a>
+                            <div class="documents-hover-image">
+                                <img src="{{asset('FrontEnd/assets/images/documents-8.png')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
-</div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
+    </section>
 
-<!-- GO TO TOP -->
-	<a href="#" class="cd-top"><i class="ion-chevron-up"></i></a>
-<!-- GO TO TOP End -->
+    <!--====== DOCUMENTS PART ENDS ======-->
 
-<!-- Script -->
-<script src="{{asset('FrontEnd/assets/js/jquery-1.11.3.min.js')}}"></script>
-<script src="{{asset('FrontEnd/assets/js/bootstrap.bundle.js')}}"></script>
-<script src="{{asset('FrontEnd/assets/js/particles.min.js')}}"></script>
-<script src="{{asset('FrontEnd/assets/js/jquery.counterup.min.js')}}"></script>
-<script src="{{asset('FrontEnd/assets/js/jquery.sticky.js')}}"></script>
-<script src="{{asset('FrontEnd/assets/js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{asset('FrontEnd/assets/js/main.js')}}"></script>
+    <!--====== FUTURE ROADMAP PART START ======-->
+
+    <section class="future-roadmap" id="Roadmap">
+        <div class="section-title section-title-2 text-center">
+            <span>Future forecast</span>
+            <h3 class="title">Our Future Roadmap</h3>
+        </div>
+        <div class="container">
+            <div class="swiper-custom-pagination"></div>
+            <div class="swiper-container roadmap-main">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide roadmap-main-slide">
+                        <div class="swiper-container roadmap-sec">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide roadmap-sec-slide active">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q1</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q1</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q2</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q2</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q3</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q3</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q4</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q4</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide roadmap-main-slide">
+                        <div class="swiper-container roadmap-sec">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q1</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q1</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q2</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q2</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q3</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q3</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q4</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q4</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide roadmap-main-slide">
+                        <div class="swiper-container roadmap-sec">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q1</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q1</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q2</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q2</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q3</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q3</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide roadmap-sec-slide">
+                                    <div class="content">
+                                        <div class="content-wrapper">
+                                            <h6>Q4</h6>
+                                            <ul>
+                                                <li>Idea Realization and Market Research</li>
+                                                <li>$480,000 First Round Investment</li>
+                                                <li>Architecture Design and Whitepaper</li>
+                                                <li>Starting MVP Development</li>
+                                                <li>Initial Token Offering</li>
+                                            </ul>
+                                            <div class="progress-bar-wrapper">
+                                                <div class="progress-bar-wrapper-text">
+                                                    <span>PROGRESS</span>
+                                                    <span>42%</span>
+                                                </div>
+                                                <div class="progress-bar-wrapper-actual"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle-div">
+                                        <h6>Q4</h6>
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="baseline"></div>
+        <div class="roadmap-main-arrow roadmap-main-prev">
+            <i class="fas fa-angle-left"></i>
+        </div>
+        <div class="roadmap-main-arrow roadmap-main-next">
+            <i class="fas fa-angle-right"></i>
+        </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
+        <div class="roadmap-map">
+            <img src="{{asset('FrontEnd/assets/images/roadmap-map.png')}}" alt="">
+        </div>
+    </section>
+
+    <!--====== FUTURE ROADMAP PART END ======-->
+
+    <!--====== TEAM PART START ======-->
+
+    <section class="team-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="section-title text-center">
+                        <span>Our Senior Management</span>
+                        <h3 class="title">Meet Our Executive Team</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-1.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Maria Dokshina</h4>
+                            <span>Co-founder, ceo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-2.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Alexander Nuikin</h4>
+                            <span>Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-3.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Nadia Cherkasova</h4>
+                            <span>Head of Community</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-4.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Bdtayev Valery</h4>
+                            <span>PR Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-5.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content ">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Nikita Shilenko</h4>
+                            <span>PR Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-6.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Oleg Gaidukov</h4>
+                            <span>Technical Officer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-7.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Bogdan Dupak</h4>
+                            <span>Front-end</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-8.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Polina Sukhanova</h4>
+                            <span>Community Hero</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center mt-75 pb-30">
+                        <h3 class="title">Meet Our Advisors</h3>
+                    </div>
+                </div>
+            </div> --}}
+            {{-- <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-9.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Maria Dokshina</h4>
+                            <span>Co-founder, ceo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-10.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Alexander Nuikin</h4>
+                            <span>Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-11.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Nadia Cherkasova</h4>
+                            <span>Head of Community</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-12.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Bdtayev Valery</h4>
+                            <span>PR Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-13.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content ">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Nikita Shilenko</h4>
+                            <span>PR Director</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-14.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Oleg Gaidukov</h4>
+                            <span>Technical Officer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-15.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Bogdan Dupak</h4>
+                            <span>Front-end</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="team-item mt-40">
+                        <div class="team-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/team-16.jpg')}}" alt="team">
+                        </div>
+                        <div class="team-content">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            </ul>
+                            <h4 class="title">Polina Sukhanova</h4>
+                            <span>Community Hero</span>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
+    </section>
+
+    <!--====== TEAM PART ENDS ======-->
+
+    <!--====== FAQ PART START ======-->
+
+    <section class="faq-area" id="Faqs">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center">
+                        <span>Knowledgebase</span>
+                        <h3 class="title">Frequently Asked Questions</h3>
+                        <p>Below are some common frequently asked questionshendrerit justo quisque quis rhoncus exeget
+                            semper semlamat lobortis velit estibulum ante.</p>
+                        <ul class="nav nav-pills" id="pills-tab-2" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="pills-a-tab" data-toggle="pill" href="#pills-a"
+                                    role="tab" aria-controls="pills-a" aria-selected="true">general</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pills-b-tab" data-toggle="pill" href="#pills-b" role="tab"
+                                    aria-controls="pills-b" aria-selected="false">Pre ICO & ICO</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="pills-c-tab" data-toggle="pill" href="#pills-c" role="tab"
+                                    aria-controls="pills-c" aria-selected="false">Tokens</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="pills-tabContent-2">
+                        <div class="tab-pane fade show active" id="pills-a" role="tabpanel"
+                            aria-labelledby="pills-a-tab">
+                            <div class="faq-accordion">
+                                <div class="accrodion-grp" data-grp-name="faq-accrodion">
+                                    <div class="accrodion active  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="0ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is CRYPTEN?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion   animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="300ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is CRYPTO Token?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="600ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is the price of the CRYPTO Token?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="600ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>Why do you accept only Ether (ETH)?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-c" role="tabpanel" aria-labelledby="pills-c-tab">
+                            <div class="faq-accordion">
+                                <div class="accrodion-grp" data-grp-name="faq-accrodion">
+                                    <div class="accrodion active  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="0ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is CRYPTEN?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion   animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="300ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is CRYPTO Token?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="600ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is the price of the CRYPTO Token?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="600ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>Why do you accept only Ether (ETH)?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-b" role="tabpanel" aria-labelledby="pills-b-tab">
+                            <div class="faq-accordion">
+                                <div class="accrodion-grp" data-grp-name="faq-accrodion">
+                                    <div class="accrodion active  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="0ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is CRYPTEN?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion   animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="300ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is CRYPTO Token?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="600ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>What is the price of the CRYPTO Token?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                    <div class="accrodion  animated wow fadeInRight" data-wow-duration="1500ms"
+                                        data-wow-delay="600ms">
+                                        <div class="accrodion-inner">
+                                            <div class="accrodion-title">
+                                                <h4>Why do you accept only Ether (ETH)?</h4>
+                                            </div>
+                                            <div class="accrodion-content">
+                                                <div class="inner">
+                                                    <p>CRYPTO is a utility token based on the ERC20 standard. All
+                                                        transactions on the CRYPTEN platform will be carried out in
+                                                        CRYPTO. TheCRYPTO token will be freely tradable on major
+                                                        exchanges and is fully compatible with Ethereum wallets.</p>
+                                                </div><!-- /.inner -->
+                                            </div>
+                                        </div><!-- /.accrodion-inner -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
+    </section>
+
+    <!--====== FAQ PART ENDS ======-->
+
+    <!--====== BLOG PART START ======-->
+
+    <section class="blog-area">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <span>Our blog</span>
+                        <h3 class="title">Fresh Crypten Reads</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="blog-item mt-30">
+                        <div class="blog-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/blog-1.jpg')}}" alt="">
+                        </div>
+                        <div class="blog-content text-center">
+                            <span><span>BLOCKCHAIN</span> June 19, 2019</span>
+                            <a href="#">Decentralized vs. Centralized Exchanges</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="blog-item mt-30">
+                        <div class="blog-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/blog-2.jpg')}}" alt="">
+                        </div>
+                        <div class="blog-content text-center">
+                            <span><span>Cryptocurrency</span> June 19, 2019</span>
+                            <a href="#">Cryptocurrencies and The Promising Future</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="blog-item mt-30">
+                        <div class="blog-thumb">
+                            <img src="{{asset('FrontEnd/assets/images/blog-3.jpg')}}" alt="">
+                        </div>
+                        <div class="blog-content text-center">
+                            <span><span>BLOCKCHAIN</span> June 19, 2019</span>
+                            <a href="#">Crypten Blockchain Initiative for 2019</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-btn text-center">
+                        <a class="main-btn main-btn-2" href="#">go to our blog <i class="fal fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
+    </section>
+
+    <!--====== BLOG PART ENDS ======-->
+
+    <!--====== BRAND PART START ======-->
+
+    <section class="brand-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center">
+                        <span>Our trusted Partners</span>
+                        <h3 class="title">Meet Our Partners and Platform Backers</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="brand-item mt-30">
+                        <a href="#"><img src="{{asset('FrontEnd/assets/images/brand.png')}}" alt="brand"></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="brand-item mt-30">
+                        <a href="#"><img src="{{asset('FrontEnd/assets/images/brand.png')}}" alt="brand"></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="brand-item mt-30">
+                        <a href="#"><img src="{{asset('FrontEnd/assets/images/brand.png')}}" alt="brand"></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="brand-item mt-30">
+                        <a href="#"><img src="{{asset('FrontEnd/assets/images/brand.png')}}" alt="brand"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-70">
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="brand-item mt-30">
+                        <a href="#"><img src="{{asset('FrontEnd/assets/images/brand.png')}}" alt="brand"></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="brand-item mt-30">
+                        <a href="#"><img src="{{asset('FrontEnd/assets/images/brand.png')}}" alt="brand"></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="brand-item mt-30">
+                        <a href="#"><img src="{{asset('FrontEnd/assets/images/brand.png')}}" alt="brand"></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
+                    <div class="brand-item mt-30">
+                        <a href="#"><img src="{{asset('FrontEnd/assets/images/brand.png')}}" alt="brand"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
+    </section>
+
+    <!--====== BRAND PART ENDS ======-->
+
+    <!--====== CONTACT PART START ======-->
+
+    <section class="contact-area" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center">
+                        <span>get in touch</span>
+                        <h3 class="title">Contact Crypten</h3>
+                        <p>Have any question? Write to us and we’ll get back to you shortly.</p>
+                        <ul>
+                            <li><a href="tel:+61383766284"><img src="{{asset('FrontEnd/assets/images/icon/icon-7.png')}}" alt="icon"> +61 3
+                                    8376 6284</a></li>
+                            <li><a href="mailto:info@crypten.com"><img src="{{asset('FrontEnd/assets/images/icon/icon-8.png')}}" alt="icon">
+                                    info@crypten.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form action="#">
+                        <div class="contact-box">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="input-box mt-10">
+                                        <input type="text" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-box mt-10">
+                                        <input type="text" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-box mt-10">
+                                        <input type="text" placeholder="Phone">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-box mt-10">
+                                        <input type="text" placeholder="Subject">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="input-box mt-10 text-center">
+                                        <textarea name="#" id="#" cols="30" rows="10" placeholder="Message"></textarea>
+                                        <button type="submit" class="main-btn">send message <i
+                                                class="fal fa-arrow-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
+    </section>
+
+    <!--====== CONTACT PART ENDS ======-->
+
+    <!--====== FOOTER PART START ======-->
+
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-list mt-30">
+                        <h4 class="title">Menu</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-list mt-30">
+                        <h4 class="title">PAPERS</h4>
+                        <ul>
+                            <li><a href="#">White Paper</a></li>
+                            <li><a href="#">Technical Paper</a></li>
+                            <li><a href="#">One Pager</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-list mt-30">
+                        <h4 class="title">legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-list mt-30">
+                        <h4 class="title">Newsletter</h4>
+                        <form action="#">
+                            <div class="input-box">
+                                <input type="text" placeholder="Email Address">
+                                <button><i class="fal fa-arrow-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copyright d-flex justify-content-between align-items-center">
+                        <p class="order-2 order-sm-1">© 2021 PIKACHU</p>
+                        <ul class="order-1 order-sm-2">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fab fa-github"></i></a></li>
+                            <li><a href="#"><i class="fal fa-paper-plane"></i></a></li>
+                            <li><a href="#"><i class="fab fa-btc"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banefits-color-2">
+            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
+        </div>
+    </footer>
+
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== scroll_up PART START ======-->
+
+    <a id="scroll_up"><i class="far fa-angle-up"></i></a>
+
+    <!--====== scroll_up PART ENDS ======-->
+
+
+
+
+
+
+    <!--====== jquery js ======-->
+    <script src="{{asset('FrontEnd/assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{asset('FrontEnd/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('FrontEnd/assets/js/particles.min.js')}}"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="{{asset('FrontEnd/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('FrontEnd/assets/js/popper.min.js')}}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="{{asset('FrontEnd/assets/js/slick.min.js')}}"></script>
+
+    <!--====== Swiper js ======-->
+    <script src="{{asset('FrontEnd/assets/js/swiper.min.js')}}"></script>
+
+    <!--====== nice select js ======-->
+    <script src="{{asset('FrontEnd/assets/js/jquery.nice-select.min.js')}}"></script>
+
+    <!--====== circle progress js ======-->
+    <script src="{{asset('FrontEnd/assets/js/circle-progress.min.js')}}"></script>
+
+    <!--====== Images Loaded js ======-->
+    <script src="{{asset('FrontEnd/assets/js/jquery.syotimer.min.js')}}"></script>
+
+    <!--====== Main js ======-->
+    <script src="{{asset('FrontEnd/assets/js/main.js')}}"></script>
+
 </body>
+
 </html>

@@ -13,7 +13,7 @@
     &[data-container="wide-boxed"] {
         .nav-header {
             left: auto;
-            right: 0;
+            right: auto;
         }
     }
 	
@@ -60,7 +60,7 @@
         }
     
         @include media-breakpoint-down(xs) {
-            left:-4.0625rem;
+            left: -2.0625rem;
         }
     }
 
@@ -84,7 +84,7 @@
 }
 [direction="rtl"][data-sidebar-style="compact"][data-layout="horizontal"]{
 	.nav-header .brand-logo{
-		padding-right: 30px;
+		padding-right: 40px;
 	}
 }
 [direction="rtl"][data-sidebar-style="modern"][data-layout="horizontal"]{

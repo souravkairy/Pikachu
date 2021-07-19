@@ -8,13 +8,13 @@
     border  : 0 none;
     height  : 100%;
     position: absolute;
-    left: 99%;
+    right: 0;
     top     : 0;
     width   : 2.1875rem;
 }
 [direction="rtl"] .asColorPicker-trigger{
-	right: 99%;
-	left: auto;
+	left: 0;
+	right: auto;
 }
 .asColorPicker-clear {
     display        : none;

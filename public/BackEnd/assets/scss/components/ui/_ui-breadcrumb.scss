@@ -1,42 +1,21 @@
 
-.welcome-text{
-	span,
-	p{
-		display:none;
-	}
-}
+
 .page-titles {
-    margin-bottom: 40px;
-    display: block;
-    margin-left: -40px;
-    margin-right: -40px;
-    padding: 20px 40px;
-    margin-top: -40px;
-    background: #f1f1f1;
-    display: block;
-	
-	
-	
-	
-	[class*="col-"]{
-		display: block !important;
-		max-width: 100%;
-		width: 100%;
-		margin: 0;
-	}
-	@include custommq($max: 1600px) {
-		margin-left: -30px;
-        margin-top: -30px;
-        margin-right: -30px;
-        margin-bottom: 30px;
-		padding: 15px 30px;
-	}
+    padding: 0.9375rem 0;
+    background: transparent;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    margin-top: -30px;
+    @at-root [data-theme-version="dark"] & {
+        background: transparent;
+    }
+
     @include respond('phone-land') {
         margin-left: -15px;
-        margin-top: -15px;
         margin-right: -15px;
-        margin-bottom: 15px;
-        padding: 15px;
+        margin-bottom: 0;
+        padding: 15px 0px;
+		margin-top: -15px;
     }
 
     .justify-content-sm-end{
@@ -44,14 +23,13 @@
     }
 
     h4 {
-        margin-bottom: 10px;
-		margin-top: 0;
-		color: #000;
-		font-size: 1.75rem;
-		font-weight: 600;
-		
+        margin-bottom: 0;
+        margin-top: 0;
+        color: $primary;
+        font-size: 1.25rem;
         span {
-            font-size: 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 400;
         }
     }
     .breadcrumb {
@@ -62,26 +40,29 @@
         li {
             margin-top: 0;
             margin-bottom: 0;
-			font-size: 18px;
-			@include respond('phone-land') {
-				font-size: 15px;
-			}
+
             a{
-               color: $primary; 
+               color: $l-ctl; 
 
             }
 
-            &.active a{
-                color: $body-color;
+            &.active{
+                color:$primary;
+				font-weight: 600;
+				a{
+					color:$primary;
+				}
             }
         }
         
         .breadcrumb-item + .breadcrumb-item {
             &:before {
-                content: "\e606";
-                font-family: 'simple-line-icons';
-                // font-weight: 4;
-                font-size: 10px;
+                //content: "\e606";
+                /* font-family: 'simple-line-icons';
+                font-weight: 400;
+				position:absolute;
+                font-size: 10px; */
+				color:$primary;
             }
         }
 

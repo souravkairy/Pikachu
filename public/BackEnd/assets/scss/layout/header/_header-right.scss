@@ -39,43 +39,14 @@
         .nav-link {
             position: relative;
             color: $primary;
-			background: transparent;
-			border-radius: $radius;
+			background: #F4F4F4;
+			border-radius: 15px;
 			padding: 15px;
 			line-height: 1;
 			@include respond('laptop') {
 				padding: 10px;
 			}
 			
-			&.secondary{
-				background:$secondary-light;
-				color: $secondary;
-				[fill] {
-					fill: $secondary;
-				}
-				
-			}
-			&.primary{
-				background:$primary-light;
-				color: $primary;
-				[fill] {
-					fill: $primary;
-				}
-			}
-			&.warning{
-				background:$warning-light;
-				color: $warning;
-				[fill] {
-					fill: $warning;
-				}
-			}
-			&.success{
-				background:$success-light;
-				color: $success;
-				[fill] {
-					fill: $success;
-				}
-			}
             i {
                 font-size: 24px;
 				@include respond('laptop') {
@@ -85,23 +56,23 @@
             }
 			svg{
 				@include respond('laptop') {
-					width:18px;
-					height:18px;
+					width:24px;
+					height:24px;
 				}
 			}
             .badge {
                 position: absolute;
-                font-size: 14px;
-                border-radius: 0;
-                right: -10px;
-                top: -10px;
-                font-weight: normal;
-                height: 26px;
-                width: 26px;
-                line-height: 26px;
-                text-align: center;
-                padding: 0px;
-				@include respond('laptop') {
+				font-size: 14px;
+				border-radius: 0;
+				right: -9px;
+				top: -9px;
+				font-weight: normal;
+				height: 26px;
+				width: 26px;
+				line-height: 24px;
+				text-align: center;
+				padding: 0px;
+				@include respond ('laptop'){
 					right: -2px;
 					top: -2px;
 					font-size: 12px;
@@ -135,35 +106,30 @@
     }
     .header-profile {
         &>a.nav-link {
-			padding: 0 0 0 20px;
+			padding:0;
 			display: flex;
 			align-items: center;
-			border-radius: $radius 28px 28px $radius;
-			@include respond('phone') {
-				background: transparent;
-				padding: 0 ;
-			}	
+			margin-left: 15px;
             i {
                 font-weight: 700;
             }
 			.header-info{
-				padding-right: 30px;
-				text-align: right;
-				border-left:1px solid rgba($border-color,0.7);
-				padding-left:30px;
+				padding-left: 20px;
+				text-align: left;
 				@include respond('laptop') {
-					padding-right: 10px;
+					padding-left: 10px;
 				}
 				@include respond('phone') {
 					display:none;
 				}
 				span{
 					font-size:16px;
+					color:$black;
 					display: block;
-					font-weight: 400;
+					font-weight: 600;
 				}
 				strong{
-					font-weight: 600;
+					color:$dark;
 				}
 				small{
 					display:block;
@@ -172,6 +138,15 @@
 					font-weight:400;
 					line-height: 1.2;
 				}
+			}
+			@include respond ('laptop'){
+				margin-left: 10px;
+				padding-left: 20px;
+			}
+			@include respond ('phone'){
+				margin-left: 0px;
+				padding-left:0px;
+				border-left:0;
 			}
         }
         .dropdown-menu {
@@ -186,11 +161,9 @@
             }
         }
         img {
-            width: 57px;
-            height: 57px;
-            border-radius: 0;
-			box-shadow: 0 0 0 4px #fff;
-				
+            width: 55px;
+            height: 55px;
+            border-radius: $radius;
 			@include respond('laptop') {
 				 width: 39px;
 				height: 39px;
@@ -276,27 +249,15 @@
                 &.success {
                     background: $success-light;
                     color: $success;
-					[fill] {
-						fill: $success;
-					}
                 }
                 &.primary {
                     background: $primary-light;
                     color: $primary;
-					svg [fill] {
-						fill: $primary;
-					}
                 }
                 &.danger {
                     background: $danger-light;
                     color: $danger;
-					[fill] {
-						fill: $danger;
-					}
                 }
-				[fill] {
-					fill: $primary;
-				}
             }
             .notify-time {
                 width: 100%!important;
@@ -327,4 +288,53 @@
             }
         }
     }
+}
+
+//search-area
+.search-area{
+	width:370px;
+	.input-group-append{
+		.input-group-text{
+			background:#F1F1F1;
+			padding:0  25px;
+			border-radius:15px;
+			i {
+				font-size: 22px;
+			}
+		}
+	}
+	.form-control{
+		border-radius:15px;
+		border:0;
+		background:#F1F1F1!important;
+		height: 60px;
+		padding:0 25px;	
+		&:hover,&:active,&:focus{
+			background:#F1F1F1;
+		}
+	}
+	&.right{
+		.input-group-append{
+			.input-group-text{
+				border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
+			}	
+		}	
+	}	
+	@include respond ('laptop'){
+		width:250px;
+		.form-control{
+			height:50px;
+		}
+		.input-group-append{
+			.input-group-text{
+				height:50px;
+			}
+		}
+	}
+}
+[data-container="boxed"] {
+	.search-area{
+		display:none!important;
+	}
 }

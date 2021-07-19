@@ -9,6 +9,7 @@
 		
 		@at-root [data-theme-version="dark"] & {
 			border-color:$d-border !important;
+			background:$d-bg !important;
 		}
        
        &:active,

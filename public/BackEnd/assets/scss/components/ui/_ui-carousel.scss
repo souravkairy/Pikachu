@@ -37,6 +37,7 @@
 
 .carousel-caption{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.78);
+	z-index:1;
 
     h5{
         color: $white;
@@ -46,4 +47,14 @@
     p{
         margin-bottom: 0;
     }
+	&:after{
+		position:absolute;
+		z-index:-1;
+		top:0;
+		content:"";
+		left:0;
+		height:100%;
+		width:100%;
+		background:rgba($black,0.6);
+	}
 }

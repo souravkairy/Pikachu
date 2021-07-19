@@ -59,6 +59,66 @@ input[type="checkbox"] {
 .custom-control {
     line-height: normal;
 }
+
+
+// Toggle Switch
+.toggle-switch{
+	padding-left:50px;
+	line-height: 1.25;
+	.custom-control-label{
+		
+		font-weight: 500;
+		&:after{
+			width: 24px;
+			background:#959595;
+			height: 24px;
+			border-radius: 24px;
+			top: -2px;
+			left: -50px;
+			@include transitionMedium;
+		}
+		&:before{
+			border: 0;
+			background: #D8D8D8;
+			width: 40px;
+			border-radius: 20px !important;
+			height: 16px;
+			left: -50px;
+			@include transitionMedium
+		}
+	}
+	.custom-control-input:checked ~ .custom-control-label{
+		&:after{
+			left: -43px;
+			background:$primary;
+		}
+		&:before{
+			background: $primary-light;
+		}
+	}
+	&.text-right{
+		padding-left:0;
+		padding-right:50px;
+		.custom-control-label{
+			&:after{
+				left: auto;
+				right: -30px;
+			}
+			&:before{
+				left: auto;
+				right: -50px;	
+			}
+		}
+		.custom-control-input:checked ~ .custom-control-label{
+			&:after{
+				left: auto;
+				right: -43px;
+			}
+		}
+	}
+}
+
+
 // CheckBox
 .custom-control-input:focus ~ .custom-control-label::before{
 	box-shadow:none !important;
@@ -67,7 +127,7 @@ input[type="checkbox"] {
     background-color: transparent;
     border-color: $light;
 	border-width: 2px;
-	border-radius: 0 !important;
+	border-radius: 0.25rem !important;
 		
 	@at-root [data-theme-version="dark"] & {
 		background-color: transparent;
@@ -98,7 +158,7 @@ input[type="checkbox"] {
 .checkbox{
 	&-info{
 		.custom-control-label::before{
-			background-color: transparent;
+			background-color: $info-light;
 			border-color: $info-light;
 			@at-root [data-theme-version="dark"] & {
 				background-color: $info-opacity;
@@ -112,7 +172,7 @@ input[type="checkbox"] {
 	}
 	&-danger {
 		.custom-control-label::before{
-			background-color:transparent;
+			background-color: $danger-light;
 			border-color: $danger-light;
 			@at-root [data-theme-version="dark"] & {
 				background-color: $danger-opacity;
@@ -126,7 +186,7 @@ input[type="checkbox"] {
 	}
 	&-success{
 		.custom-control-label::before{
-			background-color: transparent;
+			background-color: $success-light;
 			border-color: $success-light;
 			@at-root [data-theme-version="dark"] & {
 				background-color: $success-opacity;
@@ -140,7 +200,7 @@ input[type="checkbox"] {
 	}
 	&-warning{
 		.custom-control-label::before{
-			background-color: transparent;
+			background-color: $warning-light;
 			border-color: $warning-light;
 			@at-root [data-theme-version="dark"] & {
 				background-color: $warning-opacity;
@@ -154,7 +214,7 @@ input[type="checkbox"] {
 	}
 	&-secondary{
 		.custom-control-label::before{
-			background-color: transparent;
+			background-color: $secondary-light;
 			border-color: $secondary-light;
 			@at-root [data-theme-version="dark"] & {
 				background-color: $secondary-opacity;
@@ -171,7 +231,30 @@ input[type="checkbox"] {
 
 
 
-
+//Check Switch
+.check-switch{
+	padding-left: 40px;
+	.custom-control-label{
+		line-height: 30px;
+		font-weight: 500;
+		span{
+			line-height: 1;
+		}
+		&:after,&:before{
+			height:1.5rem;
+			width:1.5rem;
+			left: -2rem;
+			border-radius: 3rem!important;
+			border-color:$black;
+		}
+	}
+	.custom-control-input:checked ~ .custom-control-label::after{
+		background-image:url('../images/svg/check.svg');
+	}
+	.custom-control-input:checked ~ .custom-control-label::before{
+		background:$white;
+	}
+}
 
 
 

@@ -2149,22 +2149,22 @@ a {
       [direction="rtl"][data-sidebar-style="icon-hover"][data-layout="vertical"] .deznav .metismenu .has-arrow::after {
         right: auto;
         left: 5rem; }
-  [data-sidebar-style="icon-hover"][data-layout="vertical"] .icon-hover-toggle .nav-header {
+  [data-sidebar-style="icon-hover"][data-layout="vertical"] .iconhover-toggle .nav-header {
     width: 17.1875rem; }
-    [data-sidebar-style="icon-hover"][data-layout="vertical"] .icon-hover-toggle .nav-header .brand-logo {
+    [data-sidebar-style="icon-hover"][data-layout="vertical"] .iconhover-toggle .nav-header .brand-logo {
       padding-left: 1.6rem; }
-      [data-sidebar-style="icon-hover"][data-layout="vertical"] .icon-hover-toggle .nav-header .brand-logo .logo-abbr {
+      [data-sidebar-style="icon-hover"][data-layout="vertical"] .iconhover-toggle .nav-header .brand-logo .logo-abbr {
         display: none; }
-      [data-sidebar-style="icon-hover"][data-layout="vertical"] .icon-hover-toggle .nav-header .brand-logo .brand-title {
+      [data-sidebar-style="icon-hover"][data-layout="vertical"] .iconhover-toggle .nav-header .brand-logo .brand-title {
         display: block; }
-  [data-sidebar-style="icon-hover"][data-layout="vertical"] .icon-hover-toggle .header {
+  [data-sidebar-style="icon-hover"][data-layout="vertical"] .iconhover-toggle .header {
     padding-left: 4.38rem; }
-    [direction="rtl"][data-sidebar-style="icon-hover"][data-layout="vertical"] .icon-hover-toggle .header {
+    [direction="rtl"][data-sidebar-style="icon-hover"][data-layout="vertical"] .iconhover-toggle .header {
       padding-right: 4.38rem;
       padding-left: 0.9375rem; }
-  [data-sidebar-style="icon-hover"][data-layout="vertical"] .icon-hover-toggle .deznav {
+  [data-sidebar-style="icon-hover"][data-layout="vertical"] .iconhover-toggle .deznav {
     left: 0; }
-    [direction="rtl"][data-sidebar-style="icon-hover"][data-layout="vertical"] .icon-hover-toggle .deznav {
+    [direction="rtl"][data-sidebar-style="icon-hover"][data-layout="vertical"] .iconhover-toggle .deznav {
       left: auto;
       right: 0; }
   [data-sidebar-style="icon-hover"][data-layout="vertical"] .content-body {

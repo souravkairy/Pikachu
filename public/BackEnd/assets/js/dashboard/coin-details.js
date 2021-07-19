@@ -1,184 +1,238 @@
 (function($) {
-    /* "use strict" */
+     "use strict" 
 
 
  var dzChartlist = function(){
 	
 	var screenWidth = $(window).width();
-		
-	var chartLine = function(){
-		
-		
-		var options = {
+		var chartBarRunning = function(){
+			 var options = {
           series: [{
-          name: 'north',
-          data: [{
-              x: 1996,
-              y: 340
-            },
-            {
-              x: 1997,
-              y: 324
-            },
-            {
-              x: 1998,
-              y: 329
-            },
-            {
-              x: 1999,
-              y: 342
-            },
-            {
-              x: 2000,
-              y: 348
-            },
-            {
-              x: 2001,
-              y: 334
-            },
-            {
-              x: 2002,
-              y: 325
-            },
-            {
-              x: 2003,
-              y: 366
-            },
-            {
-              x: 2004,
-              y: 318
-            },
-            {
-              x: 2005,
-              y: 330
-            },
-            {
-              x: 2006,
-              y: 355
-            },
-            {
-              x: 2007,
-              y: 366
-            },
-            {
-              x: 2008,
-              y: 337
-            },
-            {
-              x: 2009,
-              y: 352
-            },
-            {
-              x: 2010,
-              y: 377
-            },
-            {
-              x: 2011,
-              y: 383
-            },
-            {
-              x: 2012,
-              y: 344
-            },
-            {
-              x: 2013,
-              y: 366
-            },
-            {
-              x: 2014,
-              y: 389
-            },
-            {
-              x: 2015,
-              y: 334
-            }
-          ]
-        }],
-        chart: {
-			type: 'area',
-			height: 420,
-			toolbar: {
-				show: false,
-			},
+          data: [300, 300, 100, 250, 350, 500, 400, 400, 200,600]
+        },],
+          chart: {
+          height: 350,
+          type: 'area',
+		  toolbar:{
+			  show:false
+		  },
         },
         dataLabels: {
           enabled: false
         },
-		responsive: [{
-			breakpoint: 767,
-			options: {
-				chart: {
-					height: 250,
-				}
-				
-			},
-		}],
-		
         stroke: {
-          curve: 'straight',
-		  curve: 'smooth',
-		  colors:['#ffab2e']
+          curve: 'smooth'
         },
-		
         xaxis: {
-          type: 'datetime',
-          axisBorder: {
-            show: false
-          },
-          axisTicks: {
-            show: false
-          }
+          type: 'Week',
+          categories: ["Week 01", "Week 02", "Week 03", "Week 04", "Week 05", "Week 06", "Week 07","Week 08","Week 09","Week 010"],
+		   labels:{
+			    show: true,
+				style:{
+					 colors:'#808080',
+				},
+		   },
         },
-        yaxis: {
-          tickAmount: 4,
-          floating: false,
-        
-          labels: {
-            style: {
-              colors: '#8e8da4',
-            },
-            offsetY: -7,
-            offsetX: 0,
-          },
-          axisBorder: {
-            show: false,
-          },
-          axisTicks: {
-            show: false
-          }
+		 yaxis: {
+			labels: {
+				 formatter: function (value) {
+				  return value + "k";
+				},
+				style: {
+					colors: '#787878',
+					fontSize: '13px',
+					fontFamily: 'Poppins',
+					fontWeight: 400
+				},
+			},
         },
-        fill: {
-          opacity: 0.1,
-		  colors:['#ffab2e']
-        },
-        toolbar: {
-			enabled: false
-		},
         tooltip: {
-			
           x: {
-            format: "yyyy",
+            format: 'dd/MM/yy HH:mm'
           },
-          fixed: {
-            enabled: false,
-            position: 'topRight'
-          }
         },
-        grid: {
-          yaxis: {
-            lines: {
-              offsetX: -30
-            }
-          },
-          padding: {
-            left: 20
-          }
-        }
+		colors:['#ffab2d']
         };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        var chart = new ApexCharts(document.querySelector("#chartBarRunning"), options);
         chart.render();
 		
+		
+	}
+	var chartBarRunning1 = function(){
+			 var options = {
+          series: [{
+          data: [300, 300, 100, 250, 350, 500, 400, 400, 200,600]
+        },],
+          chart: {
+          height: 350,
+          type: 'area',
+		  toolbar:{
+			  show:false
+		  },
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'Week',
+          categories: ["Week 01", "Week 02", "Week 03", "Week 04", "Week 05", "Week 06", "Week 07","Week 08","Week 09","Week 010"],
+		  labels:{
+			    show: true,
+				style:{
+					 colors:'#808080',
+				},
+		   },
+        },
+		 yaxis: {
+			labels: {
+				 formatter: function (value) {
+				  return value + "k";
+				},
+				style: {
+					colors: '#787878',
+					fontSize: '13px',
+					fontFamily: 'Poppins',
+					fontWeight: 400
+				},
+			},
+        },
+        tooltip: {
+          x: {
+            format: 'dd/MM/yy HH:mm'
+          },
+        },
+		colors:['#00ADA3']
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chartBarRunning1"), options);
+        chart.render();
+		
+		
+	}
+	var chartBarRunning2 = function(){
+			 var options = {
+          series: [{
+          data: [300, 300, 100, 250, 350, 500, 400, 400, 200,600]
+        },],
+          chart: {
+          height: 350,
+          type: 'area',
+		  toolbar:{
+			  show:false
+		  },
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'Week',
+          categories: ["Week 01", "Week 02", "Week 03", "Week 04", "Week 05", "Week 06", "Week 07","Week 08","Week 09","Week 010"],
+		  labels:{
+			    show: true,
+				style:{
+					 colors:'#808080',
+				},
+		   },
+        },
+		 yaxis: {
+			labels: {
+				 formatter: function (value) {
+				  return value + "k";
+				},
+				style: {
+					colors: '#787878',
+					fontSize: '13px',
+					fontFamily: 'Poppins',
+					fontWeight: 400
+				},
+			},
+        },
+        tooltip: {
+          x: {
+            format: 'dd/MM/yy HH:mm'
+          },
+        },
+		colors:['#ff782c']
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chartBarRunning2"), options);
+        chart.render();
+		
+		
+	}
+	var chartBarRunning3 = function(){
+			 var options = {
+          series: [{
+          data: [300, 300, 100, 250, 350, 500, 400, 400, 200,600]
+        },],
+          chart: {
+          height: 350,
+          type: 'area',
+		  toolbar:{
+			  show:false
+		  },
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'Week',
+          categories: ["Week 01", "Week 02", "Week 03", "Week 04", "Week 05", "Week 06", "Week 07","Week 08","Week 09","Week 010"],
+		  labels:{
+			    show: true,
+				style:{
+					 colors:'#808080',
+				},
+		   },
+        },
+		 yaxis: {
+			labels: {
+				 formatter: function (value) {
+				  return value + "k";
+				},
+				style: {
+					colors: '#787878',
+					fontSize: '13px',
+					fontFamily: 'Poppins',
+					fontWeight: 400
+				},
+			},
+        },
+        tooltip: {
+          x: {
+            format: 'dd/MM/yy HH:mm'
+          },
+        },
+		colors:['#374c98']
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chartBarRunning3"), options);
+        chart.render();
+		
+		
+	}
+	
+	var handleDaterange = function(){
+		$('.input-daterange-timepicker').daterangepicker({
+			timePicker: true,
+			format: 'MM/DD/YYYY h:mm A',
+			timePickerIncrement: 30,
+			timePicker12Hour: true,
+			timePickerSeconds: false,
+			buttonClasses: ['btn', 'btn-sm'],
+			applyClass: 'btn-danger',
+			cancelClass: 'btn-inverse'
+		});
 	}
 	
 	/* Function ============ */
@@ -187,18 +241,21 @@
 			},
 			
 			
-			load:function(){	
-				chartLine();		
+			load:function(){			
+				chartBarRunning();			
+				chartBarRunning1();			
+				chartBarRunning2();			
+				chartBarRunning3();			
+				handleDaterange();			
 			},
 			
 			resize:function(){
-				
 			}
 		}
 	
 	}();
-	jQuery(document).ready(function(){
-	});
+
+	
 		
 	jQuery(window).on('load',function(){
 		setTimeout(function(){

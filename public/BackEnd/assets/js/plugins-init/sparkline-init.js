@@ -1,11 +1,10 @@
 (function($) {
-    /* "use strict" */
-
-
+    "use strict" 
+   
  var dzSparkLine = function(){
-	
-	var screenWidth = $(window).width();
     
+	var screenWidth = $(window).width();
+	
 	function getSparkLineGraphBlockSize(selector)
 	{
 		var screenWidth = $(window).width();
@@ -27,6 +26,7 @@
 		return graphBlockSize;
 		
 	}
+	
 	var sparkLineDash = function(){
 		// Line Chart
 		if(jQuery('#sparklinedash').length > 0 ){	 
@@ -36,10 +36,11 @@
 				barWidth: "4",
 				resize: !0,
 				barSpacing: "5",
-				barColor: "#2b98d6"
+				barColor: "#EB8153"
 			});
 		}
 	}
+	
 	var sparkLine8 = function(){
 		if(jQuery('#sparkline8').length > 0 ){	
 			$("#sparkline8").sparkline([79, 72, 29, 6, 52, 32, 73, 40, 14, 75, 77, 39, 9, 15, 10], {
@@ -47,16 +48,17 @@
 				//width: "100%",
 				width: getSparkLineGraphBlockSize('#sparkline8'),
 				height: "50",
-				lineColor: "#6418c3",
-				fillColor: "rgba(100, 24, 195, .5)",
-				minSpotColor: "#6418c3",
-				maxSpotColor: "#6418c3",
-				highlightLineColor: "#6418c3",
-				highlightSpotColor: "#6418c3",
+				lineColor: "#EB8153",
+				fillColor: "rgba(235, 129, 83, .5)",
+				minSpotColor: "#EB8153",
+				maxSpotColor: "#EB8153",
+				highlightLineColor: "#EB8153",
+				highlightSpotColor: "#EB8153",
 				
 			});
 		}
 	}
+	
 	var sparkLine9 = function(){
 		if(jQuery('#sparkline9').length > 0 ){	
 			$("#sparkline9").sparkline([27, 31, 35, 28, 45, 52, 24, 4, 50, 11, 54, 49, 72, 59, 75], {
@@ -64,28 +66,29 @@
 				//width: "100%",
 				width: getSparkLineGraphBlockSize('#sparkline9'),
 				height: "50",
-				lineColor: "#dc3ccc",
-				fillColor: "rgba(220, 60, 204, .5)",
-				minSpotColor: "#dc3ccc",
-				maxSpotColor: "#dc3ccc",
+				lineColor: "#ff5c00",
+				fillColor: "rgba(255, 92, 0, .5)",
+				minSpotColor: "#ff5c00",
+				maxSpotColor: "#ff5c00",
 				highlightLineColor: "rgb(255, 159, 0)",
-				highlightSpotColor: "#dc3ccc"
+				highlightSpotColor: "#ff5c00"
 			});
 		}
 	}
 
+    // Bar Chart
 	var sparkBar = function(){
-			// Bar Chart
 		if(jQuery('#spark-bar').length > 0 ){	
 			$("#spark-bar").sparkline([33, 22, 68, 54, 8, 30, 74, 7, 36, 5, 41, 19, 43, 29, 38], {
 				type: "bar",
 				height: "200",
 				barWidth: 6,
 				barSpacing: 7,
-				barColor: "#2bc155"
+				barColor: "#6418C3"
 			});
 		}	
-	}	
+	}
+		
 	var sparkBar2 = function(){
 		if(jQuery('#spark-bar-2').length > 0 ){	
 			$("#spark-bar-2").sparkline([33, 22, 68, 54, 8, 30, 74, 7, 36, 5, 41, 19, 43, 29, 38], {
@@ -97,7 +100,8 @@
 				barColor: "rgb(255, 206, 120)"
 			});
 		}	
-	}	
+	}
+		
 	var stackedBarChart = function(){
 		if(jQuery('#StackedBarChart').length > 0 ){	
 			$('#StackedBarChart').sparkline([
@@ -110,10 +114,11 @@
 					height: "200",
 					barWidth: 10,
 					barSpacing: 7, 
-					stackedBarColor: ['#2b98d6', '#2bc155', '#ff2e2e']
+					stackedBarColor: ['#EB8153', '#6418C3', '#ff5c00']
 				});
 		}
 	}
+		
 	var triState = function(){
 		if(jQuery('#tristate').length > 0 ){	
 
@@ -122,11 +127,12 @@
 				height: "200",
 				barWidth: 10,
 				barSpacing: 7, 
-				colorMap: ['#2b98d6', '#2bc155', '#ff2e2e'], 
-				negBarColor: '#ff2e2e'
+				colorMap: ['#EB8153', '#6418C3', '#ff5c00'], 
+				negBarColor: '#ff5c00'
 			});
 		}
 	}
+		
 	var compositeBar = function(){
 		// Composite
 		if(jQuery('#composite-bar').length > 0 ){
@@ -136,22 +142,23 @@
 				barWidth: "10",
 				resize: true,
 				// barSpacing: "7",
-				barColor: "#2b98d6", 
+				barColor: "#EB8153", 
 				width: '100%',
 				
 			});
 		}	
 	}	
+	
 	var sparklineCompositeChart = function(){
 		if(jQuery('#sparkline-composite-chart').length > 0 ){
 			$("#sparkline-composite-chart").sparkline([5, 6, 7, 2, 0, 3, 6, 8, 1, 2, 2, 0, 3, 6], {
 				type: 'line',
 				width: '100%',
 				height: '200', 
-				barColor: '#2bc155', 
-				colorMap: ['#2bc155', '#ff2e2e']
+				barColor: '#6418C3', 
+				colorMap: ['#6418C3', '#ff5c00']
 			});
-		}	
+		}
 		if(jQuery('#sparkline-composite-chart').length > 0 ){
 			$("#sparkline-composite-chart").sparkline([5, 6, 7, 2, 0, 3, 6, 8, 1, 2, 2, 0, 3, 6], {
 				type: 'bar',
@@ -165,6 +172,7 @@
 			});
 		}
 	}
+		
 	var sparkLine11 = function(){
 		if(jQuery('#sparkline11').length > 0 ){
 			//Pie
@@ -172,10 +180,11 @@
 				type: "pie",
 				height: "100px",
 				resize: !0,
-				sliceColors: ["rgba(192, 10, 39, .5)", "rgba(0, 0, 128, .5)", "rgba(100, 24, 195, .5)"]
+				sliceColors: ["rgba(192, 10, 39, .5)", "rgba(0, 0, 128, .5)", "rgba(235, 129, 83, .5)"]
 			});
 		}	
 	}	
+	
 	var sparkLine12 = function(){
 		if(jQuery('#sparkline12').length > 0 ){
 			//Pie
@@ -187,6 +196,7 @@
 			});
 		}	
 	}	
+	
 	var bulletChart = function(){
 		if(jQuery('#bullet-chart').length > 0 ){
 			// Bullet
@@ -204,6 +214,7 @@
 			});
 		}
 	}
+		
 	var boxPlot = function(){
 		if(jQuery('#boxplot').length > 0 ){
 			//Boxplot
@@ -212,10 +223,9 @@
 			});
 		}
 	}
-
-    
-
-	/* Function ============ */
+	
+	
+    /* Function ============ */
 		return {
 			init:function(){
 			},
@@ -256,16 +266,17 @@
 	
 	}();
 
-	jQuery(document).ready(function(){
-	});
-		
+	
 	jQuery(window).on('load',function(){
-		dzSparkLine.load();
+		setTimeout(function(){
+			dzSparkLine.resize();	
+		}, 1000);
 	});
 
 	jQuery(window).on('resize',function(){
-		dzSparkLine.resize();
-		
+		setTimeout(function(){
+			dzSparkLine.resize();	
+		}, 1000);
 	});     
 
 })(jQuery);

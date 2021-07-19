@@ -26,8 +26,8 @@
 				border-color: $primary-light;
 				color: #211c37;
 				box-shadow:none;
-				border-bottom-left-radius:0;
-				border-bottom-right-radius:0;
+				border-bottom-left-radius:$radius;
+				border-bottom-right-radius:$radius;
 				@at-root [data-theme-version="dark"] & {
 					background: $primary-opacity;
 					border-color: $primary-opacity;
@@ -45,8 +45,8 @@
             border: 2px solid $primary;
             border-top: none;
 			box-shadow:0 15px 20px 0 rgba($primary, 0.15);
-			border-bottom-left-radius:0;
-			border-bottom-right-radius:0;
+			border-bottom-left-radius:$radius;
+			border-bottom-right-radius:$radius;
 		}
 	}
 
@@ -71,8 +71,8 @@
 				border-color: $danger-light;
 				color: #211c37;
 				box-shadow:none;
-				border-bottom-left-radius:0;
-				border-bottom-right-radius:0;
+				border-bottom-left-radius:$radius;
+				border-bottom-right-radius:$radius;
 				@at-root [data-theme-version="dark"] & {
 					background: $danger-opacity;
 					border-color: $danger-opacity;
@@ -90,8 +90,8 @@
             border: 2px solid $danger;
             border-top: none;
 			box-shadow:0 15px 20px 0 rgba($danger, 0.15);
-			border-bottom-left-radius:0;
-			border-bottom-right-radius:0;
+			border-bottom-left-radius:$radius;
+			border-bottom-right-radius:$radius;
 		}
 	}
 
@@ -109,7 +109,7 @@
         position: relative;
         color: $heading;
         font-weight: 400;
-		border-radius:0;
+		border-radius:$radius;
 		@include transitionMedium;
         @at-root [data-theme-version="dark"] & {
             color: $white;
@@ -184,14 +184,14 @@
         .accordion__body {
             border: 1px solid $border;
             border-top: none;
-			border-bottom-left-radius:0;
-			border-bottom-right-radius:0;
+			border-bottom-left-radius:$radius;
+			border-bottom-right-radius:$radius;
             @at-root [data-theme-version="dark"] & {
                 border-color: $d-border;
             }
         }
 		.accordion__header.collapsed{
-			border-radius:0;
+			border-radius:$radius;
 		}
 		.accordion__header{
 			border-bottom-left-radius:0;
@@ -323,14 +323,14 @@
 		.accordion__item{
 			&:first-child{
 				.accordion__header{
-					border-top-left-radius:0;
-					border-top-right-radius:0;
+					border-top-left-radius:$radius;
+					border-top-right-radius:$radius;
 				}
 			}
 			&:last-child{
 				.accordion__header{
-					border-bottom-left-radius:0;
-					border-bottom-right-radius:0;
+					border-bottom-left-radius:$radius;
+					border-bottom-right-radius:$radius;
 				}
 			}
 		}
@@ -348,18 +348,18 @@
 		.accordion__item{
 			&:first-child{
 				.accordion__header{
-					border-top-left-radius:0;
-					border-top-right-radius:0;
+					border-top-left-radius:$radius;
+					border-top-right-radius:$radius;
 				}
 			}
 			&:last-child{
 				.accordion__header.collapsed{
-					border-bottom-left-radius:0;
-					border-bottom-right-radius:0;
+					border-bottom-left-radius:$radius;
+					border-bottom-right-radius:$radius;
 				}
 				.accordion__body{
-					border-bottom-left-radius:0;
-					border-bottom-right-radius:0;
+					border-bottom-left-radius:$radius;
+					border-bottom-right-radius:$radius;
 				}
 			}
 		}
@@ -376,15 +376,15 @@
                 background-color: $d-bg;
             }
 			&.collapsed{
-				border-radius:0;
+				border-radius:$radius;
 			}
         }
 		
         .accordion__body {
             border-color: transparent;
             background-color: $primary-light;
-			border-bottom-left-radius:0;
-			border-bottom-right-radius:0;
+			border-bottom-left-radius:$radius;
+			border-bottom-right-radius:$radius;
             @at-root [data-theme-version="dark"] & {
                 background-color: $d-bg;
             }
@@ -439,8 +439,8 @@
 			border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
 			&.collapsed{
-				border-bottom-left-radius: 0;
-				border-bottom-right-radius: 0;
+				border-bottom-left-radius: $radius;
+				border-bottom-right-radius: $radius;
 			}
         }
 

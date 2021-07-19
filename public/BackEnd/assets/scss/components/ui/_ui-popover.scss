@@ -1,8 +1,8 @@
 .popover{
     border: 2px solid $secondary;
     min-width: 210px;
+	z-index:103;
     box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
-	border-radius:0;
 	@at-root [data-theme-version="dark"] & {
         background-color: $d-bg;
     }
@@ -10,7 +10,7 @@
         background: $secondary;
         color: $white;
         font-weight: 300;
-		border-radius:0;
+
         &::before{
             border-bottom: 0 !important;
         }
@@ -18,13 +18,15 @@
 
     &-body{
         font-size: 0.75rem;
-		
     }
 	.popover-header{
 		@at-root [data-theme-version="dark"] & {
 			border-color: $dark-card;
 		}
     }
+	@include respond ('phone-land'){
+		z-index:3;
+	}
 }
 
 .bootstrap-popover-wrapper{

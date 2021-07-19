@@ -29,7 +29,7 @@
     margin-left: 21.563rem;
     z-index: 0;
     transition: all .2s ease;
-    @include custommq($min: 1200px, $max: 1400px) {
+    @include custommq($max: 1350px) {
         margin-left: 17rem;
     }
 }
@@ -128,21 +128,22 @@
 .deznav {
     width: 21.563rem;
     padding-bottom: 0;
-    height:100%;
+    height: calc(100% - 96px);
     position: absolute;
-    top: 0;
-    padding-top: 120px;
-    z-index: 3;
+    top: 6rem;
+    padding-top: 0;
+    z-index: 4;
     background-color: $white;
     // box-shadow: 0px 0px 10px rgba(120, 130, 140, 0.13);
     transition: all .2s ease;
     // border-top-left-radius: 5px;
     // border-top-right-radius: 5px;
-	box-shadow: 18px 0px 35px 0px rgba(0, 0, 0, 0.02);
+	box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.02);
 	
     @include respond('tab-land') {
         background-color: $white;
-		padding-top:80px;
+		top: 5rem;
+		height: calc(100% - 80px);
     }
 	@include respond('phone-land') {
          width: 18rem;
@@ -158,7 +159,7 @@
         // border-top-left-radius: 5px;
         // border-top-right-radius: 5px;
     }
-    @include custommq($min: 1200px, $max: 1400px) {
+    @include custommq($max: 1350px) {
         width: 17rem;
     }
     ul {
@@ -171,9 +172,7 @@
         flex-direction: column;
 		padding-top: 15px;
 			
-		@include respond('phone-land') {
-			padding-top: 0;
-		}	
+		
         &.fixed {
             position: fixed;
             top: 0;
@@ -184,34 +183,54 @@
             display: flex;
             flex-direction: column;
             a {
+				position:relative;
 				
                 &>i {
                     //icon will get color from parent "a"
-                    font-size: 1.25rem;
+                    font-size: 1.5rem;
                     display: inline-block;
                     vertical-align: middle;
                     padding: 0 1.5rem 0 0;
                     position: relative;
                     top: 0;
+					@include transitionMedium;
 					line-height: 1;
-					@include respond('laptop') {
-						padding: 0 0.75rem 0 0;
-					}	
+						
 					@at-root [data-sidebar-style="compact"] & {
 						display:block;
 						padding:0;
+						background:#F9F9F9;
+						color:rgba($black,0.6);
+						width: 60px;
+						height: 60px;
+						border-radius: 12px;
+						line-height: 60px;
+						margin-left: auto;
+						margin-right: auto;
+						margin-bottom: 5px;
+						&[data-theme-version="dark"]{
+							color:$white;
+						}
+						
 					}
 					@include respond('phone-land') {
 						font-size: 1.25rem;
 						padding: 0 .75rem 0 0;
+						color: #969BA0;
 					}
                 }
+					
+				
             }
+			
             &>a {
-				font-weight: 500;
+				font-weight: 400;
 				display: inline-block;
 				font-size: 15px;
-					
+				color: #969BA0;		
+				i{
+					color: #969BA0;
+				}
 				svg {
 					max-width: 24px;
 					max-height: 24px;
@@ -221,7 +240,7 @@
 					color: $primary;
 				}
 				g [fill] {
-					fill: $primary;
+					fill: #8088a1;
 				}
             }
             &:hover,
@@ -236,15 +255,35 @@
                     // &::after {
                     //     border-color: blue;
                     // }
+					i{
+						color:$primary;
+					}
                 }
             }
             &.mm-active {
 				&>a {
-                    color: $primary;
+					background:rgba($primary,0.1);
+					color:$primary;
+					font-weight: 500;
+					box-shadow:none;
+					i{
+						color: $primary;
+						font-weight:100;
+					}
 					g [fill] {
 						fill: $primary;
 					}
 					
+				}
+				@at-root [data-sidebar-style="compact"] & {
+					&>a{
+						
+						i{
+							background:rgba($primary,0.1);
+							color:$primary;
+							box-shadow:0 12px 15px 0 rgba($primary, 0.13);
+						}
+					}
 				}
             }
         }
@@ -265,19 +304,41 @@
 				padding-bottom: .5rem;
 				position: relative;
 				font-size: 16px;
-				padding-left: 6.25rem;
-				@include respond('laptop') {
-					padding-left: 3.75rem;
-					font-size: 14px;
+				padding-left: 6.4rem;
+				&:before{
+					position: absolute;
+					height: 8px;
+					width: 8px;
+					border:2px solid rgba($black,0.5);
+					content: "";
+					//background: rgba($black,0.5);
+					border-radius: 26px;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 70px;
+					@at-root [data-sidebar-style="overlay"] & {
+						left:40px;
+					}
+				}
+				@include custommq ($max:1350px){
+					padding-left: 5.2rem;
+					font-size:14px;
+					&:before{
+						left:50px;
+					}
 				}
 				@include respond('phone-land') {
 					padding-left: 3.5rem;
+					font-size: 14px;
 				}
                 &:hover,
                 &:focus,
                 &.mm-active {
                     text-decoration: none;
                     color: $primary;
+					&:before{
+						border-color:$primary;
+					}
                 }
             }
             
@@ -318,7 +379,7 @@
 // }
 
 .nav-header {
-	@include respond('tab-land'){
+	@include custommq($max: 1023px) {
 		width: 5rem;
 	}
 }
@@ -332,5 +393,6 @@
     }
     .deznav {
         left: 0;
+		top: 5rem;
     }
 }

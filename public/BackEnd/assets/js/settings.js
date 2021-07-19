@@ -200,10 +200,10 @@ dezSettings.prototype.manageSidebarStyle = function() {
         case "icon-hover":
             body.attr("data-sidebar-style", "icon-hover");
     
-            $('.deznav').on("hover", function() {
-                $('#main-wrapper').addClass('icon-hover-toggle');
+            $('.deznav').on('hover',function() {
+                $('#main-wrapper').addClass('iconhover-toggle');
             }, function() {
-                $('#main-wrapper').removeClass('icon-hover-toggle');
+                $('#main-wrapper').removeClass('iconhover-toggle');
             });            
             break;
         case "overlay":

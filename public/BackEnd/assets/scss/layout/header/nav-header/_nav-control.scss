@@ -24,7 +24,7 @@
 }
 
 .nav-header {
-    height: 7.5rem;
+    height: 6rem;
     width: 21.563rem;
     display: inline-block;
     text-align: left;
@@ -33,15 +33,14 @@
     top: 0;
     background-color: $white;
     transition: all .2s ease;
-    z-index: 5;
-    // border-bottom: 1px solid $border;
-
+    z-index: 10;
+	
     .logo-abbr {
-        max-width: 52px;
+        min-width: 45px;
 		@include respond('phone') {
-			max-width: 40px;
+			min-width: 35px;
 		}
-
+		
     }
     .logo-compact {
         display: none;
@@ -49,7 +48,7 @@
     // @include respond('big-desktop') {
     //     left: 3.125rem;
     // }
-    @include custommq($min: 1200px, $max: 1400px) {
+    @include custommq($max: 1350px) {
         width: 17rem;
     }
     .brand-logo {
@@ -64,16 +63,11 @@
         padding-left: 50px;
         padding-right: 50px;
         font-weight: 700;
-		@include respond('laptop') {
-			padding-left: 25px;
-			padding-right: 25px;
-		}
-
+		
+		
         // &:hover {
         //     color: $primary;
         // }
-
-
         [data-sidebar-style="compact"] &,
         [data-sidebar-style="mini"] & {
             padding-left: 0;
@@ -104,9 +98,13 @@
 }
 
 @include respond('tab-land') {
+	.nav-header {
+		height:5rem;
+    }
+}
+@include custommq($max:1023px) {
     .nav-header {
         width: 5rem;
-		height:5rem;
         .brand-title {
             display: none;
         }
@@ -131,7 +129,7 @@
         right: -2.75rem;
     }
 	@include respond('phone') {
-        right: -1.75rem;
+        right: -3rem;
     }
     // @include respond('desktop') {
     //     right: -3.125rem;
@@ -225,7 +223,7 @@
             display: none;
         }
         .nav-header {
-            width: 9.375rem;
+            width: 11.25rem;
         }
     }
 }
@@ -276,7 +274,7 @@
 }
 [data-sidebar-style="modern"][data-layout="vertical"] {
     .nav-header {
-        width: 9.375rem;
+        width: 10.625rem;
         .brand-title {
             display: none;
         }

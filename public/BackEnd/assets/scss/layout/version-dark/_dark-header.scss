@@ -2,13 +2,14 @@
     
     .header {
         background-color: $dark-card;
+		border-color:$d-border;
     }
 
     .header-left {
         input {
-            background: $d-bg !important;
+            background: $d-bg!important ;
             border-color: transparent ;
-            color: $white !important;
+            color: $white;
 
             &:focus {
                 box-shadow: none;
@@ -20,14 +21,17 @@
             }
         }
 		.search_icon{
-		    background: $d-bg !important;
+		    background: $d-bg;
 			
 			i{
 				color: $white;
 			}
 		}
     }
-
+	.header-right .header-profile > a.nav-link{
+		border-color:$d-border;
+		background:transparent;
+	}
     .header-right {
 		.right-sidebar a{
 			color:$primary;
@@ -37,14 +41,20 @@
 			color:$white;
 		}
 		.notification_dropdown .nav-link{
-			background: $d-bg;
+			background: transparent;
 		}
         .dropdown {
             .nav-link {
 				color: $white;
+				background:$d-bg;
                 &:hover {
                     color: $white;
                 }
+				svg{
+					path{
+						fill:$white;
+					}
+				}
             }
         }
 		.nav-link {
@@ -58,5 +68,24 @@
             }
         }
     }
-
+	.search-area {
+		.input-group-append .input-group-text{
+			background: $d-bg;
+			padding:0 19px;
+		}
+		.form-control{
+			&:focus,&:hover,&:active{
+				background: $d-bg;
+			}
+		}
+	}
+	.pulse-css{
+		border-color:$dark-card;
+	}
+	.nav-header .hamburger .line{
+		background:$white;
+	}
+	.menu-toggle .nav-header .nav-control .hamburger .line {
+		background-color: $white ;
+	}
 }

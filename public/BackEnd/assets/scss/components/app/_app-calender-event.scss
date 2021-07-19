@@ -105,7 +105,8 @@
 
 
 
-.fc-event {
+.fc-event ,
+.external-event{
     border-radius: 0.125rem;
     border       : none;
     cursor       : move;
@@ -209,8 +210,9 @@
     
 	.external-event:before{
 		content: "";
-		display: inline-block;
+		display: block;
 		width: 14px;
+		min-width:14px;
 		height: 14px;
 		border-radius: 50%;
 		margin-right: .9rem;
@@ -218,8 +220,6 @@
 		top: 2px;
 	}
     [data-class="bg-primary"]{
-        background-color: transparent !important;
-        color: $dark;
         @at-root [data-theme-version="dark"] & {
             color: $white!important;
         }
@@ -228,51 +228,39 @@
         }
     }
     [data-class="bg-success"]{
-        background-color: transparent !important;
-        color: $dark;
 
         &::before{
             background: $success;
         }
     }
     [data-class="bg-warning"]{
-        background-color: transparent !important;
-        color: $dark;
-
         &::before{
             background: $warning;
         }
     }
     [data-class="bg-dark"]{
-        background-color: transparent !important;
-        color: $dark;
-
         &::before{
             background: $dark;
         }
     }
     [data-class="bg-danger"]{
-        background-color: transparent !important;
-        color: $dark;
-
         &::before{
             background: $danger;
         }
     }
     [data-class="bg-info"]{
-        background-color: transparent !important;
-        color: $dark;
-
         &::before{
             background: $info;
         }
     }
     [data-class="bg-pink"]{
-        background-color: transparent !important;
-        color: $dark;
-
         &::before{
             background: $pink;
+        }
+    }
+	[data-class="bg-secondary"]{
+        &::before{
+            background: $secondary;
         }
     }
 }

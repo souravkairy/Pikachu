@@ -1,7 +1,7 @@
 
 
 .alert{
-    border-radius: 0;
+    border-radius: $radius;
 	padding:1rem 1.5rem;
 	p{
 		line-height:1.5;
@@ -360,8 +360,8 @@
 [direction="rtl"]{
 	.left-icon-big .alert-left-icon-big,
 	.alert-social .alert-social-icon{
-		margin-left: 0;
-		margin-right: 0.9375rem;
+		margin-right: 0;
+		margin-left: 0.9375rem;
 	}
 }
 

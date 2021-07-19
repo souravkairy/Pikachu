@@ -6,12 +6,12 @@
     [data-sidebar-style="mini"] {
         
         .nav-header {
-            width: 5rem;
+            width: 6.25rem;
 
             .nav-control {
                 z-index: -1;
                 .hamburger{
-                    left: 5rem!important;
+                    left: 6.25rem!important;
                     .line{
                         background-color: $dark!important;
                     }
@@ -31,11 +31,13 @@
 			}
 		}
         .deznav {
-            width: 5rem;
+            width: 6.25rem;
             overflow: visible;
             position: absolute;
+			z-index:2;
+			
 			.copyright,
-			.add-menu-sidebar{
+			.main-profile{
 				display:none;
 			}
             .nav-text {
@@ -52,7 +54,6 @@
                     display: none;
                 }
             }
-
             .metismenu {
                li {
 			   
@@ -65,7 +66,7 @@
 
                     &>ul {
                         position: absolute;
-                        left: 5rem;
+                        left: 6.25rem;
                         top: 2.9375rem;
                         width: 11.875rem;
                         z-index: 1001;
@@ -78,21 +79,41 @@
 
                         @at-root [direction="rtl"]:not([data-layout="horizontal"])#{&} {
                             left: auto;
-                            right: 5rem;
-                            box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.15);
+                            right: 6.25rem;
+                            box-shadow: 0px 0px 40px 0px rgba(82, 63, 105, 0.1);
                         }
                     }
                 }
                 &>li {
-					padding: 2px 15px;
+					padding: 2px 20px;
                     &>a {
-                        
+						padding: 1.125rem 0.875rem;
+						width: auto;
+						height: auto;
+						text-align: center;
+						line-height: 1;
+						transition: all 0.5s;
+						-moz-transition: all 0.5s;
+						-webkit-transition: all 0.5s;
+						-ms-transition: all 0.5s;
+						-o-transition: all 0.5s;
+						
+						& > i{
+						padding:0;
+						}
                         &.has-arrow {
                             &:after {
                                 display: none;
                             }
                         }
                     }
+					&.mm-active{
+						&>a{
+							i{
+								color:$white;
+							}
+						}
+					}
                 }
                 .nav-label,
                 .nav-badge {
@@ -102,11 +123,11 @@
         }
 
         .content-body {
-            margin-left: 5rem;
+            margin-left: 6.25rem;
         }
 
         .footer {
-            padding-left: 5rem;
+            padding-left: 6.25rem;
         }
 
 
@@ -114,6 +135,7 @@
 
     [data-sidebar-style="mini"][data-layout="vertical"] {
         .deznav {
+			position: absolute !important;
             .metismenu {
 
                 li {
@@ -123,6 +145,21 @@
                 }
 
                 &>li {
+					padding:2px 0;
+					&>a{
+						padding:1.5rem 1.5rem;
+						&:before{
+							height:100%;
+							width:0px;
+							background:$primary;
+							content:"";
+							position:absolute;
+							top: 0;
+							left: 0;
+							display:block;
+							@include transitionMedium;
+						}
+					}
 
                     &:nth-last-child(-n + 1) {
                         &>ul {
@@ -171,11 +208,19 @@
                     }
 					&.mm-active {
 						&>a {
-							background: $primary;
-							color:$white;
-							border-radius: 12px;
-							@at-root [data-theme-version="dark"]#{&} {
-								background: $dark-card;
+							background: rgba($primary,0.1);
+							color:$primary;
+							border-radius: 0;
+							//box-shadow:0 12px 15px 0 rgba($primary, 0.13);
+							
+							//@at-root [data-theme-version="dark"]#{&} {
+							//	background: $dark-card;
+							//}
+							i{
+								color:$primary;
+							}
+							&:before{
+								width:6px;
 							}
 						}
 					}
@@ -183,13 +228,16 @@
 
 
                         &>a {
-                            background: $primary;
-							color:$white;
-							border-radius: 12px;
-							position: unset;
-								
+                            //background: $primary;
+							color:$primary;
+							//box-shadow:0 12px 15px 0 rgba($primary, 0.13);
+							//border-radius: 12px;
+							//position: unset;
+							i{
+								color:$primary;
+							}	
 							@at-root [data-theme-version="dark"]#{&} {
-								background: $dark-card;
+								//background: rgba($primary);
 							}
 							
                             .nav-text {
@@ -205,33 +253,19 @@
                             overflow: visible;
 							border:0;
 							margin-left:0;
-							left: 5rem;
+							left: 6.25rem;
 							width: 13rem;
 							border-radius:12px;
 							border:0;
 							padding: 10px 0;
 							top: 0;
 							
-							&:after{
-								content: "";
-								position: absolute;
-								background: inherit;
-								width: 10px;
-								height: 10px;
-								transform: rotate(45deg);
-								-webkit-transform: rotate(45deg);
-								-ms-transform: rotate(45deg);
-								-moz-transform: rotate(45deg);
-								left: -5px;
-								top: 20px;
-							}
-							
 							@at-root [data-theme-version="dark"]#{&} {
-								box-shadow: 0px 9px 10px 0px rgba(0, 0, 0, 0.1);;
+								box-shadow: 0px 0px 40px 0px rgba(82, 63, 105, 0.1);
 							}
 							@at-root [direction="rtl"]#{&} {
 								left: auto;
-								right: 5rem;
+								right: 6.25rem;
 							}
 							a {
                                 padding: 6px 20px 6px 20px;
@@ -269,20 +303,33 @@
     }
 	
 	[data-sidebar-style="mini"][data-layout="horizontal"] {
-		.deznav .metismenu {
-			padding: 0 30px;
-		}
-		.deznav .metismenu > li > a {
-			padding: 15px 20px;
-			@at-root [direction="rtl"]#{&} {
-				padding: 15px 20px;
-				svg {
-					margin-left: 0;
+		.deznav{
+			.metismenu {
+				
+				& > li{
+					padding: 0;
+					
+					& > a {
+						padding: 18px;
+						
+						i{
+							padding: 0;	
+						}
+						@at-root [direction="rtl"]#{&} {
+							padding: 18px;
+							svg {
+								margin-left: 0;
+							}
+						}
+						svg{
+							margin-right: 0;
+							margin-top: 0;
+						}
+					}
+					& > ul li a{
+					    padding: 8px 20px 8px 45px;
+					}
 				}
-			}
-			svg{
-				margin-right: 0;
-				margin-top: 0;
 			}
 		}
 	}

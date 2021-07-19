@@ -11,6 +11,12 @@
     top: 35px;
 }
 
-#world-map {
+#world-map, #usa {
     height: 400px;
+	@include respond ('tab-port'){
+		height:350px;
+	}
+	@include respond ('phone'){
+		height:230px;
+	}
 }

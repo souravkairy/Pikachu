@@ -12,32 +12,20 @@
             justify-content: center;
             align-items: center;
             color: $l-ctd;
-            
-			@include respond('laptop') {
-				height: 70px;
-				width: 70px;
-				min-width:70px;
-			}
+            min-width:85px;
         }
         @include custommq($min: 576px) {}
         .media-body {
             p {
+                text-transform: uppercase;
                 font-weight: 500;
-				font-size: 16px;
-				line-height: 1.5;
-				@include respond('laptop') {
-					font-size: 14px;
-				}
+                font-size: 14px;
                 @at-root [data-theme-version="dark"] & {
                     color: #c4c9d5;
                 }
             }
-			small, 
-			.small {
-				font-size: 75%;
-			}
             h3{
-				font-size: 30px;
+				font-size: 40px;
 				font-weight: 600;
 				margin: 0;
 				line-height: 1.2;

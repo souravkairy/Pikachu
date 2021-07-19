@@ -1,6 +1,6 @@
 .nav-pills {
     .nav-link {
-		border-radius: 0;
+		border-radius: $radius;
 	    padding: 0.75rem 1.25rem;
 	}
 }
@@ -23,7 +23,7 @@
 			color: #495057;
 			background-color: #fff;
 			border-color: #dee2e6 #dee2e6 #fff #ebeef6;
-			border-radius: 0;
+			border-radius: $radius $radius 0 0;
 			color:$primary;
 			@at-root [data-theme-version="dark"] & {
 				background-color: $primary-opacity;

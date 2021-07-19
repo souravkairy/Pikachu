@@ -119,5 +119,10 @@
   }
 
 
-
+#pie-chart .ct-label{
+	@include respond ('phone-land'){
+		color: #fff;
+		fill: #fff;
+	}
+}
   

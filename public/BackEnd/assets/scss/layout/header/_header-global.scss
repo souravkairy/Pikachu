@@ -3,18 +3,16 @@
 /////////////////
 .header {
     // width: 100%;
-    height: 7.5rem;
+    height: 6rem;
     z-index: 1;
     position: relative;
     padding: 0rem;
-    background-color: $white;
-    z-index: 3;
+    z-index: 9;
     // box-shadow: 0 0 1rem $l-border;
     padding-left: 21.563rem;
     transition: all .2s ease;
-	@include respond('laptop'){
-		padding-left: 17rem;
-	}
+	background:$white;
+	
     // &::before {
     //     content: "";
     //     height: 168px;
@@ -31,7 +29,7 @@
         padding-right: 1.875rem;
         align-items: center;
         display: flex;
-
+		
         // box-shadow: $shadow;
         // @include respond('desktop') {
         //     padding-left: 15px;
@@ -59,7 +57,7 @@
             padding-left: 3.75rem;
 			padding-right: 0.938rem;
         }
-
+		
     }
     .navbar {
         padding: 0;
@@ -116,12 +114,13 @@ svg.pulse-svg {
 .pulse-css {
     @include circle(1rem);
     border-radius: 3.5rem;
-    height: .4rem;
+    height: 24px;
     position: absolute;
-    background: $primary;
-    right: 5px;
-    top: .6rem;
-    width: .4rem;
+    background: #D8B9C3;
+    right: -4px;
+    top: -4px;
+	border:4px solid $white;
+    width: 24px;
     &:after,
     &:before {
         content: '';
@@ -131,7 +130,7 @@ svg.pulse-svg {
         right: 0;
         bottom: 0;
         left: -.2rem;
-        background-color: $primary;
+        background-color: #D8B9C3;
         margin: auto;
         -webkit-transform: scale(0.3);
         transform: scale(0.3);
@@ -144,6 +143,10 @@ svg.pulse-svg {
             right: -.2rem;
         }
     }
+	@include respond ('laptop'){
+		height:16px;
+		width:16px;
+	}
 }
 
 @-webkit-keyframes pulse-me {
@@ -188,11 +191,11 @@ svg.pulse-svg {
 [data-sidebar-style="overlay"] {
     .header {
         width: 100%;
-        @include custommq($min: 1200px, $max: 1350px) {
+        @include custommq($max: 1350px) {
             width: 100%;
             padding-left: 17rem;
         }
-        @include respond('tab-land') {
+        @include custommq($max: 1023px) {
             width: 100%;
             padding-left: 5rem;
         }
@@ -202,14 +205,14 @@ svg.pulse-svg {
 [data-sidebar-style="mini"] {
     .header {
         width: 100%;
-        padding-left: 5rem;
+        padding-left: 6.25rem;
     }
 }
 
 [data-sidebar-style="compact"] {
     .header {
         width: 100%;
-        padding-left: 9.375rem;
+        padding-left: 11.25rem;
 		.header-content{
 			padding-left: 1.875rem;
 		}
@@ -223,7 +226,7 @@ svg.pulse-svg {
         width: 100%;
     }
     .content-body {
-        padding-top: 7.5rem;
+        padding-top: 6rem;
 		@include respond('tab-land'){
 			padding-top: 5rem;
 		}
@@ -240,8 +243,8 @@ svg.pulse-svg {
 [data-sidebar-style="modern"] {
     .header {
 		width: 100%;
-		padding-left: 9.375rem;
-
+		padding-left: 10.625rem;
+    
 
     }
 	&[data-layout="horizontal"] {
@@ -250,7 +253,7 @@ svg.pulse-svg {
 		}
 		.header .header-content{
             padding-left: 30px;
-
+			
         }
 	}
 }

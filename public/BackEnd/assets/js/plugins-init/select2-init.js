@@ -324,24 +324,24 @@
   // destroy selector
   $(".destroy-selector").select2();
 
-  $("#destroy-selector-trigger").on("click", function(){
+  $("#destroy-selector-trigger").on('click',function(){
       $(".destroy-selector").select2("destroy");
   });
 
 
   // opening options
   $(".opening-dropdown").select2();
-  $("#dropdown-trigger-open").on("click", function(){
+  $("#dropdown-trigger-open").on('click',function(){
       $(".opening-dropdown").select2('open');
   });
 
 
   // open or close dropdown
   $(".open-close-dropdown").select2();
-  $("#opening-dropdown-trigger").on("click", function(){
+  $("#opening-dropdown-trigger").on('click',function(){
       $(".open-close-dropdown").select2('open');
   });
-  $("#closing-dropdown-trigger").on("click", function(){
+  $("#closing-dropdown-trigger").on('click',function(){
       $(".open-close-dropdown").select2('close');
   });
 

@@ -6,53 +6,43 @@
 		.metismenu{
 
 			& > li{
-				padding:0;
+				padding:0 0px;
 				
 				& > a{
-					font-size: 18px;
+					font-size: 16px;
 					padding: 20px 50px;
-					color: #969ba0;
 					@include transitionMedium;
-					position:relative;
-					@include respond('laptop') {
-						padding: 15px 25px;
-						font-size: 16px;
-					}
-					i{
-						color: #969ba0;
-					}
 					&:before{
-						content:"";
-						height:100%;
-						width:0;
 						position:absolute;
-						left:0;
-						top:0;
+						content:"";
 						background:$primary;
+						width:0;
+						height:100%;
+						top:0;
+						left:0;
 						@include transitionMedium;
+						border-top-right-radius: 15px;
+						border-bottom-right-radius: 15px;
+						
 					}
+					@include custommq ($max:1350px){
+						padding:20px 30px;
+					}
+					
 				}
 				&.mm-active{
 
 					& > a{
-						background:rgba($primary-light,0.1);
-						color:$primary;
-						i{
-							color: $primary;
+						 &:before{
+							width:10px;
 						}
-						&:before{
-							width:20px;
-							@include respond('laptop') {
-								width:8px;
-							}
+						i{
+							font-weight: 300;
 						}
 					}
 				}
 				.has-arrow:after{
-					right: 2.5rem;
-					@include respond('laptop') {
-						right: 1.5rem;
-					}
+					right: 1.5rem;
 				}
 			}
 			
@@ -77,7 +67,7 @@
             }
         }
 		.copyright,
-		.add-menu-sidebar{
+		.main-profile{
 			display:none;
 		}
         .header {
@@ -107,6 +97,7 @@
 					
                     a {
                         padding: 0.8125rem 0.9375rem;
+						margin: 2px 0;
 						
 						svg{
 						    max-width: 24px;
@@ -131,22 +122,10 @@
 						margin-left: 0;
 						border:0;
 						background:$white;
-						&:after{
-							content: "";
-							position: absolute;
-							background: inherit;
-							width: 10px;
-							height: 10px;
-							transform: rotate(45deg);
-							-webkit-transform: rotate(45deg);
-							-ms-transform: rotate(45deg);
-							-moz-transform: rotate(45deg);
-							left: -5px;
-							top: 20px;
-						}
+
                         @at-root [direction="rtl"]#{&} {
                             left: auto;
-                            right: 3rem;
+                            right: 5rem;
                             // box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.15);
                         }
                         li:hover {
@@ -171,25 +150,19 @@
 					padding: 0 13px;
 					
                     &>a {
-						text-align: center;
+						
                         &.has-arrow {
                             &:after {
                                 display: none;
                             }
                         }
-						i{
-							padding: 0;
-						}
                     }
                     &.mm-active > a{
 						background:$primary;
-						border-radius:$radius;
-						color:$white;
-						
-							
+						border-radius:8px;
 						i{
-							color: $white;
-							padding: 0;
+							color:$white;
+							padding:0;
 						}
 					}
                     &:hover{
@@ -200,7 +173,7 @@
                             }
                         }
                         &>a {
-							border-radius: $radius;
+							border-radius: 8px;
 							background:$primary;
 							color:$white;
 							@at-root [data-theme-version="dark"]#{&} {
@@ -253,9 +226,6 @@
     }
 }
 [data-sidebar-style="full"][data-layout="horizontal"] {
-	.deznav .metismenu{
-	    padding: 0 30px;
-	}
 	.header .header-content{
 		padding-left: 1.875rem;
 	}

@@ -1,3 +1,6 @@
+(function ($) {
+    "use strict"
+	
 jQuery(".form-valide").validate({
     rules: {
         "val-username": {
@@ -140,3 +143,5 @@ jQuery(".form-valide-with-icon").validate({
 
 
 });
+
+})(jQuery);

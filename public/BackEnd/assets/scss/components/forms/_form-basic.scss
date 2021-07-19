@@ -2,13 +2,13 @@
 // Basic Input
 
 .form-control{
-    border-radius: 0;
+    // border-radius: 0;
     background: $white;
     border: 1px solid $border;
     // height: 45px;
     color: $dark;
 	height: 56px;
-	@include respond('tab-land') {
+	@include respond('laptop') {
 		height: 41px;
 	}
     &:hover,&:focus,&.active{
@@ -150,8 +150,7 @@
     display: flex;
     justify-content: center;
 	padding: 0.532rem 0.75rem;
-	border-radius: 0;
-		
+	
     i{
         font-size: 16px;
     }
@@ -159,7 +158,6 @@
 .custom-file-label{
     height: 40px;
 	padding: 0.5rem 0.75rem;
-	border-radius: 0;
 }
 .input-group-prepend .btn,
 .input-group-append .btn {
@@ -180,12 +178,10 @@
 .custom-file-label{
     // height: 45px;
     // border-radius: 0px!important;
-	
     &:after{
         background: #656C73;
         border: 1px solid $border;
         color: $white;
-		border-radius: 0;
 		@at-root [data-theme-version="dark"] & {
 			background: $d-border;
 			border-color: $d-border;
@@ -206,6 +202,10 @@
     }
 }
 
+
+.select2-dropdown{
+	z-index:6;
+}
 
 .form-control:disabled,
  .form-control[readonly] {

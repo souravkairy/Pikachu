@@ -9,10 +9,10 @@
 .dropdown-menu{
 	font-size: inherit;
 	border: 0;
+	z-index:6;
 	box-shadow: 0 10px 40px 0 rgba(32,28,69,0.1);
 	margin-top:0;
-	border-radius: 0;
-		
+	
 	.dropdown-item{
 		font-size: 16px;
 		color:$body-color;
@@ -30,7 +30,8 @@
 		}
 		&.active, 
 		&:active{
-			color: $white  !important;
+			color: $primary;
+			background:rgba($primary,0.1);
 		}
 	}
 	

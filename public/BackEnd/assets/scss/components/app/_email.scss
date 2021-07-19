@@ -56,7 +56,9 @@
 
     @include media-breakpoint-between(sm, md) {
         padding-left: 0;
+		padding-right:0;
 		margin-left: 0!important;
+		clear:both;
 	}
 
     @include media-breakpoint-down(xs) {
@@ -111,6 +113,7 @@
 .read-content {
     textarea {
         height:150px;
+		padding: 15px 20px;
     }
 
     &-email{
@@ -487,8 +490,9 @@
 		padding-left: 1rem;
 		padding-right: 15rem;
 		@include respond('tab-port') {
-			padding-left: 1rem;
-			padding-right: 12rem;
+			padding-left: 0;
+			padding-right: 0;
+			margin-right:0;
 		}
 		@include respond('phone') {
 			padding-left: 0;

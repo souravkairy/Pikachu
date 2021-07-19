@@ -21,6 +21,13 @@
         }
     }
 }
+[data-sidebar-style="icon-hover"][data-layout="vertical"][data-container="wide-boxed"],
+[data-sidebar-style="icon-hover"][data-layout="vertical"][data-container="boxed"],
+[data-header-position="fixed"][data-sidebar-position="fixed"][data-sidebar-style="icon-hover"][data-layout="vertical"][data-container="wide-boxed"],
+[data-header-position="fixed"][data-sidebar-position="fixed"][data-sidebar-style="icon-hover"][data-layout="vertical"][data-container="boxed"],
+[data-sidebar-style="overlay"][data-layout="vertical"][data-container="wide-boxed"],
+[data-sidebar-style="overlay"][data-layout="vertical"][data-container="boxed"],
+[data-header-position="fixed"][data-sidebar-position="fixed"][data-sidebar-style="overlay"][data-layout="vertical"][data-container="wide-boxed"],
 [data-header-position="fixed"][data-sidebar-position="fixed"][data-sidebar-style="overlay"][data-layout="vertical"][data-container="boxed"] {
     .deznav {
         position: absolute;

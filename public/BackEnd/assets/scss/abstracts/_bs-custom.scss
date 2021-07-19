@@ -7,7 +7,7 @@ $fn:'HelveticaNeue'; // fn = font normal
 $fm:'HelveticaNeueMed'; // fm = font Medium 
 $border-radius: 0.75rem;
 // Body
-$body-bg   : #f9f9f9;
+$body-bg   : #fbfbfb;
 $body-color: #7e7e7e;
 
 // Typography
@@ -99,14 +99,13 @@ $colors: map-merge((
 
 
   
-$primary  : #6418C3 !default;
-/*$primary  : #7356f1 !default;*/
-$secondary: #DC3CCC !default;
-$success  : #2BC155 !default;
-$info     : #2B98D6 !default;
+$primary  : #EB8153 !default;
+$secondary: #6418C3 !default;
+$success  : #68CF29 !default;
+$info     : #51A6F5 !default;
 $warning  : #FFAB2D !default;
-$danger   : #FF2E2E !default;
-$light    : #F4F5F9 !default;
+$danger   : #FF4C41 !default;
+$light    : #E8E8E8 !default;
 $dark     : #6e6e6e;
 
 $theme-colors: () !default;
@@ -134,8 +133,6 @@ $dropdown-lik-color: $body-color;
 $border-color  : #EEEEEE;
 $headings-color:#3d4465 !default;
 $rounded : 0.75rem ;
-
-
 
 $grid-breakpoints: (xs: 0,
   sm: 576px,

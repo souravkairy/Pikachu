@@ -1,3 +1,8 @@
+// .authincation{
+//     height: 100%;
+
+// }
+
 .authincation-content{
     background: $white;
     box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
@@ -8,6 +13,7 @@
     }
 
 }
+
 .welcome-content{
     background: url('./../images/1.jpg');
     background-size: cover;
@@ -69,6 +75,7 @@
         }
     }
 }
+
 .auth-form{
     padding: 50px 50px;
 	@include respond('phone') {
