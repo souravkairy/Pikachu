@@ -48,7 +48,7 @@
                     <div class="col-lg-12">
                         <div class="navigation">
                             <nav class="navbar navbar-expand-lg navbar-light ">
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('FrontEnd/assets/images/logo.png')}}" alt=""></a>
+                                <a class="navbar-brand" href="index.html"><img src="{{asset('FrontEnd/assets/images/logo.png')}}" alt=""><strong style="color: white">PIKACHU</strong></a>
                                 <!-- logo -->
                                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
