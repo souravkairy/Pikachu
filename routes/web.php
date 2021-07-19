@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//frontend
+Route::get('/', function () { return view('frontend/index');});
+Route::get('/login-panel', function () { return view('frontend/login');});
+Route::get('/registration', function () { return view('frontend/registration');});
 
-Route::get('/', function () {
-    return view('frontend/index');
-});
-Route::get('/registartion', 'App\Http\Controllers\backEnd\User\RegistrationController@index');
+//admin section
 Route::get('/admin-dashboard', 'App\Http\Controllers\backEnd\Admin\DashboardController@index');
+
 
 //user route
 Route::get('/work-station-setting', 'App\Http\Controllers\backEnd\Admin\WorkStationController@index');

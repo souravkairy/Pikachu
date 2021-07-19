@@ -86,8 +86,8 @@
                                 </div> <!-- navbar collapse -->
                                 <div class="navbar-btn d-none d-sm-flex">
                                     <ul>
-                                        <li><a class="main-btn" href="login.html">login</a></li>
-                                        <li><a class="main-btn-2 main-btn" href="singup.html">signup</a></li>
+                                        <li><a class="main-btn" href="{{url('login-panel')}}">login</a></li>
+                                        <li><a class="main-btn-2 main-btn" href="{{url('registration')}}">signup</a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -107,7 +107,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8">
                     <div class="banner-content text-center">
-                        <h1 class="title">Introducing The First Global Cryptofunding Platform</h1>
+                        <h1 class="title">Introducing The Global Cryptofunding Platform</h1>
                         <ul>
                             <li><a class="main-btn main-btn-2" href="#about">Know More</a></li>
                             <li><a class="main-btn" href="#contact">Contact</a></li>
@@ -1120,7 +1120,7 @@
     <!--====== FUTURE ROADMAP PART END ======-->
 
     <!--====== TEAM PART START ======-->
-
+{{--
     <section class="team-area">
         <div class="container">
             <div class="row justify-content-center">
@@ -1386,7 +1386,7 @@
         <div class="banefits-color-2">
             <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
         </div>
-    </section>
+    </section> --}}
 
     <!--====== TEAM PART ENDS ======-->
 

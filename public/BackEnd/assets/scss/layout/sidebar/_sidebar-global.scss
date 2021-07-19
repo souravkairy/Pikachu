@@ -9,7 +9,7 @@
     letter-spacing: 0.05rem;
     border-top: 1px solid $l-border;
 	color:$dusty-gray;
-	
+
     @at-root [data-theme-version="dark"] & {
         border-color: $d-border;
     }
@@ -126,7 +126,7 @@
 // Sidebar
 //////////////
 .deznav {
-    width: 21.563rem;
+    width: 17.563rem;
     padding-bottom: 0;
     height: calc(100% - 96px);
     position: absolute;
@@ -139,7 +139,7 @@
     // border-top-left-radius: 5px;
     // border-top-right-radius: 5px;
 	box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.02);
-	
+
     @include respond('tab-land') {
         background-color: $white;
 		top: 5rem;
@@ -154,7 +154,7 @@
     .deznav-scroll {
         position: relative;
         height: 100%;
-		
+
         // overflow: visible!important;
         // border-top-left-radius: 5px;
         // border-top-right-radius: 5px;
@@ -171,8 +171,8 @@
         display: flex;
         flex-direction: column;
 		padding-top: 15px;
-			
-		
+
+
         &.fixed {
             position: fixed;
             top: 0;
@@ -184,7 +184,7 @@
             flex-direction: column;
             a {
 				position:relative;
-				
+
                 &>i {
                     //icon will get color from parent "a"
                     font-size: 1.5rem;
@@ -195,7 +195,7 @@
                     top: 0;
 					@include transitionMedium;
 					line-height: 1;
-						
+
 					@at-root [data-sidebar-style="compact"] & {
 						display:block;
 						padding:0;
@@ -211,7 +211,7 @@
 						&[data-theme-version="dark"]{
 							color:$white;
 						}
-						
+
 					}
 					@include respond('phone-land') {
 						font-size: 1.25rem;
@@ -219,15 +219,15 @@
 						color: #969BA0;
 					}
                 }
-					
-				
+
+
             }
-			
+
             &>a {
 				font-weight: 400;
 				display: inline-block;
 				font-size: 15px;
-				color: #969BA0;		
+				color: #969BA0;
 				i{
 					color: #969BA0;
 				}
@@ -245,7 +245,7 @@
             }
             &:hover,
 			&:focus {
-				
+
                 &>a {
                   //  background-color: lighten($color: $primary, $amount: 40%);
                     color: $primary;
@@ -273,11 +273,11 @@
 					g [fill] {
 						fill: $primary;
 					}
-					
+
 				}
 				@at-root [data-sidebar-style="compact"] & {
 					&>a{
-						
+
 						i{
 							background:rgba($primary,0.1);
 							color:$primary;
@@ -290,7 +290,7 @@
         li {
             position: relative;
         }
-		
+
         //one step dropdown
         ul {
             //background-color: darken($color: $white, $amount: 2%);
@@ -298,7 +298,7 @@
 			position:relative;
 			z-index: 1;
 			padding: 0.5rem 0;
-				
+
             a {
 				padding-top: .5rem;
 				padding-bottom: .5rem;
@@ -341,7 +341,7 @@
 					}
                 }
             }
-            
+
         }
         a {
             position: relative;
@@ -363,7 +363,7 @@
                 border-color: inherit;
                 -webkit-transform: rotate(-225deg) translateY(-50%);
                 transform: rotate(-225deg) translateY(-50%);
-				
+
             }
         }
         .has-arrow[aria-expanded=true]:after,
