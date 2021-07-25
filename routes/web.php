@@ -30,8 +30,19 @@ Route::get('admin/logout','App\Http\Controllers\AdminController@logout')->name('
 
 //admin section route
 Route::get('/work-station-setting', 'App\Http\Controllers\backEnd\Admin\WorkStationController@index');
+
+//package setting ------------------
 Route::get('/package-setting', 'App\Http\Controllers\backEnd\Admin\PackageRateController@index');
+Route::post('/save-package', 'App\Http\Controllers\backEnd\Admin\PackageRateController@save_package');
+Route::get('/delete-package/{id}', 'App\Http\Controllers\backEnd\Admin\PackageRateController@delete_package');
+
+//wallet setting -------------------
 Route::get('/wallet-setting', 'App\Http\Controllers\backEnd\Admin\WalletSettingController@index');
+Route::post('/update-wallet', 'App\Http\Controllers\backEnd\Admin\WalletSettingController@update_wallet');
+
+
+
+
 Route::get('/contact-inbox', 'App\Http\Controllers\backEnd\Admin\MailController@contact_inbox');
 Route::get('/contact-sent', 'App\Http\Controllers\backEnd\Admin\MailController@contact_sent');
 Route::get('/site-setting', 'App\Http\Controllers\backEnd\Admin\SiteSettingController@index');
