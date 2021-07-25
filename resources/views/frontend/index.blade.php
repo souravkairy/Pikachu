@@ -1383,10 +1383,7 @@
                 </div>
             </div> --}}
         </div>
-        <div class="banefits-color-2">
-            <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
-        </div>
-    </section> --}}
+    </section>
 
     <!--====== TEAM PART ENDS ======-->
 
