@@ -10,6 +10,17 @@
             </div>
             <!-- row -->
             <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="card">
                         <div class="card-header">
@@ -17,15 +28,17 @@
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form>
+                                <form method="POST" action="{{url('update-wallet')}}">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="text" class="form-control input" placeholder="Wallet Name">
+                                        <input type="hidden" name="id" value="{{$wallet['id'] ?? NULL}}">
+                                        <input type="text" class="form-control input" value="{{$wallet['wallet_title'] ?? NULL}}" name="wallet_title">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control input" placeholder="Wallet Address">
+                                        <input type="text" class="form-control input" value="{{$wallet['wallet_address'] ?? NULL}}" name="wallet_address">
                                     </div>
                                     <div class="form-group">
-                                        <button type="button" class="btn btn-primary btn-sm">Submit</button>
+                                        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
                                     </div>
                                 </form>
                             </div>
@@ -42,13 +55,13 @@
                                 <div class="accordion__item">
                                     <div class="accordion__header collapsed rounded-lg" data-toggle="collapse"
                                         data-target="#default_collapseTwo">
-                                        <span class="accordion__header--text">Wallet</span>
+                                        <span class="accordion__header--text">{{$wallet['wallet_title'] ?? NULL}}</span>
                                         <span class="accordion__header--indicator"></span>
                                     </div>
                                     <div id="default_collapseTwo" class="collapse accordion__body"
                                         data-parent="#accordion-one">
                                         <div class="accordion__body--text">
-                                            $500
+                                            {{$wallet['wallet_address'] ?? NULL}}
                                         </div>
                                     </div>
                                 </div>
