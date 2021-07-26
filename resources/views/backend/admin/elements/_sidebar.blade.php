@@ -27,7 +27,6 @@
                         <i class="flaticon-061-puzzle"></i>
                         <span class="nav-text">Work Station Setting</span>
                     </a>
-
                 </li>
                 <li><a href="{!! url('wallet-setting') !!}" aria-expanded="false">
                         <i class="flaticon-003-diamond"></i>
@@ -38,6 +37,11 @@
                         <i class="flaticon-381-settings-1"></i>
                         <span class="nav-text">Package Setting</span>
                     </a>
+                </li>
+                <li><a href="{!!url('commisions-setting')!!}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-settings-3"></i>
+                    <span class="nav-text">Commisions Setting</span>
+                </a>
                 </li>
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-053-heart"></i>

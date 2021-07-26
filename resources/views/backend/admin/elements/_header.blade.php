@@ -571,7 +571,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="input-group search-area right d-lg-inline-flex d-none">
-                                <h2 class="font-w600 mb-2 mr-auto ">Admin-Dashboard</h2>
+                                <h3 class="font-w600">Admin-Dashboard</h3>
 							</div>
                         </div>
                         <ul class="navbar-nav header-right main-notification">

@@ -42,6 +42,10 @@ Route::get('/contact-inbox', 'App\Http\Controllers\backEnd\Admin\MailController@
 Route::get('/view-message/{id}', 'App\Http\Controllers\backEnd\Admin\MailController@view_message');
 Route::get('/contact-sent', 'App\Http\Controllers\backEnd\Admin\MailController@contact_sent');
 
+//commisions setting ---------------
+Route::get('/commisions-setting', 'App\Http\Controllers\backEnd\Admin\CommisionsSettingController@index');
+Route::post('/update-commisions', 'App\Http\Controllers\backEnd\Admin\CommisionsSettingController@update_commisions');
+
 
 Route::get('/site-setting', 'App\Http\Controllers\backEnd\Admin\SiteSettingController@index');
 Route::get('/admin-role-setting', 'App\Http\Controllers\backEnd\Admin\UserRoleController@index');
