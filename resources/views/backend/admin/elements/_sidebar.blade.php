@@ -2,8 +2,8 @@
 @section('sidebar')
 
     <!--**********************************
-                Sidebar start
-            ***********************************-->
+        Sidebar start
+    ***********************************-->
     <div class="deznav">
         <div class="deznav-scroll">
             <ul class="metismenu" id="menu">
@@ -44,16 +44,16 @@
                         <span class="nav-text">Contact Messages</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="./uc-select2.html">Inbox</a></li>
-                        <li><a href="./uc-nestable.html">Sent</a></li>
+                        <li><a href="{{url('contact-inbox')}}">Inbox</a></li>
+                        <li><a href="#">Sent</a></li>
                     </ul>
                 </li>
-                <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+                <li><a href="#" class="ai-icon" aria-expanded="false">
                         <i class="flaticon-381-settings-2"></i>
                         <span class="nav-text">Site-Setting</span>
                     </a>
                 </li>
-                <li><a href="javascript:void()" aria-expanded="false">
+                <li><a href="#" aria-expanded="false">
                         <i class="flaticon-044-file"></i>
                         <span class="nav-text">Admin-Role-Setting</span>
                     </a>
@@ -61,11 +61,10 @@
             </ul>
             <div class="copyright">
                 <p><strong>Pikachu Admin Dashboard</strong> © 2021 All Rights Reserved</p>
-                {{-- <p class="fs-12">Developed <span class="heart"></span> by DexignZone</p> --}}
             </div>
         </div>
     </div>
     <!--**********************************
-                Sidebar end
-            ***********************************-->
+        Sidebar end
+    ***********************************-->
 @endsection

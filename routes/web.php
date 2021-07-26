@@ -23,7 +23,10 @@ Route::post('/admin/password/update', [AdminController::class, 'Update_pass'])->
 Route::get('admin/logout','App\Http\Controllers\AdminController@logout')->name('admin.logout');
 
 //admin section route
+
+//work station setting -------------
 Route::get('/work-station-setting', 'App\Http\Controllers\backEnd\Admin\WorkStationController@index');
+Route::post('/update-task', 'App\Http\Controllers\backEnd\Admin\WorkStationController@update_task');
 
 //package setting ------------------
 Route::get('/package-setting', 'App\Http\Controllers\backEnd\Admin\PackageRateController@index');
@@ -34,21 +37,20 @@ Route::get('/delete-package/{id}', 'App\Http\Controllers\backEnd\Admin\PackageRa
 Route::get('/wallet-setting', 'App\Http\Controllers\backEnd\Admin\WalletSettingController@index');
 Route::post('/update-wallet', 'App\Http\Controllers\backEnd\Admin\WalletSettingController@update_wallet');
 
-
-
-
+//mail setting ---------------------
 Route::get('/contact-inbox', 'App\Http\Controllers\backEnd\Admin\MailController@contact_inbox');
+Route::get('/view-message/{id}', 'App\Http\Controllers\backEnd\Admin\MailController@view_message');
 Route::get('/contact-sent', 'App\Http\Controllers\backEnd\Admin\MailController@contact_sent');
+
+
 Route::get('/site-setting', 'App\Http\Controllers\backEnd\Admin\SiteSettingController@index');
 Route::get('/admin-role-setting', 'App\Http\Controllers\backEnd\Admin\UserRoleController@index');
 Route::get('/new-users', 'App\Http\Controllers\backEnd\Admin\UserListController@new_users');
 Route::get('/pending-users', 'App\Http\Controllers\backEnd\Admin\UserListController@pending_users');
 Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListController@active_users');
 
-//frontend
-Route::get('/', function () { return view('frontend/index');});
-Route::get('/login-panel', function () { return view('frontend/login');});
-Route::get('/registration', function () { return view('frontend/registration');});
+
+
 
 //user section route
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index');
@@ -57,3 +59,8 @@ Route::get('/user-buy-package', 'App\Http\Controllers\backEnd\User\UserPackageCo
 Route::get('/user-add-member', 'App\Http\Controllers\backEnd\User\AddMembersController@index');
 Route::get('/user-work-station', 'App\Http\Controllers\backEnd\User\WorkStationController@index');
 
+//frontend
+Route::get('/', function () { return view('frontend/index');});
+Route::post('/contact-message','App\Http\Controllers\frontEnd\FrontEndController@contact_message');
+Route::get('/login-panel', function () { return view('frontend/login');});
+Route::get('/registration', function () { return view('frontend/registration');});

@@ -1784,32 +1784,34 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <form action="#">
+                    <div class="col-xl-12 col-lg-12">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+                    <form action="{{url('contact-message')}}" method="POST">
+                        @csrf
                         <div class="contact-box">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="input-box mt-10">
-                                        <input type="text" placeholder="Name">
+                                        <input type="text" placeholder="Name" name="name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-box mt-10">
-                                        <input type="text" placeholder="Email Address">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="input-box mt-10">
-                                        <input type="text" placeholder="Phone">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="input-box mt-10">
-                                        <input type="text" placeholder="Subject">
+                                        <input type="text" placeholder="Email Address" name="email" >
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="input-box mt-10 text-center">
-                                        <textarea name="#" id="#" cols="30" rows="10" placeholder="Message"></textarea>
+                                        <textarea name="message" id="#" cols="30" rows="10" placeholder="Message"></textarea>
                                         <button type="submit" class="main-btn">send message <i
                                                 class="fal fa-arrow-right"></i></button>
                                     </div>
