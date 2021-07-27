@@ -7,7 +7,7 @@
     <div class="deznav">
         <div class="deznav-scroll">
             <ul class="metismenu" id="menu">
-                <li><a href="{{ url('/admin-dashboard') }}" aria-expanded="false">
+                <li><a href="{{url('/admin/home')}}" aria-expanded="false">
                         <i class="flaticon-144-layout"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>

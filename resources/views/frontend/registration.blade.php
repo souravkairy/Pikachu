@@ -56,25 +56,54 @@
                             <h3 class="title">Create an Account!</h3>
                         </div>
                         <div class="login-input">
-                            <form action="#" method="POST">
+                            <form action="{{ route('register') }}" method="POST">
                                 @csrf
                                 <div class="input-box mt-10">
-                                    <input type="text" placeholder="Refered By">
+                                    <input type="text" name="ref_from" placeholder="Refered By">
                                 </div>
                                 <div class="input-box mt-10">
-                                    <input type="text" placeholder="Name">
-                                </div>
-                                <div class="input-box mt-10">
-                                    <input type="email" placeholder="Email Address">
-                                </div>
-                                <div class="input-box mt-10">
-                                    <input type="password" placeholder="Password">
+                                    <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" required placeholder="Name">
 
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="input-box mt-10">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="Email Address">
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="input-box mt-10">
+                                    <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required placeholder="Username">
+
+                                    @error('username')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="input-box mt-10">
+                                    <input class="form-control @error('password') is-invalid @enderror" required type="password" name="password" placeholder="Password">
+
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="input-box mt-10">
+                                    <input class="form-control" required type="password" name="password_confirmation" placeholder="Confirm Password">
                                 </div>
                                 <div class="input-btn mt-10">
                                     <button class="main-btn" type="submit">Register <i
                                             class="fal fa-arrow-right"></i></button>
-                                    <span>Have an account? <a href="{{ url('registration') }}">Login</a></span>
+                                    <span>Have an account? <a href="{{ url('login-panel') }}">Login</a></span>
                                 </div>
                             </form>
                         </div>
