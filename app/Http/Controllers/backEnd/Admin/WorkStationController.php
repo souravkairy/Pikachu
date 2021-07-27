@@ -8,6 +8,10 @@ use App\Models\WorkStation;
 
 class WorkStationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index()
     {
         $alldata = WorkStation::first();
