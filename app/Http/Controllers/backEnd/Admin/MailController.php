@@ -8,6 +8,10 @@ use App\Models\Contact;
 
 class MailController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function contact_inbox()
     {
         $allMail = Contact::orderByDesc('id')->paginate(10);

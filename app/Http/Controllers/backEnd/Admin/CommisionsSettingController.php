@@ -8,6 +8,10 @@ use App\Models\CommisionSetting;
 
 class CommisionsSettingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index()
     {
         $commisionsData = CommisionSetting::first();
