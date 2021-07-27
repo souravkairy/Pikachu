@@ -42,7 +42,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="{{url('/admin-dashboard')}}" class="brand-logo">
+            <a href="{{url('/admin/home')}}" class="brand-logo">
                 <svg class="logo-abbr" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<rect class="svg-logo-rect" width="50" height="50" rx="20" fill="#EB8153"/>
 					<path class="svg-logo-path"  d="M17.5158 25.8619L19.8088 25.2475L14.8746 11.1774C14.5189 9.84988 15.8701 9.0998 16.8205 9.75055L33.0924 22.2055C33.7045 22.5589 33.8512 24.0717 32.6444 24.3951L30.3514 25.0095L35.2856 39.0796C35.6973 40.1334 34.4431 41.2455 33.3397 40.5064L17.0678 28.0515C16.2057 27.2477 16.5504 26.1205 17.5158 25.8619ZM18.685 14.2955L22.2224 24.6007L29.4633 22.6605L18.685 14.2955ZM31.4751 35.9615L27.8171 25.6886L20.5762 27.6288L31.4751 35.9615Z" fill="white"/>
@@ -571,7 +571,7 @@
                     <div class="collapse navbar-collapse justify-content-between">
                         <div class="header-left">
 							<div class="input-group search-area right d-lg-inline-flex d-none">
-                                <h2 class="font-w600 mb-2 mr-auto ">Dashboard</h2>
+                                <h3 class="font-w600">Admin-Dashboard</h3>
 							</div>
                         </div>
                         <ul class="navbar-nav header-right main-notification">
@@ -732,8 +732,8 @@
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                                     <img src="{{asset('BackEnd/assets/images/profile/pic1.jpg')}}" width="20" alt=""/>
 									<div class="header-info">
-										<span>Johndoe</span>
-										<small>Super Admin</small>
+										<span>Admin</span>
+										{{-- <small>Super Admin</small> --}}
 									</div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
@@ -742,7 +742,7 @@
                                         <span class="ml-2">Profile </span>
                                     </a>
 
-                                    <a href="./page-login.html" class="dropdown-item ai-icon">
+                                    <a href="{{route('admin.logout')}}" class="dropdown-item ai-icon">
                                         <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                         <span class="ml-2">Logout </span>
                                     </a>

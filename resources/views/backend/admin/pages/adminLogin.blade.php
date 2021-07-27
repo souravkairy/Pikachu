@@ -23,16 +23,28 @@
                             <div class="col-xl-12 pb-5">
                                 <div class="auth-form">
 									<div class="text-center mb-3">
-										<img src={{asset('BackEnd/assets/images/logo-full.png')}}" alt="">
+										{{-- <img src={{asset('BackEnd/assets/images/logo-full.png')}}" alt=""> --}}
 									</div>
-                                    <form action="{{url('admin-dashboard')}}">
+                                    <form action="{{ route('admin.login') }}" method="post">
+                                    @csrf
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="email" class="form-control">
+                                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email Address">
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
+
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" class="form-control">
+                                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" class="btn btn-primary btn-block">Log In</button>
