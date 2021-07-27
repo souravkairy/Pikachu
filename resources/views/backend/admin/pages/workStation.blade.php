@@ -14,56 +14,42 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="basic-form">
-                            <form>
+                            <form method="POST" action="{{url('update-task')}}" >
+                                @csrf
                                 <div class="form-row">
                                     <div class="input-group input-Secondary col-md-12 mb-2">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text">Youtube Link</span>
+                                            <span class="input-group-text">Youtube Link - 1</span>
                                         </div>
-                                        <textarea class="form-control"></textarea>
+                                        <input type="hidden" name="id" value="{{$alldata->id}}">
+                                        <input type="text" class="form-control" name="link1" value={{$alldata->link1 ?? NULL }}>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="input-group input-Secondary col-md-12 mb-2">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text">Youtube Link</span>
+                                            <span class="input-group-text">Youtube Link - 2</span>
                                         </div>
-                                        <textarea class="form-control"></textarea>
+                                        <input type="text" class="form-control" name="link2" value={{$alldata->link2 ?? NULL }}>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="input-group input-Secondary col-md-12 mb-2">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text">Youtube Link</span>
+                                            <span class="input-group-text" >Youtube Link - 3</span>
                                         </div>
-                                        <textarea class="form-control"></textarea>
+                                        <input type="text" class="form-control" name="link3" value={{$alldata->link3?? NULL }}>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="input-group input-Secondary col-md-12 mb-2">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text">Youtube Link</span>
+                                            <span class="input-group-text">Youtube Link - 4</span>
                                         </div>
-                                        <textarea class="form-control"></textarea>
+                                        <input type="text" class="form-control" name="link4" value={{$alldata->link4 ?? NULL }}>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <div class="input-group input-Secondary col-md-12 mb-2">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Youtube Link</span>
-                                        </div>
-                                        <textarea class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="input-group input-Secondary col-md-12 mb-2">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">Youtube Link</span>
-                                        </div>
-                                        <textarea class="form-control"></textarea>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary mt-3 float-right">Submit</button>
+                                <button type="submit" class="btn btn-primary mt-3 w-100">Submit</button>
                             </form>
                         </div>
                     </div>
