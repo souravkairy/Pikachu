@@ -54,13 +54,25 @@
                            <a href="{{url('/')}}"> <h3 class="title">Welcome to Pikachu!</h3></a>
                         </div>
                         <div class="login-input">
-                            <form action="#" method="POST">
+                            <form action="{{ url('login') }}" method="POST">
                                 @csrf
                                 <div class="input-box mt-10">
-                                    <input type="email" placeholder="Email Address">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required="" placeholder="Email Address">
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="input-box mt-10">
-                                    <input type="password" placeholder="Password">
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" required="" name="password" placeholder="Password">
+
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                     <a href="#">Forgot Password?</a>
                                 </div>
                                 <div class="input-btn mt-10">

@@ -17,8 +17,16 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('username')->unique();
             $table->string('password');
+            $table->integer('status')->nullable();
+            $table->string('ref_from')->nullable();
+            $table->string('ref_commision')->nullable();
+            $table->string('traiding_bonous')->nullable();
+            $table->integer('active_package_id')->nullable();
+            $table->integer('package_status')->nullable();
+            $table->string('wallet_address')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -1,12 +1,12 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
-// Route::get('/password/change', [HomeController::class, 'changePassword'])->name('password.change');
-// Route::post('/password/update', [HomeController::class, 'updatePassword'])->name('password.update');
-// Route::get('/logout', [HomeController::class, 'Logout']);
+//user section Auth
+Route::get('/password/change', 'App\Http\Controllers\HomeController@changePassword')->name('password.change');
+Route::post('/password/update', 'App\Http\Controllers\HomeController@updatePassword')->name('password.update');
+Route::get('/logout', 'App\Http\Controllers\HomeController@Logout');
 
 //admin section Auth
 Route::get('admin/home', 'App\Http\Controllers\AdminController@index');

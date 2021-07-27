@@ -30,12 +30,13 @@
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Email</strong></label>
                                             <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email Address">
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong style="color: red;">{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Password</strong></label>
                                             <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
