@@ -22,7 +22,7 @@
 							<span class="nav-text">Add Member</span>
 						</a>
                     </li>
-                    <li><a href="{!!url('user-buy-package')!!}" aria-expanded="false">
+                    <li><a href="{!!url('packages')!!}" aria-expanded="false">
 							<i class="flaticon-003-diamond"></i>
 							<span class="nav-text">Buy Package</span>
 						</a>

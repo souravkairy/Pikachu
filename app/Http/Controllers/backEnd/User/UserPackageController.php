@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\BackEnd\User;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\ActivePackage;
 use App\Models\PackageSetting;
+use App\Models\WalletSetting;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use Session;
 
 class UserPackageController extends Controller
 {
@@ -20,7 +25,63 @@ class UserPackageController extends Controller
         $sidebar = view('backend/user/elements/_sidebar');
         $footer = view('backend/user/elements/_footer');
         $content = view('backend/user/pages/userPackage')
-                        ->with('packageData',$packageData);
-        return view('backend/user/dashboard/index',compact('header','sidebar','footer','content'));
+            ->with('packageData', $packageData);
+        return view('backend/user/dashboard/index', compact('header', 'sidebar', 'footer', 'content'));
     }
+    public function package_buying_process(request $request)
+    {
+        $userId = Auth::id();
+        $walletAddress = WalletSetting::find(1);
+        $packageId = $request->id;
+        $package_name = $request->package_name;
+        $package_price = $request->package_price;
+        session::put('packageId', $packageId);
+        session::put('package_name', $package_name);
+        session::put('package_price', $package_price);
+        session::put('userId', $userId);
+
+        $header = view('backend/user/elements/_header');
+        $sidebar = view('backend/user/elements/_sidebar');
+        $footer = view('backend/user/elements/_footer');
+        $content = view('backend/user/pages/package_buying_process')->with('walletAddress', $walletAddress);
+        return view('backend/user/dashboard/index', compact('header', 'sidebar', 'footer', 'content'));
+    }
+    public function process_completed(request $request)
+    {
+
+        $validated = $request->validate([
+            'user_id' => 'required',
+            'package_id' => 'required',
+            'txnId' => 'required',
+            'screen_shot' => 'required',
+        ]);
+        if ($request) {
+            $data = new ActivePackage;
+            $data['user_id'] = $request->user_id;
+            $data['package_id'] = $request->package_id;
+            $data['package_name'] = $request->package_name;
+            $data['txnId'] = $request->txnId;
+            $data['status'] = 2;
+            // $data['screen_shot'] = $request->screen_shot;
+            $data['created_at'] = date("Y/m/d H:i:s");
+            $fileNameone = $request->file('screen_shot')->getClientOriginalName();
+            $fileName1 =  $fileNameone;
+            $path = 'screen_shot' . "/" ;
+            $destinationPath = $path; // upload path
+
+            $request->file('screen_shot')->move($destinationPath, $fileName1);
+
+            $data['screen_shot'] = '/screen_shot/' . $fileName1;
+
+            $insert = $data->save();
+            if ($insert) {
+                session::put('packageId', '');
+                session::put('package_name', '');
+                session::put('package_price', '');
+                session::put('userId', '');
+                return redirect('/user-wallet');
+            }
+        }
+    }
+
 }
