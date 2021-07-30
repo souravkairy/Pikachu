@@ -1,25 +1,27 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ForgotPasswordController;
+use App\Http\Controllers\Admin\ResetPasswordController;
 
 Auth::routes(['verify' => true]);
 
-//user section Auth
+//user section Auth-------------
 Route::get('/password/change', 'App\Http\Controllers\HomeController@changePassword')->name('password.change');
 Route::post('/password/update', 'App\Http\Controllers\HomeController@updatePassword')->name('password.update');
 Route::get('/logout', 'App\Http\Controllers\HomeController@Logout');
 
-//admin section Auth
+//admin section Auth-------------
 Route::get('admin/home', 'App\Http\Controllers\AdminController@index');
 Route::get('admin', 'App\Http\Controllers\Admin\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin', 'App\Http\Controllers\Admin\LoginController@login');
 
-//Admin Password Reset Routes...
+//Admin Password Reset Routes----
 Route::get('admin/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('admin.password.request');
 Route::post('admin-password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('admin.password.email');
 Route::get('admin/reset/password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('admin.password.reset');
 Route::post('admin/update/reset', [ResetPasswordController::class, 'reset'])->name('admin.reset.update');
-Route::get('/admin/Change/Password', [AdminController::class, 'ChangePassword'])->name('admin.password.change');
-Route::post('/admin/password/update', [AdminController::class, 'Update_pass'])->name('admin.password.update');
+Route::get('/admin/Change/Password', 'App\Http\Controllers\AdminController@ChangePassword')->name('admin.password.change');
+Route::post('/admin/password/update', 'App\Http\Controllers\AdminController@Update_pass')->name('admin.password.update');
 Route::get('admin/logout','App\Http\Controllers\AdminController@logout')->name('admin.logout');
 
 //admin section route

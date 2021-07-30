@@ -73,7 +73,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                    <a href="#">Forgot Password?</a>
+                                    <a href="{{ route('password.request') }}">Forgot Password?</a>
                                 </div>
                                 <div class="input-btn mt-10">
                                     <button class="main-btn" type="submit">login  <i class="fal fa-arrow-right"></i></button>
