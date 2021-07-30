@@ -51,22 +51,39 @@ Route::post('/update-commisions', 'App\Http\Controllers\backEnd\Admin\Commisions
 
 Route::get('/site-setting', 'App\Http\Controllers\backEnd\Admin\SiteSettingController@index');
 Route::get('/admin-role-setting', 'App\Http\Controllers\backEnd\Admin\UserRoleController@index');
+
+
 Route::get('/new-users', 'App\Http\Controllers\backEnd\Admin\UserListController@new_users');
 Route::get('/pending-users', 'App\Http\Controllers\backEnd\Admin\UserListController@pending_users');
+Route::get('/viewSS/{id}', 'App\Http\Controllers\backEnd\Admin\UserListController@viewSS');
+Route::get('/activeUser/{user_id}/{id}', 'App\Http\Controllers\backEnd\Admin\UserListController@activeUser');
 Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListController@active_users');
-
-
 
 
 //user section route
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index');
+Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address');
 Route::get('/user-profile', 'App\Http\Controllers\backEnd\User\UserProfileController@index');
-Route::get('/user-buy-package', 'App\Http\Controllers\backEnd\User\UserPackageController@index');
+
+//package section --------------
+Route::get('/packages', 'App\Http\Controllers\backEnd\User\UserPackageController@index');
+Route::post('/package-buying-process', 'App\Http\Controllers\backEnd\User\UserPackageController@package_buying_process');
+Route::post('/process-completed', 'App\Http\Controllers\backEnd\User\UserPackageController@process_completed');
+
+
+
+
 Route::get('/user-add-member', 'App\Http\Controllers\backEnd\User\AddMembersController@index');
 Route::get('/user-work-station', 'App\Http\Controllers\backEnd\User\WorkStationController@index');
+
+
+
+
+
 
 //frontend
 Route::get('/', function () { return view('frontend/index');});
 Route::post('/contact-message','App\Http\Controllers\frontEnd\FrontEndController@contact_message');
 Route::get('/login-panel', function () { return view('frontend/login');});
-Route::get('/registration', function () { return view('frontend/registration');});
+Route::get('/registration', 'App\Http\Controllers\frontEnd\FrontEndController@registration');
+Route::get('/registration/{slug}','App\Http\Controllers\frontEnd\FrontEndController@registrationbyref');

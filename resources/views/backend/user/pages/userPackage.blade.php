@@ -21,7 +21,6 @@
 									<div class="col-8">
 										<div class="bgl-primary rounded p-3">
 											<h4 class="mb-0">{{$item->package_price}}$</h4>
-											{{-- <small>Years Old</small> --}}
 										</div>
 									</div>
                                     <div class="col-2">
@@ -29,7 +28,13 @@
 								</div>
                             </div>
 							<div class="card-footer mt-0">
-								<button class="btn btn-primary btn-lg btn-block">BUY</button>
+                                <form action="{{url('package-buying-process')}}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="package_name" value="{{$item->package_name}}">
+                                    <input type="hidden" name="id" value="{{$item->id}}">
+                                    <input type="hidden" name="package_price" value="{{$item->package_price}}">
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit">BUY</button>
+                                </form>
                             </div>
                         </div>
 					</div>

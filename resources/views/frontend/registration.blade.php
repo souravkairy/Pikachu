@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
-
+@php
+    $slug =  session::get('slug');
+@endphp
 <head>
 
     <!--====== Required meta tags ======-->
@@ -59,7 +61,7 @@
                             <form action="{{ route('register') }}" method="POST">
                                 @csrf
                                 <div class="input-box mt-10">
-                                    <input type="text" name="ref_from" placeholder="Refered By">
+                                    <input type="text" name="ref_from" placeholder="Refered By" value="{{$slug ?? null}}">
                                 </div>
                                 <div class="input-box mt-10">
                                     <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" required placeholder="Name">
