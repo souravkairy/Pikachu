@@ -70,9 +70,10 @@ Route::post('/process-completed', 'App\Http\Controllers\backEnd\User\UserPackage
 
 
 
-
+//user work station controller -
 Route::get('/user-add-member', 'App\Http\Controllers\backEnd\User\AddMembersController@index');
 Route::get('/user-work-station', 'App\Http\Controllers\backEnd\User\WorkStationController@index');
+Route::get('/update-work-status', 'App\Http\Controllers\backEnd\User\WorkStationController@update_work_status');
 
 
 

@@ -39,6 +39,10 @@
                                             name="package_price" required>
                                     </div>
                                     <div class="form-group">
+                                        <input type="text" class="form-control input" placeholder="Trading Rate Per Day"
+                                            name="trading_rate" required>
+                                    </div>
+                                    <div class="form-group">
                                         <button type="submit" class="btn btn-primary w-100">Submit</button>
                                     </div>
                                 </form>
@@ -62,8 +66,8 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h5 class="mb-1">{{$item->package_name}} <small class="text-muted">{{$item->created_at}}</small></h5>
-                                                    <p class="mb-1">{{$item->package_price}}</p>
-                                                    {{-- <a href="#" class="btn btn-primary btn-xxs shadow">Reply</a> --}}
+                                                    <p class="mb-1">{{$item->package_price}}$</p>
+                                                    <a href="#" class="btn btn-primary btn-xxs shadow">{{$item->trading_rate}}$ Per Task In One day</a>
                                                 </div>
                                                 <div class="dropdown">
                                                     <a href="{{url('delete-package/'.$item->id)}}" class="btn btn-outline-danger btn-xxs">Delete</a>
