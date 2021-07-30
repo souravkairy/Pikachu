@@ -28,7 +28,6 @@ class UserListController extends Controller
     public function pending_users()
     {
         $pendingUsers = ActivePackage::where('status', 2)->get();
-
         $header = view('backend/admin/elements/_header');
         $sidebar = view('backend/admin/elements/_sidebar');
         $footer = view('backend/admin/elements/_footer');
@@ -51,13 +50,15 @@ class UserListController extends Controller
         $user_data['status'] = 1;
         $user_data->save();
 
+        $customer_id = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,8);
         $package_data = ActivePackage::find($id);
         $package_data['status'] = 1;
+        $package_data['customer_id'] = $customer_id;
         $package_data->save();
 
         $ref_data = new RefLink;
         $ref_data['user_id'] = $user_id;
-        $ref_data['ref_link'] = $generateRef = "https://$_SERVER[HTTP_HOST]/". substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,10);;
+        $ref_data['ref_link'] = $generateRef = "https://$_SERVER[HTTP_HOST]/registration/". $customer_id;
         $insert =  $ref_data->save();
 
         if ($insert) {
@@ -65,15 +66,13 @@ class UserListController extends Controller
         }
 
     }
-
-
-
     public function active_users()
     {
+        $activeUsers = ActivePackage::where('status', 1)->get();
         $header = view('backend/admin/elements/_header');
         $sidebar = view('backend/admin/elements/_sidebar');
         $footer = view('backend/admin/elements/_footer');
-        $content = view('backend/admin/pages/activeUsers');
+        $content = view('backend/admin/pages/activeUsers')->with('activeUsers',$activeUsers);
         return view('backend/admin/dashboard/index',compact('header','sidebar','footer','content'));
     }
 

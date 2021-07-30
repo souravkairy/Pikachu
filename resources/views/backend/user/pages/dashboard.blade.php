@@ -207,6 +207,20 @@
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="mb-4">
+                                                        <p class="mb-2">Customer ID</p>
+                                                        @forelse ($activePackages as $item)
+                                                        <li><h4 class="text-black">{!!$item->customer_id!!}</h4></li>
+                                                     @empty
+                                                         <button type="button" class="btn btn-rounded btn-warning"><span
+                                                             class="btn-icon-left text-warning"><i
+                                                                 class="fa fa-eye color-warning"></i>
+                                                         </span>Account Pending</button>
+                                                     @endforelse
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="mb-4">
                                                         <p class="mb-2">Referal Link</p>
                                                         <h4 class="text-black">{!!$refData->ref_link ?? 'No Link Found'!!}</h4>
                                                     </div>

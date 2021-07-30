@@ -82,4 +82,5 @@ Route::get('/user-work-station', 'App\Http\Controllers\backEnd\User\WorkStationC
 Route::get('/', function () { return view('frontend/index');});
 Route::post('/contact-message','App\Http\Controllers\frontEnd\FrontEndController@contact_message');
 Route::get('/login-panel', function () { return view('frontend/login');});
-Route::get('/registration', function () { return view('frontend/registration');});
+Route::get('/registration', 'App\Http\Controllers\frontEnd\FrontEndController@registration');
+Route::get('/registration/{slug}','App\Http\Controllers\frontEnd\FrontEndController@registrationbyref');

@@ -17,6 +17,7 @@ class CreateActivePackagesTable extends Migration
             $table->increments('id');
             $table->string('user_id');
             $table->string('package_id');
+            $table->string('customer_id');
             $table->string('package_name');
             $table->string('screen_shot');
             $table->string('txnId');
