@@ -22,23 +22,11 @@
                                     <div class="card-bx stacked card">
                                         <img src="{{ asset('Backend/assets/images/card/card1.jpg') }}" alt="">
                                         <div class="card-info">
-                                            <p class="mb-1 text-white fs-14">Main Balance</p>
+                                            <p class="mb-1 text-white fs-14">Total Earnings</p>
                                             <div class="d-flex justify-content-between">
                                                 <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
-                                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M19.2744 18.8013H16.0334V23.616H19.2744C19.9286 23.616 20.5354 23.3506 20.9613 22.9053C21.4066 22.4784 21.672 21.8726 21.672 21.1989C21.673 19.8813 20.592 18.8013 19.2744 18.8013Z"
-                                                        fill="white" />
-                                                    <path
-                                                        d="M18 0C8.07429 0 0 8.07429 0 18C0 27.9257 8.07429 36 18 36C27.9257 36 36 27.9247 36 18C36 8.07531 27.9247 0 18 0ZM21.6627 26.3355H19.5398V29.6722H17.3129V26.3355H16.0899V29.6722H13.8528V26.3355H9.91954V24.2414H12.0898V11.6928H9.91954V9.59863H13.8528V6.3288H16.0899V9.59863H17.3129V6.3288H19.5398V9.59863H21.4735C22.5535 9.59863 23.5491 10.044 24.2599 10.7547C24.9706 11.4655 25.416 12.4611 25.416 13.5411C25.416 15.6549 23.7477 17.3798 21.6627 17.4744C24.1077 17.4744 26.0794 19.4647 26.0794 21.9096C26.0794 24.3453 24.1087 26.3355 21.6627 26.3355Z"
-                                                        fill="white" />
-                                                    <path
-                                                        d="M20.7062 15.8441C21.095 15.4553 21.3316 14.9338 21.3316 14.3465C21.3316 13.1812 20.3842 12.2328 19.2178 12.2328H16.0334V16.4695H19.2178C19.7959 16.4695 20.3266 16.2226 20.7062 15.8441Z"
-                                                        fill="white" />
-                                                </svg>
                                             </div>
-                                            <div class="d-flex">
+                                            {{-- <div class="d-flex">
                                                 <div class="mr-4 text-white">
                                                     <p class="fs-12 mb-1 op6">VALID THRU</p>
                                                     <span>08/21</span>
@@ -47,7 +35,7 @@
                                                     <p class="fs-12 mb-1 op6">CARD HOLDER</p>
                                                     <span>Marquezz Silalahi</span>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -55,26 +43,9 @@
                                     <div class="card-bx stacked card">
                                         <img src="{{ asset('Backend/assets/images/card/card2.jpg') }}" alt="">
                                         <div class="card-info">
-                                            <p class="fs-14 mb-1 text-white">Main Balance</p>
+                                            <p class="fs-14 mb-1 text-white">Available Earnings</p>
                                             <div class="d-flex justify-content-between">
                                                 <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
-                                                <svg width="55" height="34" viewBox="0 0 55 34" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="38.0091" cy="16.7788" r="16.7788" fill="white"
-                                                        fill-opacity="0.67" />
-                                                    <circle cx="17.4636" cy="16.7788" r="16.7788" fill="white"
-                                                        fill-opacity="0.67" />
-                                                </svg>
-                                            </div>
-                                            <div class="d-flex">
-                                                <div class="mr-4 text-white">
-                                                    <p class="fs-12 mb-1 op6">VALID THRU</p>
-                                                    <span>08/21</span>
-                                                </div>
-                                                <div class="text-white">
-                                                    <p class="fs-12 mb-1 op6">CARD HOLDER</p>
-                                                    <span>Marquezz Silalahi</span>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -83,26 +54,9 @@
                                     <div class="card-bx stacked card">
                                         <img src="{{ asset('Backend/assets/images/card/card3.jpg') }}" alt="">
                                         <div class="card-info">
-                                            <p class="mb-1 text-white fs-14">Main Balance</p>
+                                            <p class="mb-1 text-white fs-14">Trading Bonous</p>
                                             <div class="d-flex justify-content-between">
                                                 <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
-                                                <svg width="55" height="34" viewBox="0 0 55 34" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="38.0091" cy="16.7788" r="16.7788" fill="white"
-                                                        fill-opacity="0.67" />
-                                                    <circle cx="17.4636" cy="16.7788" r="16.7788" fill="white"
-                                                        fill-opacity="0.67" />
-                                                </svg>
-                                            </div>
-                                            <div class="d-flex">
-                                                <div class="mr-4 text-white">
-                                                    <p class="fs-12 mb-1 op6">VALID THRU</p>
-                                                    <span>08/21</span>
-                                                </div>
-                                                <div class="text-white">
-                                                    <p class="fs-12 mb-1 op6">CARD HOLDER</p>
-                                                    <span>Marquezz Silalahi</span>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -111,26 +65,9 @@
                                     <div class="card-bx stacked card">
                                         <img src="{{ asset('Backend/assets/images/card/card4.jpg') }}" alt="">
                                         <div class="card-info">
-                                            <p class="mb-1 text-white fs-14">Main Balance</p>
+                                            <p class="mb-1 text-white fs-14">Referal Bonous</p>
                                             <div class="d-flex justify-content-between">
                                                 <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
-                                                <svg width="55" height="34" viewBox="0 0 55 34" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <circle cx="38.0091" cy="16.7788" r="16.7788" fill="white"
-                                                        fill-opacity="0.67" />
-                                                    <circle cx="17.4636" cy="16.7788" r="16.7788" fill="white"
-                                                        fill-opacity="0.67" />
-                                                </svg>
-                                            </div>
-                                            <div class="d-flex">
-                                                <div class="mr-4 text-white">
-                                                    <p class="fs-12 mb-1 op6">VALID THRU</p>
-                                                    <span>08/21</span>
-                                                </div>
-                                                <div class="text-white">
-                                                    <p class="fs-12 mb-1 op6">CARD HOLDER</p>
-                                                    <span>Marquezz Silalahi</span>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -181,7 +118,7 @@
                                                                         data-dismiss="modal"><span>&times;</span>
                                                                     </button>
                                                                 </div>
-                                                                <div class="modal-body">ijfdgoihdfjghodfhg03475874jkfj</div>
+                                                                <div class="modal-body">{{$user_data->wallet_address}}</div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-danger light"
                                                                         data-dismiss="modal">Close</button>
@@ -225,40 +162,21 @@
                                                         <h4 class="text-black">{!!$refData->ref_link ?? 'No Link Found'!!}</h4>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6 col-lg-12 col-xxl-12 mb-lg-0 mb-3">
-                                            <p>Earning Limits</p>
-                                            <div class="row">
-                                                <div class="col-sm-4 mb-sm-0 mb-4 text-center">
-                                                    <div class="d-inline-block position-relative donut-chart-sale mb-3">
-                                                        <span class="donut1"
-                                                            data-peity='{ "fill": ["rgb(255, 104, 38)", "rgba(240, 240, 240)"],   "innerRadius": 40, "radius": 10}'>5/8</span>
-                                                        <small>66%</small>
+                                                <div class="col-sm-12">
+                                                    <div class="mb-4">
+                                                        <p>Trading Bonous</p>
+                                                        <h3 class="float-left">1$</h3>
+                                                        <h3 class="float-right">300$</h3>
+                                                        <div class="progress mb-2">
+                                                            <div class="progress-bar progress-animated bg-warning" style="width: 95%"></div>
+                                                        </div>
+                                                        <br>
+                                                        <small>300% Increase in 25 Days</small>
                                                     </div>
-                                                    <h5 class="fs-18 text-black">Total Bonous</h5>
-                                                    <span>$10,000</span>
-                                                </div>
-                                                <div class="col-sm-4 mb-sm-0 mb-4 text-center">
-                                                    <div class="d-inline-block position-relative donut-chart-sale mb-3">
-                                                        <span class="donut1"
-                                                            data-peity='{ "fill": ["rgb(29, 198, 36)", "rgba(240, 240, 240)"],   "innerRadius": 40, "radius": 10}'>4/9</span>
-                                                        <small>31%</small>
-                                                    </div>
-                                                    <h5 class="fs-18 text-black">Referal Bonous</h5>
-                                                    <span>$500</span>
-                                                </div>
-                                                <div class="col-sm-4 text-center">
-                                                    <div class="d-inline-block position-relative donut-chart-sale mb-3">
-                                                        <span class="donut1"
-                                                            data-peity='{ "fill": ["rgb(158, 158, 158)", "rgba(240, 240, 240)"],   "innerRadius": 40, "radius": 10}'>2/8</span>
-                                                        <small>7%</small>
-                                                    </div>
-                                                    <h5 class="fs-18 text-black">Commisions</h5>
-                                                    <span>$100</span>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -269,18 +187,53 @@
                                     <div>
                                         <h4 class="fs-20 text-black">Withdraw</h4>
                                         <p class="mb-0 fs-12">Please Make Sure Your Wallet Is Correct
-                                            <a href="#" class="btn border border-warning text-black fs-12">Set Wallet</a>
+                                            <button type="button" class="btn btn-rounded btn-success mt-2"
+                                            data-toggle="modal" data-target="#basicModal2"><span
+                                                class="btn-icon-left text-success"><i
+                                                    class="fa fa-edit color-success"></i>
+                                            </span>Set Wallet Address</button>
                                         </p>
+
+                                        <div class="modal fade" id="basicModal2">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Set Your Wallet Addres</h5>
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal"><span>&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="basic-form">
+                                                            <form method="POST" action="{{ url('update-wallet-address') }}">
+                                                                @csrf
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control input" placeholder="Enter Your Wallet Address"
+                                                                        name="wallet_address" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <button type="submit" class="btn btn-success w-100">Submit</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger light"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="dropdown custom-dropdown d-block mt-3 mt-sm-0 mb-0">
                                         <div class="btn border border-warning btn-sm d-flex align-items-center svg-btn"
                                             role="button" data-toggle="dropdown" aria-expanded="false">
-                                            <svg class="mr-2" width="42" height="42" viewBox="0 0 42 42" fill="none"
+                                            {{-- <svg class="mr-2" width="42" height="42" viewBox="0 0 42 42" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M21 0C9.40213 0 0.00012207 9.40201 0.00012207 20.9999C0.00012207 32.5978 9.40213 41.9998 21 41.9998C32.5979 41.9998 41.9999 32.5978 41.9999 20.9999C41.9867 9.4075 32.5924 0.0132751 21 0ZM28.5 31.5001H16.5002C15.6717 31.5001 15.0001 30.8286 15.0001 30C15.0001 29.929 15.0052 29.8581 15.0152 29.7876L16.1441 21.8843L13.864 22.4547C13.7449 22.4849 13.6227 22.5 13.5 22.5C12.6715 22.4991 12.0009 21.8271 12.0013 20.9985C12.0022 20.311 12.4701 19.7122 13.137 19.5447L16.6018 18.6786L18.015 8.78723C18.1321 7.96692 18.892 7.39746 19.7123 7.51465C20.5327 7.63184 21.1021 8.39172 20.9849 9.21204L19.7444 17.8931L25.1364 16.545C25.9388 16.3403 26.755 16.8251 26.9592 17.6276C27.1638 18.43 26.679 19.2462 25.8766 19.4508C25.872 19.4518 25.8674 19.4531 25.8629 19.454L19.2857 21.0983L18.2287 28.4999H28.5C29.3286 28.4999 30.0001 29.1714 30.0001 30C30.0001 30.8281 29.3286 31.5001 28.5 31.5001Z"
                                                     fill="#5974D5" />
-                                            </svg>
+                                            </svg> --}}
                                             <span class="text-black fs-16">23,511 USDT</span>
                                         </div>
                                         {{-- <div class="dropdown-menu dropdown-menu-right">

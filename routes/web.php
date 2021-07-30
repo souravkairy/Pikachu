@@ -60,6 +60,7 @@ Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListControll
 
 //user section route
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index');
+Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address');
 Route::get('/user-profile', 'App\Http\Controllers\backEnd\User\UserProfileController@index');
 
 //package section --------------
