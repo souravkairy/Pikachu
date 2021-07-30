@@ -21,7 +21,7 @@ class DashboardController extends Controller
     {
         $user_id = Auth::id();
         $user_data = User::find($user_id);
-        $packageData = ActivePackage::with('matchUser')->where('status',1)->get();
+        $packageData = ActivePackage::where('user_id',$user_id)->where('status',1)->get();
         $refData = RefLink::where('user_id',$user_id)->first();
         $header = view('backend/user/elements/_header');
         $sidebar = view('backend/user/elements/_sidebar');
