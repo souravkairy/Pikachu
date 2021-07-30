@@ -32,19 +32,19 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="">Level-1</label>
-                                        <input type="hidden" name="id" , value="{{$commisionsData->id}}">
+                                        <input type="hidden" name="id" , value="{{$commisionsData->id ?? NULL}}">
                                         <input type="text" class="form-control input" placeholder="Percentage"
-                                            name="levelOnePer" value="{{$commisionsData->levelOnePer}}">
+                                            name="levelOnePer" value="{{$commisionsData->levelOnePer ?? NULL}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Level-2</label>
                                         <input type="text" class="form-control input" placeholder="Percentage"
-                                            name="levelTwoPer" value="{{$commisionsData->levelTwoPer}}">
+                                            name="levelTwoPer" value="{{$commisionsData->levelTwoPer ?? NULL}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Level-3</label>
                                         <input type="text" class="form-control input" placeholder="Percentage"
-                                            name="levelthreePer" value="{{$commisionsData->levelThreePer}}" >
+                                            name="levelthreePer" value="{{$commisionsData->levelThreePer ?? NULL}}" >
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary w-100">Submit</button>
@@ -72,7 +72,7 @@
                                                     <h5 class="mb-1">Level-1</h5>
                                                 </div>
                                                 <div class="dropdown">
-                                                    <a href="#" class="btn btn-outline-primary btn-xxs">{{$commisionsData->levelOnePer}}%</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-xxs">{{$commisionsData->levelOnePer ?? NULL}}%</a>
                                                 </div>
                                             </div>
                                         </li>
@@ -85,7 +85,7 @@
                                                     <h5 class="mb-1">Level-2</h5>
                                                 </div>
                                                 <div class="dropdown">
-                                                    <a href="#" class="btn btn-outline-primary btn-xxs">{{$commisionsData->levelTwoPer}}%</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-xxs">{{$commisionsData->levelTwoPer ?? NULL}}%</a>
                                                 </div>
                                             </div>
                                         </li>
@@ -98,7 +98,7 @@
                                                     <h5 class="mb-1">Level-3</h5>
                                                 </div>
                                                 <div class="dropdown">
-                                                    <a href="#" class="btn btn-outline-primary btn-xxs">{{$commisionsData->levelThreePer}}%</a>
+                                                    <a href="#" class="btn btn-outline-primary btn-xxs">{{$commisionsData->levelThreePer ?? NULL}}%</a>
                                                 </div>
                                             </div>
                                         </li>

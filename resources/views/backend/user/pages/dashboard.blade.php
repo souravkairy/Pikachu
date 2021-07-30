@@ -24,7 +24,8 @@
                                         <div class="card-info">
                                             <p class="mb-1 text-white fs-14">Total Earnings</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->traiding_bonous + $user_data->ref_commision
+                                                ?? NULL}}</h2>
                                             </div>
                                             {{-- <div class="d-flex">
                                                 <div class="mr-4 text-white">
@@ -56,7 +57,7 @@
                                         <div class="card-info">
                                             <p class="mb-1 text-white fs-14">Trading Bonous</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->traiding_bonous ?? NULL}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -65,9 +66,9 @@
                                     <div class="card-bx stacked card">
                                         <img src="{{ asset('Backend/assets/images/card/card4.jpg') }}" alt="">
                                         <div class="card-info">
-                                            <p class="mb-1 text-white fs-14">Referal Bonous</p>
+                                            <p class="mb-1 text-white fs-14">Referal Commision</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->ref_commision ?? NULL}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +81,6 @@
                 </div>
                 <div class="col-xl-9 col-xxl-8">
                     <div class="row">
-
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
@@ -89,14 +89,14 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
-                                                        <p class="mb-2">User Name</p>
-                                                        <h4 class="text-black">Kibria Malik</h4>
+                                                        <p class="mb-2">Name</p>
+                                                        <h4 class="text-black">{{$user_data->name}}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Refered By</p>
-                                                        <h4 class="text-black">Sourav</h4>
+                                                        <h4 class="text-black">{{$user_data->ref_from ?? NULL}}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -193,37 +193,6 @@
                                                     class="fa fa-edit color-success"></i>
                                             </span>Set Wallet Address</button>
                                         </p>
-
-                                        <div class="modal fade" id="basicModal2">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Set Your Wallet Addres</h5>
-                                                        <button type="button" class="close"
-                                                            data-dismiss="modal"><span>&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="basic-form">
-                                                            <form method="POST" action="{{ url('update-wallet-address') }}">
-                                                                @csrf
-                                                                <div class="form-group">
-                                                                    <input type="text" class="form-control input" placeholder="Enter Your Wallet Address"
-                                                                        name="wallet_address" required>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <button type="submit" class="btn btn-success w-100">Submit</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger light"
-                                                            data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="dropdown custom-dropdown d-block mt-3 mt-sm-0 mb-0">
                                         <div class="btn border border-warning btn-sm d-flex align-items-center svg-btn"
@@ -267,32 +236,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-12  mt-4">
+                <div class="col-xl-12">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-header pb-2 d-block d-sm-flex flex-wrap border-0">
                                     <div class="mb-3">
-                                        <h4 class="fs-20 text-black">Wallet Activity</h4>
+                                        <h4 class="fs-20 text-black">Withdraw Status</h4>
                                         <p class="mb-0 fs-13">Lorem ipsum dolor sit amet, consectetur</p>
                                     </div>
                                     <div class="card-action card-tabs mb-3 style-1">
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" data-toggle="tab" href="#monthly" role="tab">
-                                                    Monthly
+                                                    Pending
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" data-toggle="tab" href="#Weekly" role="tab">
-                                                    Weekly
+                                                    Completed
                                                 </a>
                                             </li>
-                                            <li class="nav-item">
+                                            {{-- <li class="nav-item">
                                                 <a class="nav-link" data-toggle="tab" href="#Today" role="tab">
                                                     Today
                                                 </a>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
                                 </div>
@@ -798,5 +767,37 @@
     <!--**********************************
                 Content body end
             ***********************************-->
+
+{{-- //modal for set wallet_address --}}
+<div class="modal fade" id="basicModal2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Set Your Wallet Addres</h5>
+                <button type="button" class="close"
+                    data-dismiss="modal"><span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="basic-form">
+                    <form method="POST" action="{{ url('update-wallet-address') }}">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" class="form-control input" placeholder="Enter Your Wallet Address"
+                                name="wallet_address" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success w-100">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger light"
+                    data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection

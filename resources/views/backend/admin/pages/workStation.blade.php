@@ -21,7 +21,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">Youtube Link - 1</span>
                                         </div>
-                                        <input type="hidden" name="id" value="{{$alldata->id}}">
+                                        <input type="hidden" name="id" value="{{$alldata->id ?? NULL}}">
                                         <input type="text" class="form-control" name="link1" value={{$alldata->link1 ?? NULL }}>
                                     </div>
                                 </div>
