@@ -64,6 +64,9 @@
                                     <input type="text" name="ref_from" placeholder="Refered By" value="{{$slug ?? null}}">
                                 </div>
                                 <div class="input-box mt-10">
+                                    <input type="hidden" name="status" value="2">
+                                </div>
+                                <div class="input-box mt-10">
                                     <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name') }}" required placeholder="Name">
 
                                     @error('name')
@@ -73,18 +76,30 @@
                                     @enderror
                                 </div>
                                 <div class="input-box mt-10">
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="Email Address">
+                                    <input class="form-control @error('sure_name') is-invalid @enderror" type="text" name="sure_name" value="{{ old('sure_name') }}" required placeholder="Surname">
 
-                                    @error('email')
+                                    @error('sure_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="input-box mt-10">
-                                    <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required placeholder="Username">
+                                    <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone" value="{{ old('phone') }}" required placeholder="Phone">
 
-                                    @error('username')
+                                    @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="input-box mt-10">
+                                    <input class="form-control @error('date_of_birth') is-invalid @enderror" type="date" name="date_of_birth" value="{{ old('date_of_birth') }}" placeholder="Date Of Birth">
+                                </div>
+                                <div class="input-box mt-10">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required placeholder="Email Address">
+
+                                    @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
