@@ -1,10 +1,6 @@
 @extends('backend.admin.dashboard.index')
 @section('content')
-@php
-//    echo "<pre>";
-//    print_r($activePackages);
-//    exit();
-@endphp
+
     <!--**********************************
                 Content body start
             ***********************************-->
@@ -46,7 +42,8 @@
                                         <div class="card-info">
                                             <p class="fs-14 mb-1 text-white">Available Earnings</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->traiding_bonous + $user_data->ref_commision
+                                                    ?? NULL}}</h2>
                                             </div>
                                         </div>
                                     </div>
