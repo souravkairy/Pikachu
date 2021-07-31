@@ -96,7 +96,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Refered By</p>
-                                                        <h4 class="text-black">{{$user_data->ref_from ?? NULL}}</h4>
+                                                        <h4 class="text-black">{{$user_data->ref_from ?? 'From No One'}}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -142,7 +142,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-12">
+                                                <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Customer ID</p>
                                                         @forelse ($activePackages as $item)
@@ -156,10 +156,24 @@
 
                                                     </div>
                                                 </div>
+                                                <div class="col-sm-6">
+                                                    <div class="mb-4">
+                                                        <p class="mb-2">DownLine Members</p>
+                                                        <li><h6 class="text-black">First Level : 20p</h6></li>
+                                                        <li><h6 class="text-black">Second Level : 50p</h6></li>
+                                                        <li><h6 class="text-black">Third Level : 100p</h6></li>
+                                                    </div>
+                                                </div>
                                                 <div class="col-sm-12">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Referal Link</p>
-                                                        <h4 class="text-black">{!!$refData->ref_link ?? 'No Link Found'!!}</h4>
+                                                        @if ($user_data->ref_link)
+                                                        <h4 class="text-black">{!!"https://$_SERVER[HTTP_HOST]/registration/".$user_data->ref_link!!}</h4>
+                                                        @else
+                                                        <h4 class="text-black">No Link Found</h4>
+                                                        @endif
+
+                                                        {{-- <h4 class="text-black">{!!$refData->ref_link ?? 'No Link Found'!!}</h4> --}}
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">

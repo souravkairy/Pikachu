@@ -41,4 +41,27 @@ class DashboardController extends Controller
         }
 
     }
+    public function downline_memebers()
+    {
+        $user_id = Auth::id();
+        $user_data = User::find($user_id);
+
+        $reflink = $user_data->ref_link;
+        $level1 = User::where('ref_from',$reflink)->select('ref_link')->get();
+        $level2 = User::whereIn('ref_from',$level1)->select('ref_link')->get();
+        $level3 = User::whereIn('ref_from',$level2)->select('ref_link')->get();
+
+        // echo "<pre>";
+        // print_r($level2);
+        // exit();
+
+
+
+
+        $header = view('backend/user/elements/_header');
+        $sidebar = view('backend/user/elements/_sidebar');
+        $footer = view('backend/user/elements/_footer');
+        $content = view('backend/user/pages/dowlineMembers')->with('level1',$level1)->with('level2',$level2)->with('level3',$level3);
+        return view('backend/user/dashboard/index',compact('header','sidebar','footer','content'));
+    }
 }

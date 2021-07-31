@@ -46,11 +46,13 @@ class UserListController extends Controller
     }
     public function activeUser($user_id, $id)
     {
+        $customer_id = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,8);
         $user_data = User::find($user_id);
         $user_data['status'] = 1;
+        $user_data['ref_link'] =  $customer_id;
         $user_data->save();
 
-        $customer_id = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,8);
+
         $package_data = ActivePackage::find($id);
         $package_data['status'] = 1;
         $package_data['customer_id'] = $customer_id;

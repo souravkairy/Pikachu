@@ -17,15 +17,20 @@
 							<span class="nav-text">Work Station</span>
 						</a>
                     </li>
-                    <li><a href="{!!url('user-add-member')!!}" aria-expanded="false">
-							<i class="flaticon-061-puzzle"></i>
-							<span class="nav-text">Add Member</span>
-						</a>
-                    </li>
                     <li><a href="{!!url('packages')!!}" aria-expanded="false">
 							<i class="flaticon-003-diamond"></i>
 							<span class="nav-text">Buy Package</span>
 						</a>
+                    </li>
+                    <li><a href="{!!url('user-add-member')!!}" aria-expanded="false">
+                        <i class="flaticon-061-puzzle"></i>
+                        <span class="nav-text">Add Member</span>
+                    </a>
+                    </li>
+                    <li><a href="{!!url('downline-members')!!}" aria-expanded="false">
+                        <i class="flaticon-381-network"></i>
+                        <span class="nav-text">Downline Members</span>
+                    </a>
                     </li>
 
                 </ul>
