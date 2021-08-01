@@ -156,9 +156,9 @@
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">DownLine Members</p>
-                                                        <li><h6 class="text-black">First Level : 20p</h6></li>
-                                                        <li><h6 class="text-black">Second Level : 50p</h6></li>
-                                                        <li><h6 class="text-black">Third Level : 100p</h6></li>
+                                                        <li><h6 class="text-black">First Level : {{$firstLevelIncome->count() ?? 'No one'}}p</h6></li>
+                                                        <li><h6 class="text-black">Second Level : {{$secondLevelIncome->count()  ?? 'No one'}}p</h6></li>
+                                                        <li><h6 class="text-black">Third Level : {{$thirdLevelIncome->count()  ?? 'No one'}}p</h6></li>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
