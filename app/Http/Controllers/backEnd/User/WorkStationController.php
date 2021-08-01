@@ -26,7 +26,7 @@ class WorkStationController extends Controller
         $header = view('backend/user/elements/_header');
         $sidebar = view('backend/user/elements/_sidebar');
         $footer = view('backend/user/elements/_footer');
-        if ($user_data->task_status == 2) {
+        if ($user_data->task_status == 'completed') {
             return view('backend/user/dashboard/index',compact('header','sidebar','footer'));
         }
         $content = view('backend/user/pages/userWorkStation')->with('dailyWorks',$dailyWorks);

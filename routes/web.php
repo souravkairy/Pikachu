@@ -60,10 +60,13 @@ Route::get('/activeUser/{user_id}/{id}', 'App\Http\Controllers\backEnd\Admin\Use
 Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListController@active_users');
 
 
-//user section route
+//user section route------------------------------------------
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index');
 Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address');
 Route::get('/user-profile', 'App\Http\Controllers\backEnd\User\UserProfileController@index');
+
+//downline member route
+Route::get('/downline-members', 'App\Http\Controllers\backEnd\User\DashboardController@downline_memebers');
 
 //package section --------------
 Route::get('/packages', 'App\Http\Controllers\backEnd\User\UserPackageController@index');

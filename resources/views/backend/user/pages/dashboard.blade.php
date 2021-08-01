@@ -1,10 +1,6 @@
 @extends('backend.admin.dashboard.index')
 @section('content')
-@php
-//    echo "<pre>";
-//    print_r($activePackages);
-//    exit();
-@endphp
+
     <!--**********************************
                 Content body start
             ***********************************-->
@@ -46,7 +42,8 @@
                                         <div class="card-info">
                                             <p class="fs-14 mb-1 text-white">Available Earnings</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">$673,412.66</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->traiding_bonous + $user_data->ref_commision
+                                                    ?? NULL}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +93,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Refered By</p>
-                                                        <h4 class="text-black">{{$user_data->ref_from ?? NULL}}</h4>
+                                                        <h4 class="text-black">{{$user_data->ref_from ?? 'From No One'}}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -142,7 +139,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-12">
+                                                <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Customer ID</p>
                                                         @forelse ($activePackages as $item)
@@ -156,10 +153,24 @@
 
                                                     </div>
                                                 </div>
+                                                <div class="col-sm-6">
+                                                    <div class="mb-4">
+                                                        <p class="mb-2">DownLine Members</p>
+                                                        <li><h6 class="text-black">First Level : {{$firstLevelIncome->count() ?? 'No one'}}p</h6></li>
+                                                        <li><h6 class="text-black">Second Level : {{$secondLevelIncome->count()  ?? 'No one'}}p</h6></li>
+                                                        <li><h6 class="text-black">Third Level : {{$thirdLevelIncome->count()  ?? 'No one'}}p</h6></li>
+                                                    </div>
+                                                </div>
                                                 <div class="col-sm-12">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Referal Link</p>
-                                                        <h4 class="text-black">{!!$refData->ref_link ?? 'No Link Found'!!}</h4>
+                                                        @if ($user_data->ref_link)
+                                                        <h4 class="text-black">{!!"https://$_SERVER[HTTP_HOST]/registration/".$user_data->ref_link!!}</h4>
+                                                        @else
+                                                        <h4 class="text-black">No Link Found</h4>
+                                                        @endif
+
+                                                        {{-- <h4 class="text-black">{!!$refData->ref_link ?? 'No Link Found'!!}</h4> --}}
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">

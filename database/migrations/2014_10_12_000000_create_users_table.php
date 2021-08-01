@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('ref_from')->nullable();
+            $table->string('ref_link')->nullable();
             $table->string('ref_commision')->nullable();
             $table->string('traiding_bonous')->nullable();
             $table->string('wallet_address')->nullable();

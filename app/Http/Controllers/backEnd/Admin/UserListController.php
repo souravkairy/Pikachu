@@ -8,7 +8,7 @@ use App\Models\ActivePackage;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\PackageSetting;
-use App\Models\RefLink;
+// use App\Models\RefLink;
 
 class UserListController extends Controller
 {
@@ -46,20 +46,22 @@ class UserListController extends Controller
     }
     public function activeUser($user_id, $id)
     {
+        $customer_id = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,8);
         $user_data = User::find($user_id);
         $user_data['status'] = 1;
+        $user_data['ref_link'] =  $customer_id;
         $user_data->save();
 
-        $customer_id = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,8);
+
         $package_data = ActivePackage::find($id);
         $package_data['status'] = 1;
         $package_data['customer_id'] = $customer_id;
-        $package_data->save();
+        $insert = $package_data->save();
 
-        $ref_data = new RefLink;
-        $ref_data['user_id'] = $user_id;
-        $ref_data['ref_link'] = $generateRef = "https://$_SERVER[HTTP_HOST]/registration/". $customer_id;
-        $insert =  $ref_data->save();
+        // $ref_data = new RefLink;
+        // $ref_data['user_id'] = $user_id;
+        // $ref_data['ref_link'] = $generateRef = "https://$_SERVER[HTTP_HOST]/registration/". $customer_id;
+        // $insert =  $ref_data->save();
 
         if ($insert) {
             return redirect()->back();

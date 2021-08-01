@@ -61,7 +61,7 @@
                             <form action="{{ route('register') }}" method="POST">
                                 @csrf
                                 <div class="input-box mt-10">
-                                    <input type="text" name="ref_from" placeholder="Refered By" value="{{$slug ?? null}}">
+                                    <input type="text" name="ref_from" placeholder="Refered By" value="{{$slug ?? null}}" readonly>
                                 </div>
                                 <div class="input-box mt-10">
                                     <input type="hidden" name="status" value="2">
