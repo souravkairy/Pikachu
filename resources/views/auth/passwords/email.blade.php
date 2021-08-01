@@ -52,6 +52,11 @@
                            <a> <h3 class="title">{{ __('Reset Your Password') }}</h3></a>
                         </div>
                         <div class="login-input">
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                             <form action="{{ route('password.email') }}" method="POST">
                                 @csrf
                                 <div class="input-box mt-10">
