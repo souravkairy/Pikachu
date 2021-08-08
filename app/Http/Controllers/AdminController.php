@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Admin;
+use App\Models\ActivePackage;
+use App\Models\User;
+use App\Models\PackageSetting;
+use App\Models\Withdraw;
+use App\Models\Contact;
 class AdminController extends Controller
 {
         /**
@@ -25,10 +30,20 @@ class AdminController extends Controller
      */
     public function index()
     {
+        // $contactMessage = Contact::all();
+        $withdraw = Withdraw::sum('withdraw_amount');
+        $totalActivePackageAmount = ActivePackage::sum('package_price');
+        $activePackages = ActivePackage::count('id');
+        $pendingUsers = ActivePackage::where('customer_id', '')->count('id');
+        $newUser = User::where('status',2)->count('id');
+        // $header = view('backend/admin/elements/_header')->with('contactMessage',$contactMessage);
         $header = view('backend/admin/elements/_header');
         $sidebar = view('backend/admin/elements/_sidebar');
         $footer = view('backend/admin/elements/_footer');
-        $content = view('backend/admin/pages/dashboard');
+        $content = view('backend/admin/pages/dashboard')->with('activePackages',$activePackages)
+        ->with('pendingUsers',$pendingUsers)->with('newUser',$newUser)
+        ->with('totalActivePackageAmount',$totalActivePackageAmount)
+        ->with('withdraw',$withdraw);
         return view('backend/admin/dashboard/index',compact('header','sidebar','footer','content'));
     }
 

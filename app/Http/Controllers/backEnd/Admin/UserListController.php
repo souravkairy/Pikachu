@@ -46,17 +46,32 @@ class UserListController extends Controller
     }
     public function activeUser($user_id, $id)
     {
-        $customer_id = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,8);
-        $user_data = User::find($user_id);
-        $user_data['status'] = 1;
-        $user_data['ref_link'] =  $customer_id;
-        $user_data->save();
+        $ss = ActivePackage::where('user_id',$user_id)->first();
+
+        if ($ss->customer_id == !NULL) {
+
+            $package_data = ActivePackage::find($id);
+            $package_data['status'] = 1;
+            $package_data['customer_id'] = $ss->customer_id;
+            $insert = $package_data->save();
+
+        }
+        else{
+
+            $customer_id = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,8);
+            $user_data = User::find($user_id);
+            $user_data['status'] = 1;
+            $user_data['ref_link'] =  $customer_id;
+            $user_data->save();
 
 
-        $package_data = ActivePackage::find($id);
-        $package_data['status'] = 1;
-        $package_data['customer_id'] = $customer_id;
-        $insert = $package_data->save();
+            $package_data = ActivePackage::find($id);
+            $package_data['status'] = 1;
+            $package_data['customer_id'] = $customer_id;
+            $insert = $package_data->save();
+        }
+
+
 
         // $ref_data = new RefLink;
         // $ref_data['user_id'] = $user_id;

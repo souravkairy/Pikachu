@@ -9,6 +9,7 @@ use App\Models\WalletSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 use Session;
 
 class UserPackageController extends Controller
@@ -30,7 +31,21 @@ class UserPackageController extends Controller
     }
     public function package_buying_process(request $request)
     {
-        $userId = Auth::id();
+        $user_id = Auth::id();
+        $dd = ActivePackage::find($user_id);
+        if ($dd == !null) {
+            // $dff = $dd->customer_id;
+            // session::put('dff', $dff);
+            $walletAddress = WalletSetting::find(1);
+            $packageId = $request->id;
+            $package_name = $request->package_name;
+            $package_price = $request->package_price;
+            session::put('packageId', $packageId);
+            session::put('package_name', $package_name);
+            session::put('package_price', $package_price);
+            session::put('userId', $user_id);
+        }else{
+
         $walletAddress = WalletSetting::find(1);
         $packageId = $request->id;
         $package_name = $request->package_name;
@@ -38,8 +53,12 @@ class UserPackageController extends Controller
         session::put('packageId', $packageId);
         session::put('package_name', $package_name);
         session::put('package_price', $package_price);
-        session::put('userId', $userId);
+        session::put('userId', $user_id);
 
+
+        // session::put('dff', '');
+
+        }
         $header = view('backend/user/elements/_header');
         $sidebar = view('backend/user/elements/_sidebar');
         $footer = view('backend/user/elements/_footer');
@@ -49,18 +68,25 @@ class UserPackageController extends Controller
     public function process_completed(request $request)
     {
 
+
         $validated = $request->validate([
             'user_id' => 'required',
             'package_id' => 'required',
             'txnId' => 'required',
             'screen_shot' => 'required',
         ]);
-        if ($request) {
+        if ($validated) {
+
+            // echo "<pre>";
+            // print_r($request->all());
+            // exit();
             $data = new ActivePackage;
             $data['user_id'] = $request->user_id;
             $data['package_id'] = $request->package_id;
             $data['package_name'] = $request->package_name;
+            $data['package_price'] = $request->package_price;
             $data['txnId'] = $request->txnId;
+            // $data['customer_id'] = $request->dff;
             $data['status'] = 2;
             // $data['screen_shot'] = $request->screen_shot;
             $data['created_at'] = date("Y/m/d H:i:s");

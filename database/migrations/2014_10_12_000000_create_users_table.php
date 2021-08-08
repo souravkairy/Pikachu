@@ -23,8 +23,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('ref_from')->nullable();
             $table->string('ref_link')->nullable();
-            $table->string('ref_commision')->nullable();
-            $table->string('traiding_bonous')->nullable();
+            $table->string('ref_commision')->default(0);
+            $table->string('traiding_bonous')->default(0);
+            $table->string('remaining_balance')->default(0);
             $table->string('wallet_address')->nullable();
             $table->enum('task_status', ['pending', 'completed']);
             $table->integer('status');
