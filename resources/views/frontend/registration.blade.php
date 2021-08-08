@@ -76,7 +76,7 @@
                                     @enderror
                                 </div>
                                 <div class="input-box mt-10">
-                                    <input class="form-control @error('sure_name') is-invalid @enderror" type="text" name="sure_name" value="{{ old('sure_name') }}" required placeholder="Surname">
+                                    <input class="form-control @error('sure_name') is-invalid @enderror" type="text" name="sure_name" value="{{ old('sure_name') }}" placeholder="Surname">
 
                                     @error('sure_name')
                                         <span class="invalid-feedback" role="alert">
@@ -85,7 +85,7 @@
                                     @enderror
                                 </div>
                                 <div class="input-box mt-10">
-                                    <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone" value="{{ old('phone') }}" required placeholder="Phone">
+                                    <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone" value="{{ old('phone') }}"  placeholder="Phone">
 
                                     @error('phone')
                                         <span class="invalid-feedback" role="alert">

@@ -86,7 +86,7 @@
                                 </div> <!-- navbar collapse -->
                                 <div class="navbar-btn d-none d-sm-flex">
                                     <ul>
-                                        <li><a class="main-btn" href="{{url('login-panel')}}">login</a></li>
+                                        <li><a class="main-btn" href="{{route('login-panel')}}">login</a></li>
                                         <li><a class="main-btn-2 main-btn" href="{{url('registration')}}">signup</a></li>
                                     </ul>
                                 </div>

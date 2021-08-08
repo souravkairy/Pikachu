@@ -57,7 +57,7 @@
                         <span class="nav-text">Site-Setting</span>
                     </a>
                 </li>
-                <li><a href="#" aria-expanded="false">
+                <li><a href="{{route('user-role')}}" aria-expanded="false">
                         <i class="flaticon-044-file"></i>
                         <span class="nav-text">Admin-Role-Setting</span>
                     </a>

@@ -7,22 +7,30 @@ Auth::routes(['verify' => true]);
 
 //user section Auth-------------
 Route::get('/password/change', 'App\Http\Controllers\HomeController@changePassword')->name('password.change');
-Route::post('/password/update', 'App\Http\Controllers\HomeController@updatePassword')->name('password.update');
+Route::post('/password/update', 'App\Http\Controllers\HomeController@updatePassword')->name('password.updated');
 Route::get('/logout', 'App\Http\Controllers\HomeController@Logout');
 
 //admin section Auth-------------
 Route::get('admin/home', 'App\Http\Controllers\AdminController@index');
 Route::get('admin', 'App\Http\Controllers\Admin\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin', 'App\Http\Controllers\Admin\LoginController@login');
+Route::get('admin/logout','App\Http\Controllers\AdminController@logout')->name('admin.logout');
+
+//Admin user role
+Route::get('admin/User-role/create', 'App\Http\Controllers\backend\Admin\UserRoleController@UserCreate')->name('user-role');
+Route::post('admin/User-role/Store', 'App\Http\Controllers\backend\Admin\UserRoleController@UserStore')->name('store-admin');
+Route::get('delete/admin/{id}', 'App\Http\Controllers\backend\Admin\UserRoleController@UserDelete');
+// Route::get('edit/admin/{id}', [ReportController::class, 'UserEdit']);
+// Route::post('admin/update/admin', [ReportController::class, 'UserUpdate'])->name('update-admin');
 
 //Admin Password Reset Routes----
-Route::get('admin/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('admin.password.request');
-Route::post('admin-password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('admin.password.email');
-Route::get('admin/reset/password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('admin.password.reset');
-Route::post('admin/update/reset', [ResetPasswordController::class, 'reset'])->name('admin.reset.update');
-Route::get('/admin/Change/Password', 'App\Http\Controllers\AdminController@ChangePassword')->name('admin.password.change');
-Route::post('/admin/password/update', 'App\Http\Controllers\AdminController@Update_pass')->name('admin.password.update');
-Route::get('admin/logout','App\Http\Controllers\AdminController@logout')->name('admin.logout');
+// Route::get('admin/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('admin.password.request');
+// Route::post('admin-password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('admin.password.email');
+// Route::get('admin/reset/password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('admin.password.reset');
+// Route::post('admin/update/reset', [ResetPasswordController::class, 'reset'])->name('admin.reset.update');
+// Route::get('/admin/Change/Password', 'App\Http\Controllers\AdminController@ChangePassword')->name('admin.password.change');
+// Route::post('/admin/password/update', 'App\Http\Controllers\AdminController@Update_pass')->name('admin.password.update');
+
 
 //admin section route
 
@@ -88,6 +96,6 @@ Route::get('/update-work-status', 'App\Http\Controllers\backEnd\User\WorkStation
 //frontend
 Route::get('/', function () { return view('frontend/index');});
 Route::post('/contact-message','App\Http\Controllers\frontEnd\FrontEndController@contact_message');
-Route::get('/login-panel', function () { return view('frontend/login');});
+Route::get('/login-panel', function () { return view('frontend/login');})->name('login-panel');
 Route::get('/registration', 'App\Http\Controllers\frontEnd\FrontEndController@registration');
 Route::get('/registration/{slug}','App\Http\Controllers\frontEnd\FrontEndController@registrationbyref');
