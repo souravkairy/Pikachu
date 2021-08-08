@@ -76,10 +76,15 @@ Route::get('/user-profile', 'App\Http\Controllers\backEnd\User\UserProfileContro
 //downline member route
 Route::get('/downline-members', 'App\Http\Controllers\backEnd\User\DashboardController@downline_memebers');
 
+//withdraw request route
+Route::post('/withdraw_request', 'App\Http\Controllers\backEnd\User\WithdrawController@withdraw_request');
+
 //package section --------------
 Route::get('/packages', 'App\Http\Controllers\backEnd\User\UserPackageController@index');
 Route::post('/package-buying-process', 'App\Http\Controllers\backEnd\User\UserPackageController@package_buying_process');
 Route::post('/process-completed', 'App\Http\Controllers\backEnd\User\UserPackageController@process_completed');
+
+
 
 
 

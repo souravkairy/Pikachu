@@ -39,6 +39,7 @@ class WorkStationController extends Controller
         $user_data = User::find($user_id);
         $user_data['task_status'] = 2;
         $user_data['traiding_bonous'] = $user_data->traiding_bonous + 10;
+        $user_data['remaining_balance'] = $user_data->remaining_balance + 10;
         $insert = $user_data->save();
 
         // $dd = 3;

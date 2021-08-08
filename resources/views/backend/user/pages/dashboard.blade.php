@@ -16,11 +16,11 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="card-bx stacked card">
-                                        <img src="{{ asset('Backend/assets/images/card/card1.jpg') }}" alt="">
+                                        <img src="{{ asset('BackEnd/assets/images/card/card1.jpg') }}" alt="">
                                         <div class="card-info">
                                             <p class="mb-1 text-white fs-14">Total Earnings</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->traiding_bonous + $user_data->ref_commision
+                                                <h2 class="num-text text-white mb-5 font-w600">${{$totalIncome = $user_data->traiding_bonous + $user_data->ref_commision
                                                 ?? NULL}}</h2>
                                             </div>
                                             {{-- <div class="d-flex">
@@ -38,11 +38,11 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="card-bx stacked card">
-                                        <img src="{{ asset('Backend/assets/images/card/card2.jpg') }}" alt="">
+                                        <img src="{{ asset('BackEnd/assets/images/card/card2.jpg') }}" alt="">
                                         <div class="card-info">
                                             <p class="fs-14 mb-1 text-white">Available Earnings</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->traiding_bonous + $user_data->ref_commision
+                                                <h2 class="num-text text-white mb-5 font-w600">${{$remaining_balance = $user_data->remaining_balance
                                                     ?? NULL}}</h2>
                                             </div>
                                         </div>
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="card-bx stacked card">
-                                        <img src="{{ asset('Backend/assets/images/card/card3.jpg') }}" alt="">
+                                        <img src="{{ asset('BackEnd/assets/images/card/card3.jpg') }}" alt="">
                                         <div class="card-info">
                                             <p class="mb-1 text-white fs-14">Trading Bonous</p>
                                             <div class="d-flex justify-content-between">
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="card-bx stacked card">
-                                        <img src="{{ asset('Backend/assets/images/card/card4.jpg') }}" alt="">
+                                        <img src="{{ asset('BackEnd/assets/images/card/card4.jpg') }}" alt="">
                                         <div class="card-info">
                                             <p class="mb-1 text-white fs-14">Referal Commision</p>
                                             <div class="d-flex justify-content-between">
@@ -195,7 +195,7 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-header d-sm-flex d-block pb-0 border-0">
-                                    <div>
+                                    <div style="width: 60%">
                                         <h4 class="fs-20 text-black">Withdraw</h4>
                                         <p class="mb-0 fs-12">Please Make Sure Your Wallet Is Correct
                                             <button type="button" class="btn btn-rounded btn-success mt-2"
@@ -208,40 +208,47 @@
                                     <div class="dropdown custom-dropdown d-block mt-3 mt-sm-0 mb-0">
                                         <div class="btn border border-warning btn-sm d-flex align-items-center svg-btn"
                                             role="button" data-toggle="dropdown" aria-expanded="false">
-                                            {{-- <svg class="mr-2" width="42" height="42" viewBox="0 0 42 42" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M21 0C9.40213 0 0.00012207 9.40201 0.00012207 20.9999C0.00012207 32.5978 9.40213 41.9998 21 41.9998C32.5979 41.9998 41.9999 32.5978 41.9999 20.9999C41.9867 9.4075 32.5924 0.0132751 21 0ZM28.5 31.5001H16.5002C15.6717 31.5001 15.0001 30.8286 15.0001 30C15.0001 29.929 15.0052 29.8581 15.0152 29.7876L16.1441 21.8843L13.864 22.4547C13.7449 22.4849 13.6227 22.5 13.5 22.5C12.6715 22.4991 12.0009 21.8271 12.0013 20.9985C12.0022 20.311 12.4701 19.7122 13.137 19.5447L16.6018 18.6786L18.015 8.78723C18.1321 7.96692 18.892 7.39746 19.7123 7.51465C20.5327 7.63184 21.1021 8.39172 20.9849 9.21204L19.7444 17.8931L25.1364 16.545C25.9388 16.3403 26.755 16.8251 26.9592 17.6276C27.1638 18.43 26.679 19.2462 25.8766 19.4508C25.872 19.4518 25.8674 19.4531 25.8629 19.454L19.2857 21.0983L18.2287 28.4999H28.5C29.3286 28.4999 30.0001 29.1714 30.0001 30C30.0001 30.8281 29.3286 31.5001 28.5 31.5001Z"
-                                                    fill="#5974D5" />
-                                            </svg> --}}
-                                            <span class="text-black fs-16">23,511 USDT</span>
+                                            <span class="text-black fs-16">{{$remaining_balance}} USDT</span>
                                         </div>
-                                        {{-- <div class="dropdown-menu dropdown-menu-right">
-												<a href="#" class="dropdown-item">345,455 ETH</a>
-												<a href="#" class="dropdown-item ">789,123 BTH</a>
-											</div> --}}
+
                                     </div>
                                 </div>
                                 <div class="card-body">
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                    <form action="{{url('withdraw_request')}}" method="POST">
+                                    @csrf
                                     <div class="form-wrapper">
                                         <div class="form-group">
                                             <div class="input-group input-group-lg">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Amount USDT</span>
                                                 </div>
-                                                <input type="number" class="form-control" placeholder="742.2">
+                                                <input type="text" class="form-control" placeholder="742.2" name="withdraw_amount">
+                                                <input type="hidden" value="{{$user_data->wallet_address ?? null}}" name="wallet_address">
+                                                <input type="hidden" value="{!!$item->customer_id ?? null !!}" name="customer_id">
+                                                <input type="hidden" name="user_id" value="{{$user_data->id}}">
+                                                <input type="hidden" value="{{$remaining_balance}}" name="remaining_balance">
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row pt-5 align-items-center">
                                         <div class="col-sm-6 mb-2">
-                                            <p class="mb-0 fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                sed do eiusmod tempor incididunt ut</p>
+                                            <p class="mb-0 fs-14">5% charge will be diducted as a widthdraw fee</p>
                                         </div>
                                         <div class="col-sm-6 mb-2">
-                                            <a href="javascript:void(0);" class="btn btn-secondary d-block">Withdraw Now</a>
+                                            <button type="submit" class="btn btn-primary w-100">Withdraw Now</button>
                                         </div>
                                     </div>
+                                </form>
                                 </div>
                             </div>
                         </div>

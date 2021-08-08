@@ -6,6 +6,7 @@
     $package_name = session::get('package_name');
     $package_price = session::get('package_price');
     $userId = session::get('userId');
+    // $dff = session::get('dff');
 @endphp
              <!--**********************************
             Content body start
@@ -39,6 +40,8 @@
                                             <input type="hidden" value="{{$userId}}" name="user_id">
                                             <input type="hidden" value="{{$packageId}}" name="package_id">
                                             <input type="hidden" value="{{$package_name}}" name="package_name">
+                                            <input type="hidden" value="{{$package_price}}" name="package_price">
+                                            {{-- <input type="hidden" value="{{$dff ?? null}}" name="dff"> --}}
                                             <input type="text" class="form-control input" placeholder="TxId"
                                                 name="txnId" required>
                                         </div>

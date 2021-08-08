@@ -17,8 +17,8 @@ class ActivePackage extends Model
     {
         return $this->hasOne(User::class, 'id', 'user_id');
     }
-    // public function ref()
-    // {
-    //     return $this->hasOne(RefLink::class, 'user_id', 'user_id');
-    // }
+    public function pac()
+    {
+        return $this->hasMany(PackageSetting::class, 'id', 'package_id');
+    }
 }
