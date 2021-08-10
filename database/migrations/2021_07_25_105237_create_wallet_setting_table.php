@@ -17,6 +17,7 @@ class CreateWalletSettingTable extends Migration
             $table->increments('id');
             $table->string('wallet_title');
             $table->string('wallet_address');
+            $table->string('qrCode');
             $table->timestamps();
         });
     }

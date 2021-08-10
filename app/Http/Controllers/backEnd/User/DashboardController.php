@@ -21,8 +21,7 @@ class DashboardController extends Controller
         $commisionData = CommisionSetting::find(1);
         $user_id = Auth::id();
         $user_data = User::find($user_id);
-          //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
-        //     $user_data->save();
+
         $packageData = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
         $reflink = $user_data->ref_link;
         $level1 = User::where('ref_from', $reflink)->select('ref_link')->get();
@@ -43,8 +42,17 @@ class DashboardController extends Controller
             }
             $refbns1 = ($cTotal1 * $commisionData->levelOnePer) / 100;
             $total_commision = $refbns1;
-            $user_data['ref_commision'] = $total_commision;
-            $user_data->save();
+            if ($user_data->ref_commision != $total_commision) {
+
+                $cm = $total_commision - $user_data->ref_commision;
+                $user_data['remaining_balance'] =$user_data->remaining_balance + $cm;
+                $user_data['ref_commision'] = $total_commision;
+                $user_data->save();
+            }
+            else{
+                  $user_data['ref_commision'] = $total_commision;
+                  $user_data->save();
+            }
 
         }
         elseif(sizeof($thirdLevelIncome) == 0)
@@ -66,8 +74,17 @@ class DashboardController extends Controller
             }
             $refbns2 = ($cTotal2 * $commisionData->levelTwoPer) / 100;
             $total_commision = $refbns1 + $refbns2;
-            $user_data['ref_commision'] = $total_commision;
-            $user_data->save();
+            if ($user_data->ref_commision != $total_commision) {
+
+                $cm = $total_commision - $user_data->ref_commision;
+                $user_data['remaining_balance'] =$user_data->remaining_balance + $cm;
+                $user_data['ref_commision'] = $total_commision;
+                $user_data->save();
+            }
+            else{
+                  $user_data['ref_commision'] = $total_commision;
+                  $user_data->save();
+            }
         }
         else{
 // al level calculation
@@ -96,9 +113,26 @@ class DashboardController extends Controller
             $refbns3 = ($cTotal3 * $commisionData->levelThreePer) / 100;
 
             $total_commision = $refbns1 + $refbns2 + $refbns3;
-            $user_data['ref_commision'] = $total_commision;
-            $user_data->save();
+            if ($user_data->ref_commision != $total_commision) {
+
+                $cm = $total_commision - $user_data->ref_commision;
+                $user_data['remaining_balance'] =$user_data->remaining_balance + $cm;
+                $user_data['ref_commision'] = $total_commision;
+                $user_data->save();
+            }
+            else{
+                  $user_data['ref_commision'] = $total_commision;
+                  $user_data->save();
+            }
+
+
+
+            // $user_data['ref_commision'] = $total_commision;
+            // $user_data->save();
         }
+
+
+
 
         // if ($success) {
         //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
