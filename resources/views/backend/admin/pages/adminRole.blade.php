@@ -115,7 +115,7 @@
                                         </li>
                                     </ul>
                                 @empty
-                                   <h2>No Active Package</h2>
+                                   <h2>No User Role</h2>
                                 @endforelse
 
                             </div>

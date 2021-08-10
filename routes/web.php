@@ -69,18 +69,18 @@ Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListControll
 
 
 //user section route------------------------------------------
-Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index');
-Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address');
-Route::get('/user-profile', 'App\Http\Controllers\backEnd\User\UserProfileController@index');
+Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index')->middleware('verified');
+Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address')->middleware('verified');
+Route::get('/user-profile', 'App\Http\Controllers\backEnd\User\UserProfileController@index')->middleware('verified');
 
 //downline member route
-Route::get('/downline-members', 'App\Http\Controllers\backEnd\User\DashboardController@downline_memebers');
+Route::get('/downline-members', 'App\Http\Controllers\backEnd\User\DashboardController@downline_memebers')->middleware('verified');
 
 //withdraw request route
 Route::post('/withdraw_request', 'App\Http\Controllers\backEnd\User\WithdrawController@withdraw_request');
 
 //package section --------------
-Route::get('/packages', 'App\Http\Controllers\backEnd\User\UserPackageController@index');
+Route::get('/packages', 'App\Http\Controllers\backEnd\User\UserPackageController@index')->middleware('verified');
 Route::post('/package-buying-process', 'App\Http\Controllers\backEnd\User\UserPackageController@package_buying_process');
 Route::post('/process-completed', 'App\Http\Controllers\backEnd\User\UserPackageController@process_completed');
 
@@ -89,7 +89,7 @@ Route::post('/process-completed', 'App\Http\Controllers\backEnd\User\UserPackage
 
 
 //user work station controller -
-Route::get('/user-add-member', 'App\Http\Controllers\backEnd\User\AddMembersController@index');
+Route::get('/user-add-member', 'App\Http\Controllers\backEnd\User\AddMembersController@index')->middleware('verified');
 Route::get('/user-work-station', 'App\Http\Controllers\backEnd\User\WorkStationController@index');
 Route::get('/update-work-status', 'App\Http\Controllers\backEnd\User\WorkStationController@update_work_status');
 

@@ -21,8 +21,6 @@ class DashboardController extends Controller
         $commisionData = CommisionSetting::find(1);
         $user_id = Auth::id();
         $user_data = User::find($user_id);
-          //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
-        //     $user_data->save();
         $packageData = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
         $reflink = $user_data->ref_link;
         $level1 = User::where('ref_from', $reflink)->select('ref_link')->get();
@@ -45,7 +43,6 @@ class DashboardController extends Controller
             $total_commision = $refbns1;
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
-
         }
         elseif(sizeof($thirdLevelIncome) == 0)
         {
@@ -68,6 +65,8 @@ class DashboardController extends Controller
             $total_commision = $refbns1 + $refbns2;
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
+
+
         }
         else{
 // al level calculation
@@ -99,12 +98,6 @@ class DashboardController extends Controller
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
         }
-
-        // if ($success) {
-        //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
-        //     $user_data->save();
-        // }
-
 
 
         $header = view('backend/user/elements/_header');
