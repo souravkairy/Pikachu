@@ -81,27 +81,15 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="#Faqs">Faqs</a>
                                         </li>
-                                        <li style="
-                                        padding-top: 25px;
-                                        padding-right: 8px;
-                                    ">
-                                            <a class="main-btn" href="{{url('login-panel')}}">login</a>
-                                        </li>
-                                        <li style="
-                                        padding-top: 25px;
-                                        padding-right: 8px;
-                                    ">
-                                            <a class="main-btn-2 main-btn" href="{{url('registration')}}">signup</a>
-                                        </li>
 
                                     </ul>
                                 </div> <!-- navbar collapse -->
-                                {{-- <div class="navbar-btn d-none d-sm-flex">
+                                <div class="navbar-btn d-none d-sm-flex">
                                     <ul>
                                         <li><a class="main-btn" href="{{url('login-panel')}}">login</a></li>
                                         <li><a class="main-btn-2 main-btn" href="{{url('registration')}}">signup</a></li>
                                     </ul>
-                                </div> --}}
+                                </div>
                             </nav>
                         </div> <!-- navigation -->
                     </div>

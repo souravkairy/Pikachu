@@ -28,9 +28,11 @@ exit();
                         <li><a href="{!! url('active-users') !!}">Active User</a></li>
                     </ul>
                 </li>
+
                 @else
                 @endif
                 @if(Auth::user()->withdraw == 1)
+
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-network"></i>
                     <span class="nav-text">Withdraw</span>
@@ -39,10 +41,15 @@ exit();
                     <li><a href="{!! url('pending-withdraw-list') !!}">Pending Request</a></li>
                     <li><a href="{!! url('completed-withdraw-list') !!}">Completed Withdraw</a></li>
                 </ul>
+
+            </li>
+
+
                 </li>
                 @else
                 @endif
                 @if(Auth::user()->workStation == 1)
+
                 <li><a href="{!! url('work-station-setting') !!}" aria-expanded="false">
                         <i class="flaticon-061-puzzle"></i>
                         <span class="nav-text">Work Station Setting</span>
