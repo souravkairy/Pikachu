@@ -77,7 +77,7 @@ Route::get('/completed-', 'App\Http\Controllers\backEnd\Admin\WithdrawController
 
 //user section route------------------------------------------
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index')->middleware('verified');
-Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address')->middleware('verified');
+Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address');
 Route::get('/user-profile', 'App\Http\Controllers\backEnd\User\UserProfileController@index')->middleware('verified');
 
 //downline member route

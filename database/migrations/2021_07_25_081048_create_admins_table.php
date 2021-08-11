@@ -22,6 +22,7 @@ class CreateAdminsTable extends Migration
             $table->string('type');
             $table->enum('user_role', ['super_admin', 'admin', 'moderator'])->nullable();
             $table->string('user')->nullable();
+            $table->string('withdraw')->nullable();
             $table->string('workStation')->nullable();
             $table->string('wallet')->nullable();
             $table->string('package')->nullable();
