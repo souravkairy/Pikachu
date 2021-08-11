@@ -28,7 +28,7 @@
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form method="POST" action="{{url('update-wallet')}}" enctype="multipart/form-data">
+                                <form method="POST" action="{{url('update-wallet')}}">
                                     @csrf
                                     <div class="form-group">
                                         <input type="hidden" name="id" value="{{$wallet['id'] ?? NULL}}">
@@ -36,10 +36,6 @@
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control input" value="{{$wallet['wallet_address'] ?? NULL}}" name="wallet_address">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="file" class="form-control input" placeholder="Qr Code"
-                                            name="qrCode" required>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-sm">Submit</button>
@@ -54,9 +50,23 @@
                         <div class="card-header">
                             <h4 class="card-title">Active Wallet</h4>
                         </div>
-                        <div class="card-body text-center">
-                            <button class="btn btn-rounded btn-outline-primary mb-2"> {{$wallet['wallet_address'] ?? NULL}}</button>
-                            <img src="{{$wallet['qrCode']}}" alt="" class="mt-2">
+                        <div class="card-body">
+                            <div id="accordion-one" class="accordion accordion-primary">
+                                <div class="accordion__item">
+                                    <div class="accordion__header collapsed rounded-lg" data-toggle="collapse"
+                                        data-target="#default_collapseTwo">
+                                        <span class="accordion__header--text">{{$wallet['wallet_title'] ?? NULL}}</span>
+                                        <span class="accordion__header--indicator"></span>
+                                    </div>
+                                    <div id="default_collapseTwo" class="collapse accordion__body"
+                                        data-parent="#accordion-one">
+                                        <div class="accordion__body--text">
+                                            {{$wallet['wallet_address'] ?? NULL}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
