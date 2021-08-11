@@ -36,13 +36,7 @@ class WalletSettingController extends Controller
             $data['wallet_title'] = $request->wallet_title;
             $data['wallet_address'] = $request->wallet_address;
             $data['created_at'] = date("Y/m/d H:i:s");
-            $fileNameone = $request->file('qrCode')->getClientOriginalName();
-            $fileName1 =  $fileNameone;
-            $path = 'qrCode' . "/" ;
-            $destinationPath = $path; // upload path
 
-            $request->file('qrCode')->move($destinationPath, $fileName1);
-            $data['qrCode'] = '/qrCode/' . $fileName1;
             $insert = $data->save();
             if ($insert) {
                 return redirect()->back();

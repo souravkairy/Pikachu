@@ -31,7 +31,6 @@ class UserPackageController extends Controller
     }
     public function package_buying_process(request $request)
     {
-
         $user_id = Auth::id();
         $dd = ActivePackage::find($user_id);
         if ($dd == !null) {
@@ -64,24 +63,6 @@ class UserPackageController extends Controller
         $sidebar = view('backend/user/elements/_sidebar');
         $footer = view('backend/user/elements/_footer');
         $content = view('backend/user/pages/package_buying_process')->with('walletAddress', $walletAddress);
-        return view('backend/user/dashboard/index', compact('header', 'sidebar', 'footer', 'content'));
-    }
-    public function package_buying_processtwo(request $request)
-    {
-
-        $user_id = $request->user_id;
-        $packageId = $request->package_id;
-        $package_name = $request->package_name;
-        $package_price = $request->package_price;
-        session::put('packageId', $packageId);
-        session::put('package_name', $package_name);
-        session::put('package_price', $package_price);
-        session::put('userId', $user_id);
-
-        $header = view('backend/user/elements/_header');
-        $sidebar = view('backend/user/elements/_sidebar');
-        $footer = view('backend/user/elements/_footer');
-        $content = view('backend/user/pages/package_buying_process_two');
         return view('backend/user/dashboard/index', compact('header', 'sidebar', 'footer', 'content'));
     }
     public function process_completed(request $request)

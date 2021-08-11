@@ -31,8 +31,7 @@ class AdminController extends Controller
     public function index()
     {
         // $contactMessage = Contact::all();
-        $p_withdraw = Withdraw::where('status',1)->sum('withdraw_amount');
-        $c_withdraw = Withdraw::where('status',3)->sum('withdraw_amount');
+        $withdraw = Withdraw::sum('withdraw_amount');
         $totalActivePackageAmount = ActivePackage::sum('package_price');
         $activePackages = ActivePackage::count('id');
         $pendingUsers = ActivePackage::where('customer_id', '')->count('id');
@@ -44,7 +43,7 @@ class AdminController extends Controller
         $content = view('backend/admin/pages/dashboard')->with('activePackages',$activePackages)
         ->with('pendingUsers',$pendingUsers)->with('newUser',$newUser)
         ->with('totalActivePackageAmount',$totalActivePackageAmount)
-        ->with('p_withdraw',$p_withdraw)->with('c_withdraw',$c_withdraw);
+        ->with('withdraw',$withdraw);
         return view('backend/admin/dashboard/index',compact('header','sidebar','footer','content'));
     }
 

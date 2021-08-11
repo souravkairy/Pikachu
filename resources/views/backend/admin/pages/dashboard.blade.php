@@ -77,21 +77,10 @@
                     <div class="col-xl-3 col-sm-6 m-t35">
 						<div class="card card-coin">
 							<div class="card-body text-center">
-                                <img  class="mb-3 currency-icon" src="{{asset('BackEnd/assets/images/svg/withdrawal (1).svg')}}" alt="">
-								<h2 class="text-black mb-2 font-w600">{{$p_withdraw}}$</h2>
-                                <div class="media-body">
-                                    <span class="badge badge-dark">pending withdraw</span>
-                                </div>
-							</div>
-						</div>
-					</div>
-                    <div class="col-xl-3 col-sm-6 m-t35">
-						<div class="card card-coin">
-							<div class="card-body text-center">
                                 <img  class="mb-3 currency-icon" src="{{asset('BackEnd/assets/images/svg/withdrawal.svg')}}" alt="">
-								<h2 class="text-black mb-2 font-w600">{{$c_withdraw}}$</h2>
+								<h2 class="text-black mb-2 font-w600">${{$withdraw}}</h2>
                                 <div class="media-body">
-                                    <span class="badge badge-warning">Completed Withdraw</span>
+                                    <span class="badge badge-warning">Total Withdraw</span>
                                 </div>
 							</div>
 						</div>
@@ -100,9 +89,20 @@
 						<div class="card card-coin">
 							<div class="card-body text-center">
                                 <img  class="mb-3 currency-icon" src="{{asset('BackEnd/assets/images/svg/withdrawal (1).svg')}}" alt="">
-								<h2 class="text-black mb-2 font-w600">-----</h2>
+								<h2 class="text-black mb-2 font-w600">10</h2>
                                 <div class="media-body">
-                                    <span class="badge badge-primary">Blank</span>
+                                    <span class="badge badge-dark">Withdraw Request</span>
+                                </div>
+							</div>
+						</div>
+					</div>
+                    <div class="col-xl-3 col-sm-6 m-t35">
+						<div class="card card-coin">
+							<div class="card-body text-center">
+                                <img  class="mb-3 currency-icon" src="{{asset('BackEnd/assets/images/svg/withdrawal (1).svg')}}" alt="">
+								<h2 class="text-black mb-2 font-w600">${{$totalActivePackageAmount}}</h2>
+                                <div class="media-body">
+                                    <span class="badge badge-primary">Withdraw Completed</span>
                                 </div>
 							</div>
 						</div>
