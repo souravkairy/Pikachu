@@ -21,6 +21,11 @@ class DashboardController extends Controller
         $commisionData = CommisionSetting::find(1);
         $user_id = Auth::id();
         $user_data = User::find($user_id);
+<<<<<<< HEAD
+=======
+          //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
+        //     $user_data->save();
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
         $packageData = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
         $reflink = $user_data->ref_link;
         $level1 = User::where('ref_from', $reflink)->select('ref_link')->get();
@@ -43,6 +48,10 @@ class DashboardController extends Controller
             $total_commision = $refbns1;
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
         }
         elseif(sizeof($thirdLevelIncome) == 0)
         {
@@ -65,8 +74,11 @@ class DashboardController extends Controller
             $total_commision = $refbns1 + $refbns2;
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
         }
         else{
 // al level calculation
@@ -99,6 +111,15 @@ class DashboardController extends Controller
             $user_data->save();
         }
 
+<<<<<<< HEAD
+=======
+        // if ($success) {
+        //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
+        //     $user_data->save();
+        // }
+
+
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
 
         $header = view('backend/user/elements/_header');
         $sidebar = view('backend/user/elements/_sidebar');

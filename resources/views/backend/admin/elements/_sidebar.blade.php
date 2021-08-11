@@ -23,10 +23,13 @@
                         <li><a href="{!! url('active-users') !!}">Active User</a></li>
                     </ul>
                 </li>
+<<<<<<< HEAD
                 @else
                 @endif
 
                 @if(Auth::user()->workStation == 1)
+=======
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
                 <li><a href="{!! url('work-station-setting') !!}" aria-expanded="false">
                         <i class="flaticon-061-puzzle"></i>
                         <span class="nav-text">Work Station Setting</span>
