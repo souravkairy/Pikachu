@@ -68,6 +68,11 @@ Route::get('/activeUser/{user_id}/{id}', 'App\Http\Controllers\backEnd\Admin\Use
 Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListController@active_users');
 
 
+//withdraw request list route --------------------------------
+
+Route::get('/pending-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@pending_withdraw');
+Route::get('/completed-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@completed_withdraw');
+
 //user section route------------------------------------------
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index')->middleware('verified');
 Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address')->middleware('verified');
