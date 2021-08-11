@@ -1,6 +1,11 @@
 @extends('backend.admin.dashboard.index')
 @section('sidebar')
+{{-- @php
 
+echo "<pre>";
+print_r(Auth::user()->user);
+exit();
+@endphp --}}
     <!--**********************************
         Sidebar start
     ***********************************-->
