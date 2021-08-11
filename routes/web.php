@@ -78,6 +78,7 @@ Route::get('/downline-members', 'App\Http\Controllers\backEnd\User\DashboardCont
 
 //withdraw request route
 Route::post('/withdraw_request', 'App\Http\Controllers\backEnd\User\WithdrawController@withdraw_request');
+Route::post('/withdra', 'App\Http\Controllers\backEnd\User\WithdrawController@withdraw_request');
 
 //package section --------------
 Route::get('/packages', 'App\Http\Controllers\backEnd\User\UserPackageController@index')->middleware('verified');
