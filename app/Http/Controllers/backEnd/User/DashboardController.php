@@ -22,6 +22,11 @@ class DashboardController extends Controller
         $user_id = Auth::id();
         $user_data = User::find($user_id);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+          //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
+        //     $user_data->save();
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
 =======
           //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
         //     $user_data->save();
@@ -49,7 +54,10 @@ class DashboardController extends Controller
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
 
 >>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
         }
@@ -75,8 +83,11 @@ class DashboardController extends Controller
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
 =======
 >>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
         }
@@ -112,7 +123,10 @@ class DashboardController extends Controller
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
         // if ($success) {
         //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
         //     $user_data->save();

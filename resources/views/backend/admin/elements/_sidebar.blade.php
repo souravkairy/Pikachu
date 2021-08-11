@@ -24,10 +24,13 @@
                     </ul>
                 </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 @else
                 @endif
 
                 @if(Auth::user()->workStation == 1)
+=======
+>>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
 =======
 >>>>>>> parent of dd908e0 (remaining balance and withdraw section done slightly)
                 <li><a href="{!! url('work-station-setting') !!}" aria-expanded="false">
