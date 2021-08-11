@@ -67,6 +67,11 @@ Route::get('/viewSS/{id}', 'App\Http\Controllers\backEnd\Admin\UserListControlle
 Route::get('/activeUser/{user_id}/{id}', 'App\Http\Controllers\backEnd\Admin\UserListController@activeUser');
 Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListController@active_users');
 
+//withdraw request list route --------------------------------
+
+Route::get('/pending-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@pending_withdraw');
+Route::get('/completed-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@completed_withdraw');
+
 
 //user section route------------------------------------------
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index')->middleware('verified');
@@ -82,6 +87,7 @@ Route::post('/withdraw_request', 'App\Http\Controllers\backEnd\User\WithdrawCont
 //package section --------------
 Route::get('/packages', 'App\Http\Controllers\backEnd\User\UserPackageController@index')->middleware('verified');
 Route::post('/package-buying-process', 'App\Http\Controllers\backEnd\User\UserPackageController@package_buying_process');
+Route::post('/package-buying-processtwo', 'App\Http\Controllers\backEnd\User\UserPackageController@package_buying_processtwo');
 Route::post('/process-completed', 'App\Http\Controllers\backEnd\User\UserPackageController@process_completed');
 
 

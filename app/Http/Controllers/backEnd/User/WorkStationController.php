@@ -5,6 +5,8 @@ namespace App\Http\Controllers\backEnd\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\WorkStation;
+use App\Models\ActivePackage;
+use App\Models\PackageSetting;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Session;
