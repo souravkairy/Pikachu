@@ -23,6 +23,7 @@
 
                     </ul>
                 </li>
+<<<<<<< Updated upstream
                 <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-network"></i>
                     <span class="nav-text">Withdraw</span>
@@ -33,6 +34,8 @@
                 </ul>
             </li>
 
+=======
+>>>>>>> Stashed changes
                 <li><a href="{!! url('work-station-setting') !!}" aria-expanded="false">
                         <i class="flaticon-061-puzzle"></i>
                         <span class="nav-text">Work Station Setting</span>
