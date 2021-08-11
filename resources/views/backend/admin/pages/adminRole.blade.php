@@ -50,6 +50,12 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <label class="ckbox">
+                                                <input class="mr-1" type="checkbox" name="withdraw" value="1">
+                                                <span>Withdraw</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="ckbox">
                                                 <input class="mr-1" type="checkbox" name="workStation" value="1">
                                                 <span>Work Station Setting</span>
                                             </label>

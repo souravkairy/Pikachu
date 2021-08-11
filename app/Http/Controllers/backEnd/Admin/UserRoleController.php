@@ -35,6 +35,7 @@ class UserRoleController extends Controller
          $data['email']=$request->email;
          $data['password']= Hash::make($request->password);
          $data['user']=$request->user;
+         $data['withdraw']=$request->withdraw;
          $data['workStation']=$request->workStation;
          $data['wallet']=$request->wallet;
          $data['package']=$request->package;
