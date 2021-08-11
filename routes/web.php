@@ -68,20 +68,12 @@ Route::get('/activeUser/{user_id}/{id}', 'App\Http\Controllers\backEnd\Admin\Use
 Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListController@active_users');
 
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 //withdraw request list route --------------------------------
 
 Route::get('/pending-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@pending_withdraw');
 Route::get('/completed-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@completed_withdraw');
 Route::get('/completed-', 'App\Http\Controllers\backEnd\Admin\WithdrawController@completed_withdraw');
-<<<<<<< Updated upstream
-=======
 
-
->>>>>>> Stashed changes
 
 //user section route------------------------------------------
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index')->middleware('verified');
