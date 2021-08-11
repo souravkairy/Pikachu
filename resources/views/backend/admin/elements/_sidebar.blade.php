@@ -32,6 +32,7 @@
                     <li><a href="{!! url('completed-withdraw-list') !!}">Completed Withdraw</a></li>
                 </ul>
             </li>
+
                 <li><a href="{!! url('work-station-setting') !!}" aria-expanded="false">
                         <i class="flaticon-061-puzzle"></i>
                         <span class="nav-text">Work Station Setting</span>
