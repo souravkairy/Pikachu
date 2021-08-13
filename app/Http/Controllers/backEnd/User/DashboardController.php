@@ -44,8 +44,17 @@ class DashboardController extends Controller
             }
             $refbns1 = ($cTotal1 * $commisionData->levelOnePer) / 100;
             $total_commision = $refbns1;
-            $user_data['ref_commision'] = $total_commision;
-            $user_data->save();
+            if ($user_data->ref_commision != $total_commision) {
+
+                $cm = $total_commision - $user_data->ref_commision;
+                $user_data['remaining_balance'] =$user_data->remaining_balance + $cm;
+                $user_data['ref_commision'] = $total_commision;
+                $user_data->save();
+            }
+            else{
+                  $user_data['ref_commision'] = $total_commision;
+                  $user_data->save();
+            }
 
             if (sizeof($firstLevelIncome) >= 2) {
                 foreach ($packageData as $data) {
@@ -60,8 +69,6 @@ class DashboardController extends Controller
                 }
                 session::put('t_percentage',200);
             }
-
-
 
         }
         elseif(sizeof($thirdLevelIncome) == 0)
@@ -83,18 +90,27 @@ class DashboardController extends Controller
             }
             $refbns2 = ($cTotal2 * $commisionData->levelTwoPer) / 100;
             $total_commision = $refbns1 + $refbns2;
-            $user_data['ref_commision'] = $total_commision;
-            $user_data->save();
+            if ($user_data->ref_commision != $total_commision) {
+
+                $cm = $total_commision - $user_data->ref_commision;
+                $user_data['remaining_balance'] =$user_data->remaining_balance + $cm;
+                $user_data['ref_commision'] = $total_commision;
+                $user_data->save();
+            }
+            else{
+                  $user_data['ref_commision'] = $total_commision;
+                  $user_data->save();
+            }
             if (sizeof($firstLevelIncome) >= 2) {
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 300 )/100 ;
                     $data->save();
-                }
+                } session::put('t_percentage',200);
             }else{
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 200 )/100;
                     $data->save();
-                }
+                } session::put('t_percentage',200);
             }
         }
         else{
@@ -124,18 +140,27 @@ class DashboardController extends Controller
             $refbns3 = ($cTotal3 * $commisionData->levelThreePer) / 100;
 
             $total_commision = $refbns1 + $refbns2 + $refbns3;
-            $user_data['ref_commision'] = $total_commision;
-            $user_data->save();
+            if ($user_data->ref_commision != $total_commision) {
+
+                $cm = $total_commision - $user_data->ref_commision;
+                $user_data['remaining_balance'] =$user_data->remaining_balance + $cm;
+                $user_data['ref_commision'] = $total_commision;
+                $user_data->save();
+            }
+            else{
+                  $user_data['ref_commision'] = $total_commision;
+                  $user_data->save();
+            }
             if (sizeof($firstLevelIncome) >= 2) {
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 300 )/100 ;
                     $data->save();
-                }
+                } session::put('t_percentage',200);
             }else{
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 200 )/100;
                     $data->save();
-                }
+                } session::put('t_percentage',200);
             }
         }
 
