@@ -1,9 +1,10 @@
 @extends('backend.admin.dashboard.index')
 @section('content')
 
-    <!--**********************************
-                Content body start
-            ***********************************-->
+    @php
+    $ff = $user_data->traiding_bonous;
+    $dd = "width : $ff%";
+    @endphp
     <div class="content-body">
         <div class="container-fluid">
             <div class="form-head mb-sm-5 mb-3 d-flex align-items-center flex-wrap">
@@ -20,8 +21,9 @@
                                         <div class="card-info">
                                             <p class="mb-1 text-white fs-14">Total Earnings</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">${{$totalIncome = $user_data->traiding_bonous + $user_data->ref_commision
-                                                ?? NULL}}</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">
+                                                    ${{ $totalIncome = $user_data->traiding_bonous + $user_data->ref_commision ?? null }}
+                                                </h2>
                                             </div>
                                             {{-- <div class="d-flex">
                                                 <div class="mr-4 text-white">
@@ -42,8 +44,9 @@
                                         <div class="card-info">
                                             <p class="fs-14 mb-1 text-white">Available Earnings</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">${{$remaining_balance = $user_data->remaining_balance
-                                                    ?? NULL}}</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">
+                                                    ${{ $remaining_balance = $user_data->remaining_balance ?? null }}
+                                                </h2>
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +57,8 @@
                                         <div class="card-info">
                                             <p class="mb-1 text-white fs-14">Trading Bonous</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->traiding_bonous ?? NULL}}</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">
+                                                    ${{ $user_data->traiding_bonous ?? null }}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -65,7 +69,8 @@
                                         <div class="card-info">
                                             <p class="mb-1 text-white fs-14">Referal Commision</p>
                                             <div class="d-flex justify-content-between">
-                                                <h2 class="num-text text-white mb-5 font-w600">${{$user_data->ref_commision ?? NULL}}</h2>
+                                                <h2 class="num-text text-white mb-5 font-w600">
+                                                    ${{ $user_data->ref_commision ?? null }}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -87,13 +92,33 @@
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Name</p>
-                                                        <h4 class="text-black">{{$user_data->name}}</h4>
+                                                        <h4 class="text-black">{{ $user_data->name }}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Refered By</p>
-                                                        <h4 class="text-black">{{$user_data->ref_from ?? 'From No One'}}</h4>
+                                                        <h4 class="text-black">{{ $user_data->ref_from ?? 'From No One' }}
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="mb-4">
+                                                        <p class="mb-2">Customer ID</p>
+                                                        @forelse ($activePackages as $item)
+                                                            <li>
+                                                                <h4 class="text-black">
+                                                                    <?php echo $item['customer_id'];
+                                                                    break; ?>
+                                                                </h4>
+                                                            </li>
+                                                        @empty
+                                                            <button type="button" class="btn btn-rounded btn-warning"><span
+                                                                    class="btn-icon-left text-warning"><i
+                                                                        class="fa fa-eye color-warning"></i>
+                                                                </span>Account Pending</button>
+                                                        @endforelse
+
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -115,7 +140,8 @@
                                                                         data-dismiss="modal"><span>&times;</span>
                                                                     </button>
                                                                 </div>
-                                                                <div class="modal-body">{{$user_data->wallet_address}}</div>
+                                                                <div class="modal-body">{{ $user_data->wallet_address }}
+                                                                </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-danger light"
                                                                         data-dismiss="modal">Close</button>
@@ -126,68 +152,33 @@
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
-                                                        <p class="mb-2">Account Status (Packages)</p>
-                                                        <ul>
-                                                            @forelse ($activePackages as $item)
-                                                               <li><h4 class="text-black">-> {{ $item->package_name}}</h4></li>
-                                                            @empty
-                                                                <button type="button" class="btn btn-rounded btn-warning"><span
-                                                                    class="btn-icon-left text-warning"><i
-                                                                        class="fa fa-eye color-warning"></i>
-                                                                </span>Pending</button>
-                                                            @endforelse
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="mb-4">
-                                                        <p class="mb-2">Customer ID</p>
-                                                        @forelse ($activePackages as $item)
-                                                        <li><h4 class="text-black">{!!$item->customer_id!!}</h4></li>
-                                                     @empty
-                                                         <button type="button" class="btn btn-rounded btn-warning"><span
-                                                             class="btn-icon-left text-warning"><i
-                                                                 class="fa fa-eye color-warning"></i>
-                                                         </span>Account Pending</button>
-                                                     @endforelse
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="mb-4">
                                                         <p class="mb-2">DownLine Members</p>
-                                                        <li><h6 class="text-black">First Level : {{$firstLevelIncome->count() ?? 'No one'}}p</h6></li>
-                                                        <li><h6 class="text-black">Second Level : {{$secondLevelIncome->count()  ?? 'No one'}}p</h6></li>
-                                                        <li><h6 class="text-black">Third Level : {{$thirdLevelIncome->count()  ?? 'No one'}}p</h6></li>
+                                                        <li>
+                                                            <h6 class="text-black">First Level :
+                                                                {{ $firstLevelIncome->count() ?? 'No one' }}p</h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="text-black">Second Level :
+                                                                {{ $secondLevelIncome->count() ?? 'No one' }}p</h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6 class="text-black">Third Level :
+                                                                {{ $thirdLevelIncome->count() ?? 'No one' }}p</h6>
+                                                        </li>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Referal Link</p>
                                                         @if ($user_data->ref_link)
-                                                        <h4 class="text-black">{!!"https://$_SERVER[HTTP_HOST]/registration/".$user_data->ref_link!!}</h4>
+                                                            <h4 class="text-black">{!! "https://$_SERVER[HTTP_HOST]/registration/" . $user_data->ref_link !!}</h4>
                                                         @else
-                                                        <h4 class="text-black">No Link Found</h4>
+                                                            <h4 class="text-black">No Link Found</h4>
                                                         @endif
-
-                                                        {{-- <h4 class="text-black">{!!$refData->ref_link ?? 'No Link Found'!!}</h4> --}}
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="mb-4">
-                                                        <p>Trading Bonous</p>
-                                                        <h3 class="float-left">1$</h3>
-                                                        <h3 class="float-right">300$</h3>
-                                                        <div class="progress mb-2">
-                                                            <div class="progress-bar progress-animated bg-warning" style="width: 95%"></div>
-                                                        </div>
-                                                        <br>
-                                                        <small>300% Increase in 25 Days</small>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -199,57 +190,102 @@
                                         <h4 class="fs-20 text-black">Withdraw</h4>
                                         <p class="mb-0 fs-12">Please Make Sure Your Wallet Is Correct
                                             <button type="button" class="btn btn-rounded btn-success mt-2"
-                                            data-toggle="modal" data-target="#basicModal2"><span
-                                                class="btn-icon-left text-success"><i
-                                                    class="fa fa-edit color-success"></i>
-                                            </span>Set Wallet Address</button>
+                                                data-toggle="modal" data-target="#basicModal2"><span
+                                                    class="btn-icon-left text-success"><i
+                                                        class="fa fa-edit color-success"></i>
+                                                </span>Set Wallet Address</button>
                                         </p>
                                     </div>
                                     <div class="dropdown custom-dropdown d-block mt-3 mt-sm-0 mb-0">
                                         <div class="btn border border-warning btn-sm d-flex align-items-center svg-btn"
                                             role="button" data-toggle="dropdown" aria-expanded="false">
-                                            <span class="text-black fs-16">{{$remaining_balance}} USDT</span>
+                                            <span class="text-black fs-16">{{ $remaining_balance }} USDT</span>
                                         </div>
 
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                        @if ($errors->any())
-                                            <div class="alert alert-danger">
-                                                <ul>
-                                                    @foreach ($errors->all() as $error)
-                                                        <li>{{ $error }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        @endif
-                                    <form action="{{url('withdraw_request')}}" method="POST">
-                                    @csrf
-                                    <div class="form-wrapper">
-                                        <div class="form-group">
-                                            <div class="input-group input-group-lg">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Amount USDT</span>
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    <form action="{{ url('withdraw_request') }}" method="POST">
+                                        @csrf
+                                        <div class="form-wrapper">
+                                            <div class="form-group">
+                                                <div class="input-group input-group-lg">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Amount USDT</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="742.2"
+                                                        name="withdraw_amount">
+                                                    <input type="hidden" value="{{ $user_data->wallet_address ?? null }}"
+                                                        name="wallet_address">
+                                                    <input type="hidden" value="{!! $item->customer_id ?? null !!}" name="customer_id">
+                                                    <input type="hidden" name="user_id" value="{{ $user_data->id }}">
+                                                    <input type="hidden" value="{{ $remaining_balance }}"
+                                                        name="remaining_balance">
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="742.2" name="withdraw_amount">
-                                                <input type="hidden" value="{{$user_data->wallet_address ?? null}}" name="wallet_address">
-                                                <input type="hidden" value="{!!$item->customer_id ?? null !!}" name="customer_id">
-                                                <input type="hidden" name="user_id" value="{{$user_data->id}}">
-                                                <input type="hidden" value="{{$remaining_balance}}" name="remaining_balance">
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="row pt-5 align-items-center">
-                                        <div class="col-sm-6 mb-2">
-                                            <p class="mb-0 fs-14">5% charge will be diducted as a widthdraw fee</p>
+                                        <div class="row pt-5 align-items-center">
+                                            <div class="col-sm-6 mb-2">
+                                                <p class="mb-0 fs-14">5% charge will be diducted as a widthdraw fee</p>
+                                            </div>
+                                            <div class="col-sm-6 mb-2">
+                                                <button type="submit" class="btn btn-primary w-100">Withdraw Now</button>
+                                            </div>
                                         </div>
-                                        <div class="col-sm-6 mb-2">
-                                            <button type="submit" class="btn btn-primary w-100">Withdraw Now</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                    </form>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Trading Packages</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-responsive-sm">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%">Packages</th>
+                                            <th style="width: 75%">Trading Status</th>
+                                            <th style="width: 15%">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($activePackages as $item)
+                                            <tr>
+                                                <th>{{ $item->package_name }}</th>
+                                                <td>
+                                                    <h3 class="float-left">{{$user_data->traiding_bonous}}$</h3>
+                                                    <h3 class="float-right">{{$item->traiding_limit}}$</h3>
+                                                    <div class="progress mb-2">
+                                                        <div class="progress-bar progress-animated bg-warning"
+                                                            style="{{ $dd }}"></div>
+                                                    </div>
+                                                    <br>
+                                                    <small>{{session::get('t_percentage')}}% Will be added in your account as traiding bonous</small>
+                                                </td>
+                                                <td><span class="badge badge-success">Active</span>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <h1>No trading Available</h1>
+                                        @endforelse
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -783,39 +819,37 @@
         </div>
     </div>
     <!--**********************************
-                Content body end
-            ***********************************-->
+                            Content body end
+                        ***********************************-->
 
-{{-- //modal for set wallet_address --}}
-<div class="modal fade" id="basicModal2">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Set Your Wallet Addres</h5>
-                <button type="button" class="close"
-                    data-dismiss="modal"><span>&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="basic-form">
-                    <form method="POST" action="{{ url('update-wallet-address') }}">
-                        @csrf
-                        <div class="form-group">
-                            <input type="text" class="form-control input" placeholder="Enter Your Wallet Address"
-                                name="wallet_address" required>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success w-100">Submit</button>
-                        </div>
-                    </form>
+    {{-- //modal for set wallet_address --}}
+    <div class="modal fade" id="basicModal2">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Set Your Wallet Addres</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                    </button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger light"
-                    data-dismiss="modal">Close</button>
+                <div class="modal-body">
+                    <div class="basic-form">
+                        <form method="POST" action="{{ url('update-wallet-address') }}">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" class="form-control input" placeholder="Enter Your Wallet Address"
+                                    name="wallet_address" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success w-100">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 @endsection
