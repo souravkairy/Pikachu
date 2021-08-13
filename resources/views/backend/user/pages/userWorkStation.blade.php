@@ -1,10 +1,5 @@
 @extends('backend.admin.dashboard.index')
 @section('content')
-{{-- <?php
-if (session::get('dd')) {
-    print_r(session::get('dd');
-}
-?> --}}
              <!--**********************************
             Content body start
         ***********************************-->

@@ -8,6 +8,7 @@ use App\Models\CommisionSetting;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class DashboardController extends Controller
 {
@@ -25,13 +26,13 @@ class DashboardController extends Controller
         //     $user_data->save();
         $packageData = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
         $reflink = $user_data->ref_link;
-        $level1 = User::where('ref_from', $reflink)->select('ref_link')->get();
-        $level2 = User::whereIn('ref_from', $level1)->select('ref_link')->get();
-        $level3 = User::whereIn('ref_from', $level2)->select('ref_link')->get();
+        $level1 = User::where('ref_from', $reflink)->where('status', 1)->select('ref_link')->get();
+        $level2 = User::whereIn('ref_from', $level1)->where('status', 1)->select('ref_link')->get();
+        $level3 = User::whereIn('ref_from', $level2)->where('status', 1)->select('ref_link')->get();
 
-        $firstLevelIncome = User::where('ref_from', $reflink)->select('ref_commision', 'traiding_bonous')->get();
-        $secondLevelIncome = User::whereIn('ref_from', $level1)->select('ref_commision', 'traiding_bonous')->get();
-        $thirdLevelIncome = User::whereIn('ref_from', $level2)->select('ref_commision', 'traiding_bonous')->get();
+        $firstLevelIncome = User::where('ref_from', $reflink)->where('status', 1)->select('ref_commision', 'traiding_bonous')->get();
+        $secondLevelIncome = User::whereIn('ref_from', $level1)->where('status', 1)->select('ref_commision', 'traiding_bonous')->get();
+        $thirdLevelIncome = User::whereIn('ref_from', $level2)->where('status', 1)->select('ref_commision', 'traiding_bonous')->get();
 
         // if (sizeof($firstLevelIncome) == 0 && sizeof($secondLevelIncome) == 0 && sizeof($thirdLevelIncome) == 0) {
         if (sizeof($thirdLevelIncome) == 0 && sizeof($secondLevelIncome) == 0) {
@@ -45,6 +46,22 @@ class DashboardController extends Controller
             $total_commision = $refbns1;
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
+
+            if (sizeof($firstLevelIncome) >= 2) {
+                foreach ($packageData as $data) {
+                    $data['traiding_limit'] = ($data->package_price * 300 )/100 ;
+                    $data->save();
+                }
+                session::put('t_percentage',300);
+            }else{
+                foreach ($packageData as $data) {
+                    $data['traiding_limit'] = ($data->package_price * 200 )/100;
+                    $data->save();
+                }
+                session::put('t_percentage',200);
+            }
+
+
 
         }
         elseif(sizeof($thirdLevelIncome) == 0)
@@ -68,6 +85,17 @@ class DashboardController extends Controller
             $total_commision = $refbns1 + $refbns2;
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
+            if (sizeof($firstLevelIncome) >= 2) {
+                foreach ($packageData as $data) {
+                    $data['traiding_limit'] = ($data->package_price * 300 )/100 ;
+                    $data->save();
+                }
+            }else{
+                foreach ($packageData as $data) {
+                    $data['traiding_limit'] = ($data->package_price * 200 )/100;
+                    $data->save();
+                }
+            }
         }
         else{
 // al level calculation
@@ -98,13 +126,18 @@ class DashboardController extends Controller
             $total_commision = $refbns1 + $refbns2 + $refbns3;
             $user_data['ref_commision'] = $total_commision;
             $user_data->save();
+            if (sizeof($firstLevelIncome) >= 2) {
+                foreach ($packageData as $data) {
+                    $data['traiding_limit'] = ($data->package_price * 300 )/100 ;
+                    $data->save();
+                }
+            }else{
+                foreach ($packageData as $data) {
+                    $data['traiding_limit'] = ($data->package_price * 200 )/100;
+                    $data->save();
+                }
+            }
         }
-
-        // if ($success) {
-        //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
-        //     $user_data->save();
-        // }
-
 
 
         $header = view('backend/user/elements/_header');
