@@ -661,7 +661,7 @@
 
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <img src="{{asset('BackEnd/assets/images/profile/pic1.jpg')}}" width="20" alt=""/>
+                                    <img src="{{asset('BackEnd/assets/images/profile/sourav.svg')}}" width="20" alt=""/>
 									<div class="header-info">
 										<span>Johndoe</span>
 										<small>User</small>

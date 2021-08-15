@@ -6,7 +6,7 @@
         <div class="content-body">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-xl-3 col-xxl-4 col-lg-6 col-sm-6">
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-12">
 						<div class="widget-stat card">
 							<div class="card-body p-4">
 								<div class="media ai-icon">
@@ -25,7 +25,7 @@
 							</div>
 						</div>
                     </div>
-                    <div class="col-xl-3 col-xxl-4 col-lg-6 col-sm-6">
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-12">
                         <div class="widget-stat card">
 							<div class="card-body p-4">
 								<div class="media ai-icon">
@@ -44,7 +44,7 @@
 							</div>
 						</div>
                     </div>
-                    <div class="col-xl-3 col-xxl-4 col-lg-6 col-sm-6">
+                    <div class="col-xl-4 col-xxl-4 col-lg-4 col-sm-12">
                         <div class="widget-stat card">
 							<div class="card-body  p-4">
 								<div class="media ai-icon">
@@ -63,10 +63,10 @@
 							</div>
 						</div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 m-t35">
+                    <div class="col-xl-3 col-sm-6 col-xxl-3 col-lg-3 m-t35">
 						<div class="card card-coin">
 							<div class="card-body text-center">
-                                <img  class="mb-3 currency-icon" src="{{asset('BackEnd/assets/images/svg/salary.svg')}}" alt="">
+                                <img  class="mb-3 currency-icon" style="width: 45%" src="{{asset('BackEnd/assets/images/svg/salary.svg')}}" alt="">
 								<h2 class="text-black mb-2 font-w600">${{$totalActivePackageAmount}}</h2>
                                 <div class="media-body">
                                     <span class="badge badge-success">Total Deposide</span>
@@ -74,10 +74,10 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col-xl-3 col-sm-6 m-t35">
+                    <div class="col-xl-3 col-sm-6 col-xxl-3 col-lg-3 m-t35">
 						<div class="card card-coin">
 							<div class="card-body text-center">
-                                <img  class="mb-3 currency-icon" src="{{asset('BackEnd/assets/images/svg/withdrawal (1).svg')}}" alt="">
+                                <img  class="mb-3 currency-icon" style="width: 45%" src="{{asset('BackEnd/assets/images/svg/withdrawal (1).svg')}}" alt="">
 								<h2 class="text-black mb-2 font-w600">{{$p_withdraw}}$</h2>
                                 <div class="media-body">
                                     <span class="badge badge-dark">pending withdraw</span>
@@ -85,10 +85,10 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col-xl-3 col-sm-6 m-t35">
+                    <div class="col-xl-3 col-sm-6 col-xxl-3 col-lg-3 m-t35">
 						<div class="card card-coin">
 							<div class="card-body text-center">
-                                <img  class="mb-3 currency-icon" src="{{asset('BackEnd/assets/images/svg/withdrawal.svg')}}" alt="">
+                                <img  class="mb-3 currency-icon" style="width: 45%" src="{{asset('BackEnd/assets/images/svg/withdrawal.svg')}}" alt="">
 								<h2 class="text-black mb-2 font-w600">{{$c_withdraw}}$</h2>
                                 <div class="media-body">
                                     <span class="badge badge-warning">Completed Withdraw</span>
@@ -96,10 +96,10 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col-xl-3 col-sm-6 m-t35">
+                    <div class="col-xl-3 col-sm-6 col-xxl-3 col-lg-3 m-t35">
 						<div class="card card-coin">
 							<div class="card-body text-center">
-                                <img  class="mb-3 currency-icon" src="{{asset('BackEnd/assets/images/svg/withdrawal (1).svg')}}" alt="">
+                                <img  class="mb-3 currency-icon" style="width: 45%" src="{{asset('BackEnd/assets/images/svg/withdrawal (1).svg')}}" alt="">
 								<h2 class="text-black mb-2 font-w600">-----</h2>
                                 <div class="media-body">
                                     <span class="badge badge-primary">Blank</span>
@@ -453,7 +453,7 @@
 							</div>
 						</div>
 					</div> --}}
-					<div class="col-xl-6 col-xxl-12">
+					<div class="col-xl-12 col-xxl-12">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="card-bx stacked card">
