@@ -63,9 +63,6 @@ class DashboardController extends Controller
                     $data->save();
                 }
                 session::put('t_percentage',300);
-
-                print_r('fghgf');
-                exit();
             }else{
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 200 )/100;

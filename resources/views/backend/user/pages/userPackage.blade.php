@@ -25,7 +25,9 @@
 									</div>
                                     <div class="col-2">
                                     </div>
+
 								</div>
+                            <h6 class="text-center pt-2">Trading Rate {{$item->trading_rate}}$ Per day</h6>
                             </div>
 							<div class="card-footer mt-0">
                                 <form action="{{url('package-buying-process')}}" method="POST">

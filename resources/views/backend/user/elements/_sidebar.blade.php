@@ -40,7 +40,7 @@
 
                 </ul>
 				<div class="copyright">
-					<p><strong>Pikachu Admin Dashboard</strong> © 2021 All Rights Reserved</p>
+					<p><strong>PIKAFUTURE Admin Dashboard</strong> © 2021 All Rights Reserved</p>
 					{{-- <p class="fs-12">Developed <span class="heart"></span> by DexignZone</p> --}}
 				</div>
 			</div>

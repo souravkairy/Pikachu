@@ -109,7 +109,7 @@ exit();
                 @endif
             </ul>
             <div class="copyright">
-                <p><strong>Pikachu Admin Dashboard</strong> © 2021 All Rights Reserved</p>
+                <p><strong>PIKAFUTURE Admin Dashboard</strong> © 2021 All Rights Reserved</p>
             </div>
         </div>
     </div>
