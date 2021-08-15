@@ -1,5 +1,8 @@
 @extends('backend.admin.dashboard.index')
 @section('content')
+@php
+    $id = 1;
+@endphp
 <div class="content-body">
     <div class="container-fluid">
         <!-- Add Project -->
@@ -58,20 +61,19 @@
                                 <thead>
                                     <tr>
                                         <th>SL</th>
-                                        <th>Name</th>
-                                        <th>Wallet Address</th>
+                                        <th>Customer Id</th>
                                         <th>Package</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @forelse ($activeUsers as $item)
                                     <tr>
-                                        <td>001</td>
-                                        <td>Sourav</td>
-                                        <td>fsjhgjdgigffghjdfghkdhgfhgsdhfgjdgfjdgh</td>
-                                        <td>SILVER</td>
-                                        <td><span class="badge light badge-warning">Successful</span></td>
+                                        <td>{{$id}}</td>
+                                        <td>{{$item->customer_id}}</td>
+                                        <td>{{$item->package_name}}</td>
+                                        <td><span class="badge light badge-success">Successful</span></td>
                                         <td>
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-warning light sharp" data-toggle="dropdown">
@@ -85,6 +87,13 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    @php
+                                        $id++;
+                                    @endphp
+                                    @empty
+                                        <h5>No Active User Found</h5>
+                                    @endforelse
+
                                 </tbody>
                             </table>
                         </div>

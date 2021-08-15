@@ -23,14 +23,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
+    // public function index()
+    // {
+    //     return view('home');
+    // }
 
-    public function changePassword(){
-        return view('auth.changepassword');
-    }
+    // public function changePassword(){
+    //     return view('auth.changepassword');
+    // }
 
     public function updatePassword(Request $request)
     {
@@ -48,7 +48,7 @@ class HomeController extends Controller
                         'messege'=>'Password Changed Successfully ! Now Login with Your New Password',
                         'alert-type'=>'success'
                          );
-                       return Redirect()->route('login')->with($notification);
+                         return Redirect::to('/login-panel')->with($notification);
                  }else{
                      $notification=array(
                         'messege'=>'New password and Confirm Password not matched!',

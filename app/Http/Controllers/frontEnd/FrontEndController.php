@@ -5,6 +5,7 @@ namespace App\Http\Controllers\frontEnd;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Session;
 
 class FrontEndController extends Controller
 {
@@ -26,5 +27,16 @@ class FrontEndController extends Controller
                 return redirect()->back();
             }
         }
+    }
+
+    public function registrationbyref($slug)
+    {
+        session::put('slug', $slug);
+        return view('frontend/registration');
+    }
+    public function registration()
+    {
+        session::put('slug','');
+        return view('frontend/registration');
     }
 }

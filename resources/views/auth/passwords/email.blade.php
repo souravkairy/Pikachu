@@ -1,47 +1,113 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="en">
+<head>
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <!--====== Title ======-->
+    <title>Crypten – Cryptocurrency & ICO HTML Template</title>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{{asset('FrontEnd/assets/images/favicon.ico')}}" type="image/png">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/bootstrap.min.css')}}">
+
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/all.css')}}">
+
+    <!--====== nice select css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/nice-select.css')}}">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/slick.css')}}">
+
+    <!--====== Swiper css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/swiper.min.css')}}">
+
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/default.css')}}">
+
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="{{asset('FrontEnd/assets/css/style.css')}}">
+
+
+</head>
+
+<body>
+
+    <!--====== ERROR PART START ======-->
+
+    <section class="error-area bg_cover" style="background-image: url({{asset('FrontEnd/assets/images/login-bg.jpg')}})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-8">
+                    <div class="login-box">
+                        <div class="login-title text-center">
+                            <a href="{{url('/')}}"><img src="{{asset('FrontEnd/assets/images/logo-2.png')}}" alt="logo"></a>
+
+                           <a> <h3 class="title">{{ __('Reset Your Password') }}</h3></a>
                         </div>
-                    @endif
+                        <div class="login-input">
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+                            <form action="{{ route('password.email') }}" method="POST">
+                                @csrf
+                                <div class="input-box mt-10">
+                                    <input id="email" type="email" class="py-4 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Enter Your Email">
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="input-btn mt-10">
+                                    <button class="main-btn" type="submit">{{ __('Send Password Reset Link') }}</button>
+                                </div>
+                            </form>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </section>
+
+    <!--====== ERROR PART ENDS ======-->
+
+
+    <!--====== jquery js ======-->
+    <script src="{{asset('FrontEnd/assets/js/vendor/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{asset('FrontEnd/assets/js/vendor/jquery-1.12.4.min.js')}}"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="{{asset('FrontEnd/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('FrontEnd/assets/js/popper.min.js')}}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="{{asset('FrontEnd/assets/js/slick.min.js')}}"></script>
+
+    <!--====== Swiper js ======-->
+    <script src="{{asset('FrontEnd/assets/js/swiper.min.js')}}"></script>
+
+    <!--====== nice select js ======-->
+    <script src="{{asset('FrontEnd/assets/js/jquery.nice-select.min.js')}}"></script>
+
+    <!--====== circle progress js ======-->
+    <script src="{{asset('FrontEnd/assets/js/circle-progress.min.js')}}"></script>
+
+    <!--====== Images Loaded js ======-->
+    <script src="{{asset('FrontEnd/assets/js/jquery.syotimer.min.js')}}"></script>
+
+    <!--====== Main js ======-->
+    <script src="{{asset('FrontEnd/assets/js/main.js')}}"></script>
+
+</body>
+
+</html>
