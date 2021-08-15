@@ -5,6 +5,8 @@ namespace App\Http\Controllers\backEnd\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\WorkStation;
+use App\Models\ActivePackage;
+use App\Models\PackageSetting;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Session;
@@ -37,15 +39,32 @@ class WorkStationController extends Controller
     {
         $user_id = Auth::id();
         $user_data = User::find($user_id);
-        $user_data['task_status'] = 2;
-        $user_data['traiding_bonous'] = $user_data->traiding_bonous + 10;
-        $user_data['remaining_balance'] = $user_data->remaining_balance + 10;
-        $insert = $user_data->save();
 
-        // $dd = 3;
-        // session::put('dd', $dd);
-        if ($insert) {
-            return redirect()->back();
+        $active_packs =  ActivePackage::where('user_id',$user_id)->where('status',1)->select('package_id')->get();
+        // echo "<pre>";
+        // print_r($active_packs);
+        // exit();
+        foreach ($active_packs as $item) {
+            $pack_id = $item->package_id;
+            $pack_data = PackageSetting::where('id',$pack_id)->get();
+
+
+
+            foreach ($pack_data as $item) {
+                $trading_rate = $item->trading_rate;
+                $user_data['task_status'] = 2;
+                $user_data['traiding_bonous'] = $user_data->traiding_bonous + $trading_rate;
+                $user_data['remaining_balance'] = $user_data->remaining_balance + $trading_rate;
+                $user_data->save();
+        //         foreach ($active_packs as $data) {
+        // //              echo "<pre>";
+        // // print_r($data);
+        // // exit();
+        //        $ff = $data->traiding_balance + 20;
+        //             ActivePackage::where('user_id',$user_id)->update(['traiding_balance' => $ff]);
+        //         }
+            }
         }
+        return redirect('/user-wallet');
     }
 }

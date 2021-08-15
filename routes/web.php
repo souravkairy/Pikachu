@@ -71,6 +71,7 @@ Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListControll
 //withdraw request list route --------------------------------
 
 Route::get('/pending-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@pending_withdraw');
+Route::get('/confirm-withdraw/{id}', 'App\Http\Controllers\backEnd\Admin\WithdrawController@confirm_withdraw');
 Route::get('/completed-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@completed_withdraw');
 Route::get('/completed-', 'App\Http\Controllers\backEnd\Admin\WithdrawController@completed_withdraw');
 
