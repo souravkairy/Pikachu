@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--====== Title ======-->
-    <title>PIKACHU -- Grab Your Profit</title>
+    <title>PIKAFUTURE -- Grab Your Profit</title>
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{asset('FrontEnd/assets/images/favicon.ico')}}" type="image/png">
@@ -48,7 +48,9 @@
                     <div class="col-lg-12">
                         <div class="navigation">
                             <nav class="navbar navbar-expand-lg navbar-light ">
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('FrontEnd/assets/images/logo.png')}}" alt=""><strong style="color: white">PIKACHU</strong></a>
+                                <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('FrontEnd/assets/images/logo.png')}}" alt=""><strong style="color: white;
+                                    font-family: cursive;
+                                    font-size: 26px;">PIKAFUTURE</strong></a>
                                 <!-- logo -->
                                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -180,7 +182,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="crypten-trade-content">
-                            <span>what is PIKACHU</span>
+                            <span>what is PIKAFUTURE</span>
                             <h3 class="title">A Secure Platform for ICO and Cryptocurrency Trade</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, ipsa.
                                  Atque illum vel quasi eos ut officia ad cum praesentium, voluptatem consequuntur eveniet nemo, veniam, aut quia perferendis officiis. Commodi!</p>
@@ -1880,7 +1882,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-copyright d-flex justify-content-between align-items-center">
-                        <p class="order-2 order-sm-1">© 2021 PIKACHU</p>
+                        <p class="order-2 order-sm-1">© 2021 PIKAFUTURE</p>
                         <ul class="order-1 order-sm-2">
                             <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>

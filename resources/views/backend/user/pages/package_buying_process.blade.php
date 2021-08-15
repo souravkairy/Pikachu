@@ -28,22 +28,35 @@
                                         <div class="row align-items-end">
                                             <div class="col-xl-6 col-lg-12 col-xxl-12">
                                                 <div class="row">
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-4">
                                                         <div class="mb-4">
-                                                            <p class="mb-2">Package Name</p>
+                                                            <p class="mb-2">Package</p>
                                                             <h4 class="text-black">{{$package_name}}</h4>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-6">
+                                                    <div class="col-sm-4">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Price</p>
-                                                            <h4 class="text-black">{{$package_price}}</h4>
+                                                            <h4 class="text-black">{{$package_price}} + 5% charge</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="mb-4">
+                                                            <p class="mb-2">Total</p>
+                                                            <h4 class="text-black">{{$package_price + ($package_price*5)/100 }}$</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Wallet Address</p>
-                                                            <h4 class="text-black">{{$walletAddress->wallet_address}}</h4>
+                                                            <div class="row">
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" value="{{$walletAddress->wallet_address}}" id="myInput" readonly>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <button class="btn btn-light" onclick="myFunction()"><i class="fa fa-copy color-success"></i></button>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -73,6 +86,16 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            function myFunction() {
+              var copyText = document.getElementById("myInput");
+              copyText.select();
+              copyText.setSelectionRange(0, 99999)
+              document.execCommand("copy");
+              alert("Copied the text: " + copyText.value);
+            }
+        </script>
         <!--**********************************
             Content body end
         ***********************************-->
