@@ -37,13 +37,13 @@
                                                     <div class="col-sm-4">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Price</p>
-                                                            <h4 class="text-black">{{$package_price}} + 5% charge</h4>
+                                                            <h4 class="text-black">{{$package_price}}$ + 9$ charge</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Total</p>
-                                                            <h4 class="text-black">{{$package_price + ($package_price*5)/100 }}$</h4>
+                                                            <h4 class="text-black">{{$package_price + 9 }}$</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
