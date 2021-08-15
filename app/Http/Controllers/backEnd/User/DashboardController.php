@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ActivePackage;
 use App\Models\CommisionSetting;
 use App\Models\User;
+use App\Models\Withdraw;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -62,12 +63,16 @@ class DashboardController extends Controller
                     $data->save();
                 }
                 session::put('t_percentage',300);
+
+                print_r('fghgf');
+                exit();
             }else{
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 200 )/100;
                     $data->save();
                 }
                 session::put('t_percentage',200);
+
             }
 
         }
@@ -105,7 +110,7 @@ class DashboardController extends Controller
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 300 )/100 ;
                     $data->save();
-                } session::put('t_percentage',200);
+                } session::put('t_percentage',300);
             }else{
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 200 )/100;
@@ -155,7 +160,7 @@ class DashboardController extends Controller
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 300 )/100 ;
                     $data->save();
-                } session::put('t_percentage',200);
+                } session::put('t_percentage',300);
             }else{
                 foreach ($packageData as $data) {
                     $data['traiding_limit'] = ($data->package_price * 200 )/100;
@@ -163,16 +168,33 @@ class DashboardController extends Controller
                 } session::put('t_percentage',200);
             }
         }
+        $totalIncome = $user_data->traiding_bonous + $user_data->ref_commision;
+        $incomeLimit = $packageData->sum('traiding_limit');
+        if ($totalIncome >= $incomeLimit) {
+            foreach ($packageData as $data) {
+                $data['status'] = 2;
+                $data->save();
+            }
+            $user_data['remaining_balance'] = 0;
+            $user_data['p_ref_commision'] = $total_commision;
+            $user_data['traiding_bonous'] = 0;
+            $user_data->save();
 
 
+        }
+
+
+        $withdraw_status_list = Withdraw::where('user_id',$user_id)->select('wallet_address','withdraw_amount','status','created_at','updated_at')->get();
         $header = view('backend/user/elements/_header');
         $sidebar = view('backend/user/elements/_sidebar');
         $footer = view('backend/user/elements/_footer');
-        $content = view('backend/user/pages/dashboard')->with('activePackages', $packageData)
+        $content = view('backend/user/pages/dashboard')
+            ->with('activePackages', $packageData)
             ->with('user_data', $user_data)
             ->with('firstLevelIncome', $firstLevelIncome)
             ->with('secondLevelIncome', $secondLevelIncome)
-            ->with('thirdLevelIncome', $thirdLevelIncome);
+            ->with('thirdLevelIncome', $thirdLevelIncome)
+            ->with('withdraw_status_list', $withdraw_status_list);
         return view('backend/user/dashboard/index', compact('header', 'sidebar', 'footer', 'content'));
     }
 

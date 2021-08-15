@@ -45,7 +45,7 @@
                                                 <td>{{$item->customer_id}}</td>
                                                 <td>{{$item->wallet_address}}</td>
                                                 <td>{{ $item->withdraw_amount }}$</td>
-                                                <td>{{ $item->created_at }}</td>
+                                                <td>{{ $item->updated_at }}</td>
                                                 <td><span class="badge light badge-success">Completed</span></td>
                                                 <td>
                                                     <div class="dropdown">
@@ -63,7 +63,7 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="{{url('activeUser/'.$item->user_id.'/'.$item->id)}}">View</a>
+                                                            <a class="dropdown-item" href="#">-------</a>
                                                         </div>
                                                     </div>
                                                 </td>

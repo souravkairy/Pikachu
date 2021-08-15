@@ -21,6 +21,16 @@ class WithdrawController extends Controller
         $content = view('backend/admin/pages/pendingwithdrawRequest')->with('pendingwithdrawRequest',$pendingwithdrawRequest);
         return view('backend/admin/dashboard/index',compact('header','sidebar','footer','content'));
     }
+    public function confirm_withdraw($id){
+        $update_withdraw_status = Withdraw::find($id);
+        $update_withdraw_status['status'] = 3;
+        $update_withdraw_status['updated_at'] = date("Y/m/d H:i:s");
+        $success = $update_withdraw_status->save();
+        if ($success) {
+            return redirect()->back();
+        }
+
+    }
     public function completed_withdraw()
     {
         $withdrawCompleted = Withdraw::where('status', 3)->get();

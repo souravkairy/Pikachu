@@ -21,4 +21,8 @@ class ActivePackage extends Model
     {
         return $this->hasMany(PackageSetting::class, 'id', 'package_id');
     }
+    // public function active_pack()
+    // {
+    //     return $this->hasMany(User::class, 'id', 'user_id');
+    // }
 }
