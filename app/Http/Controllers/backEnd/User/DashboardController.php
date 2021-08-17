@@ -169,7 +169,7 @@ class DashboardController extends Controller
         $incomeLimit = $packageData->sum('traiding_limit');
         if ($totalIncome >= $incomeLimit) {
             foreach ($packageData as $data) {
-                $data['status'] = 2;
+                $data['status'] = 3;
                 $data->save();
             }
             $user_data['remaining_balance'] = 0;
@@ -180,7 +180,7 @@ class DashboardController extends Controller
 
         }
 
-
+       // $activePackages = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
         $withdraw_status_list = Withdraw::where('user_id',$user_id)->select('wallet_address','withdraw_amount','status','created_at','updated_at')->get();
         $header = view('backend/user/elements/_header');
         $sidebar = view('backend/user/elements/_sidebar');

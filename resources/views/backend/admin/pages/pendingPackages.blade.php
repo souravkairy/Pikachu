@@ -9,13 +9,12 @@
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
                         <h4>Hi, welcome back!</h4>
-                        <span>Pending Users</span>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Datatable</a></li>
+                        <li class="breadcrumb-item"><a href="{{url('/')}}">Admin</a></li>
+                        <li class="breadcrumb-item active"><a href="{{url('pending-packages')}}">Pending-Packages</a></li>
                     </ol>
                 </div>
             </div>
@@ -38,7 +37,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($pendingUsers as $item)
+                                        @forelse ($pendingPackages as $item)
                                             <tr>
                                                 <td>{{ $id }}</td>
                                                 <td>
@@ -66,9 +65,9 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">View</a>
+                                                            {{-- <a class="dropdown-item" href="#">View</a> --}}
                                                             <a class="dropdown-item" href="{{url('activeUser/'.$item->user_id.'/'.$item->id)}}">Active</a>
-                                                            <a class="dropdown-item" href="#">Delete</a>
+                                                            <a class="dropdown-item" href="{{url('declineUser/'.$item->id)}}">Decline</a>
                                                         </div>
                                                     </div>
                                                 </td>
