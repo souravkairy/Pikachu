@@ -12,7 +12,7 @@
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{url('/')}}">Admin</a></li>
-                    <li class="breadcrumb-item active"><a href="{{url('new-users')}}">New Users</a></li>
+                    <li class="breadcrumb-item active"><a href="{{url('de-actived-users')}})">De Activated Users</a></li>
                 </ol>
             </div>
         </div>
@@ -33,13 +33,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($newUsers as $item)
+                                    @forelse ($deActivatedUsers as $item)
                                     <tr>
                                         <td>{{$id}}</td>
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->email}}</td>
                                         <td>{{$item->created_at}}</td>
-                                        <td><span class="badge light badge-success">New Users</span></td>
+                                        <td><span class="badge light badge-danger">De-Activated</span></td>
                                         {{-- <td>
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-warning light sharp" data-toggle="dropdown">

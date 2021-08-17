@@ -1,6 +1,16 @@
 @extends('backend.admin.dashboard.index')
 @section('content')
 <?php
+
+// if (count($activePackages) == 0) {
+//     print_r('ase');
+//     exit();
+// }
+// else {
+//     print_r('nai');
+//     exit();
+// }
+
     if ($user_data->p_ref_commision >= $user_data->ref_commision) {
         $ref_commission = $user_data->p_ref_commision - $user_data->ref_commision;
     } else {
@@ -108,6 +118,8 @@
                                                 <div class="col-sm-6">
                                                     <div class="mb-4">
                                                         <p class="mb-2">Customer ID</p>
+
+
                                                         @forelse ($activePackages as $item)
                                                             <li>
                                                                 <h4 class="text-black">
@@ -184,7 +196,7 @@
                                                         <p class="mb-2">Active Packages</p>
                                                         @forelse ($activePackages as $item)
                                                         <li>
-                                                            <h6 class="text-black">Package: {{$item->package_name}} ({{$item->package_price}}$)</h6>
+                                                            <h6 class="text-black">Package: {{$item->package_name ?? NULL}} ({{$item->package_price ?? NULL}}$)</h6>
                                                         </li>
                                                         @empty
                                                         <li>

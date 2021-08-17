@@ -23,9 +23,13 @@ exit();
                         <span class="nav-text">Users</span>
                     </a>
                     <ul aria-expanded="false">
-                        <li><a href="{!! url('new-users') !!}">New User</a></li>
-                        <li><a href="{!! url('pending-users') !!}">Pending User</a></li>
-                        <li><a href="{!! url('active-users') !!}">Active User</a></li>
+                        <li><a href="{!! url('new-users') !!}">New Users</a></li>
+                        <li><a href="{!! url('active-users') !!}">Active Users</a></li>
+                        <li><a href="{!! url('de-actived-users') !!}">De-Avtive Users</a></li>
+                        <li><a href="{!! url('pending-packages') !!}">Pending Packages</a></li>
+                        <li><a href="{!! url('active-packages') !!}">Avtive Packages</a></li>
+                        <li><a href="{!! url('de-actived-packages') !!}">De-Avtive Packages</a></li>
+
                     </ul>
                 </li>
 
@@ -87,12 +91,12 @@ exit();
                     </a>
                     <ul aria-expanded="false">
                         <li><a href="{{url('contact-inbox')}}">Inbox</a></li>
-                        <li><a href="#">Sent</a></li>
+                        {{-- <li><a href="#">Sent</a></li> --}}
                     </ul>
                 </li>
 
                  @if(Auth::user()->setting == 1)
-                <li><a href="#" class="ai-icon" aria-expanded="false">
+                <li><a href="{{url('site-setting')}}" class="ai-icon" aria-expanded="false">
                         <i class="flaticon-381-settings-2"></i>
                         <span class="nav-text">Site-Setting</span>
                     </a>
@@ -109,7 +113,7 @@ exit();
                 @endif
             </ul>
             <div class="copyright">
-                <p><strong>Pikachu Admin Dashboard</strong> © 2021 All Rights Reserved</p>
+                <p><strong>PIKAFUTURE Admin Dashboard</strong> © 2021 All Rights Reserved</p>
             </div>
         </div>
     </div>

@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
-
+@php
+    $pack = DB::table('packages_setting')->get();
+@endphp
 <head>
 
     <!--====== Required meta tags ======-->
@@ -10,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--====== Title ======-->
-    <title>PIKACHU -- Grab Your Profit</title>
+    <title>PIKAFUTURE -- Grab Your Profit</title>
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{asset('FrontEnd/assets/images/favicon.ico')}}" type="image/png">
@@ -48,7 +50,9 @@
                     <div class="col-lg-12">
                         <div class="navigation">
                             <nav class="navbar navbar-expand-lg navbar-light ">
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('FrontEnd/assets/images/logo.png')}}" alt=""><strong style="color: white">PIKACHU</strong></a>
+                                <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('FrontEnd/assets/images/logo.png')}}" alt=""><strong style="color: white;
+                                    font-family: cursive;
+                                    font-size: 26px;">PIKAFUTURE</strong></a>
                                 <!-- logo -->
                                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -75,21 +79,30 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="#Roadmap">Roadmap</a>
                                         </li>
-                                        {{-- <li class="nav-item">
-                                            <a class="nav-link" href="#">downloads</a>
-                                        </li> --}}
                                         <li class="nav-item">
                                             <a class="nav-link" href="#Faqs">Faqs</a>
+                                        </li>
+                                        <li style="
+                                        padding-top: 25px;
+                                        padding-right: 8px;
+                                    ">
+                                            <a class="main-btn" href="{{url('login-panel')}}">login</a>
+                                        </li>
+                                        <li style="
+                                        padding-top: 25px;
+                                        padding-right: 8px;
+                                    ">
+                                            <a class="main-btn-2 main-btn" href="{{url('registration')}}">signup</a>
                                         </li>
 
                                     </ul>
                                 </div> <!-- navbar collapse -->
-                                <div class="navbar-btn d-none d-sm-flex">
+                                {{-- <div class="navbar-btn d-none d-sm-flex">
                                     <ul>
                                         <li><a class="main-btn" href="{{url('login-panel')}}">login</a></li>
                                         <li><a class="main-btn-2 main-btn" href="{{url('registration')}}">signup</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </nav>
                         </div> <!-- navigation -->
                     </div>
@@ -180,7 +193,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="crypten-trade-content">
-                            <span>what is PIKACHU</span>
+                            <span>what is PIKAFUTURE</span>
                             <h3 class="title">A Secure Platform for ICO and Cryptocurrency Trade</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, ipsa.
                                  Atque illum vel quasi eos ut officia ad cum praesentium, voluptatem consequuntur eveniet nemo, veniam, aut quia perferendis officiis. Commodi!</p>
@@ -449,132 +462,23 @@
                 </div>
             </div>
             <div class="row token-sale-active">
-                <div class="col-lg-3">
+                @forelse ($pack as $item)
+                <div class="col-lg-4">
                     <div class="token-sale-item mt-30 text-center">
                         <div class="circle-1">
                             <strong></strong>
                         </div>
-                        <span>Pre sale</span>
-                        <p>35% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="token-sale-start mt-20">
-                        <span>START</span>
-                        <p>Soft Cap $2M</p>
+                        <span>{{$item->package_name}}</span>
+                        <p>{{$item->package_price}}$</p>
+                        <p>{{$item->trading_rate}}$ Daily</p>
+
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-1">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 1</span>
-                        <p>30% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-3">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 2</span>
-                        <p>25% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="token-sale-start mt-20">
-                        <span>Stage 2</span>
-                        <p>hard Cap $5M</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-4">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 3</span>
-                        <p>20% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-3">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 4</span>
-                        <p>15% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="token-sale-start mt-20">
-                        <span>Stage 4</span>
-                        <p>hard Cap $10M</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-4">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 5</span>
-                        <p>10% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                @empty
+                    <h6>No package found</h6>
+                @endforelse
+
+
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -1880,7 +1784,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-copyright d-flex justify-content-between align-items-center">
-                        <p class="order-2 order-sm-1">© 2021 PIKACHU</p>
+                        <p class="order-2 order-sm-1">© 2021 PIKAFUTURE</p>
                         <ul class="order-1 order-sm-2">
                             <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>

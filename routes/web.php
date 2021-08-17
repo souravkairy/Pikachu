@@ -58,14 +58,21 @@ Route::post('/update-commisions', 'App\Http\Controllers\backEnd\Admin\Commisions
 
 
 Route::get('/site-setting', 'App\Http\Controllers\backEnd\Admin\SiteSettingController@index');
+Route::post('/save-site-setting', 'App\Http\Controllers\backEnd\Admin\SiteSettingController@save_site_setting');
 Route::get('/admin-role-setting', 'App\Http\Controllers\backEnd\Admin\UserRoleController@index');
 
 
 Route::get('/new-users', 'App\Http\Controllers\backEnd\Admin\UserListController@new_users');
-Route::get('/pending-users', 'App\Http\Controllers\backEnd\Admin\UserListController@pending_users');
+Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListController@active_users');
+Route::get('/viewActiveUser/{id}', 'App\Http\Controllers\backEnd\Admin\UserListController@view_active_users');
+Route::get('/deleteActiveUser/{id}', 'App\Http\Controllers\backEnd\Admin\UserListController@delete_active_users');
+Route::get('/de-actived-users', 'App\Http\Controllers\backEnd\Admin\UserListController@de_activated_users');
+Route::get('/pending-packages', 'App\Http\Controllers\backEnd\Admin\UserListController@pending_packages');
 Route::get('/viewSS/{id}', 'App\Http\Controllers\backEnd\Admin\UserListController@viewSS');
 Route::get('/activeUser/{user_id}/{id}', 'App\Http\Controllers\backEnd\Admin\UserListController@activeUser');
-Route::get('/active-users', 'App\Http\Controllers\backEnd\Admin\UserListController@active_users');
+Route::get('/declineUser/{id}', 'App\Http\Controllers\backEnd\Admin\UserListController@declineUser');
+Route::get('/active-packages', 'App\Http\Controllers\backEnd\Admin\UserListController@active_packages');
+Route::get('/de-actived-packages', 'App\Http\Controllers\backEnd\Admin\UserListController@de_active_packages');
 
 
 //withdraw request list route --------------------------------

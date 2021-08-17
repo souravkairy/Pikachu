@@ -23,7 +23,7 @@ class CreateActivePackagesTable extends Migration
             $table->string('package_price');
             $table->string('screen_shot');
             $table->string('txnId');
-            $table->enum('status', ['active', 'inactive'])->nullable();
+            $table->enum('status', ['active', 'inactive','disable'])->nullable();
             $table->timestamps();
         });
     }
