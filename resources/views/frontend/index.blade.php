@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
-
+@php
+    $pack = DB::table('packages_setting')->get();
+@endphp
 <head>
 
     <!--====== Required meta tags ======-->
@@ -460,132 +462,23 @@
                 </div>
             </div>
             <div class="row token-sale-active">
-                <div class="col-lg-3">
+                @forelse ($pack as $item)
+                <div class="col-lg-4">
                     <div class="token-sale-item mt-30 text-center">
                         <div class="circle-1">
                             <strong></strong>
                         </div>
-                        <span>Pre sale</span>
-                        <p>35% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="token-sale-start mt-20">
-                        <span>START</span>
-                        <p>Soft Cap $2M</p>
+                        <span>{{$item->package_name}}</span>
+                        <p>{{$item->package_price}}$</p>
+                        <p>{{$item->trading_rate}}$ Daily</p>
+
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-1">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 1</span>
-                        <p>30% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-3">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 2</span>
-                        <p>25% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="token-sale-start mt-20">
-                        <span>Stage 2</span>
-                        <p>hard Cap $5M</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-4">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 3</span>
-                        <p>20% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-3">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 4</span>
-                        <p>15% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="token-sale-start mt-20">
-                        <span>Stage 4</span>
-                        <p>hard Cap $10M</p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-4">
-                            <strong></strong>
-                        </div>
-                        <span>Stage 5</span>
-                        <p>10% bonus</p>
-                        <div class="item">
-                            <ul>
-                                <li>21 AUG</li>
-                                <li>31 AUG</li>
-                            </ul>
-                            <ul>
-                                <li>2018</li>
-                                <li>2018</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                @empty
+                    <h6>No package found</h6>
+                @endforelse
+
+
             </div>
             <div class="row">
                 <div class="col-lg-12">
