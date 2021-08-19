@@ -2,6 +2,7 @@
 <html lang="en">
 @php
     $pack = DB::table('packages_setting')->get();
+
 @endphp
 <head>
 
@@ -465,8 +466,8 @@
                 @forelse ($pack as $item)
                 <div class="col-lg-4">
                     <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-1">
-                            <strong></strong>
+                        <div class="circle">
+                            <h3 class="cicleText">300%</h3>
                         </div>
                         <span>{{$item->package_name}}</span>
                         <p>{{$item->package_price}}$</p>
@@ -546,32 +547,45 @@
                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                             aria-labelledby="v-pills-home-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-1.png')}}" alt="">
+                                <div class="circle">
+                                    <h3 class="squareText mr-2">Referal Comission</h3>
+                                    <h3 class="squareText mr-2">Trading Bonous</h3>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                             aria-labelledby="v-pills-profile-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-2.png')}}" alt="">
+                                <div class="circle">
+                                    <h3 class="squareText mr-2">12% (From level One)</h3>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
                             aria-labelledby="v-pills-messages-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-3.png')}}" alt="">
+                                <div class="circle">
+                                    <h3 class="squareText mr-2">8% (From Level Two)</h3>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
                             aria-labelledby="v-pills-settings-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-4.png')}}" alt="">
+                                <div class="circle">
+                                    <h3 class="squareText mr-2">5% (From Third level)</h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-5-tab">
+                        <div class="tab-pane fade" id="v-pills-5" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-5.png')}}" alt="">
+                                <div class="circle">
+                                    <p class="squareText p-3 text-center">Only, After 2 active account below your referal link you will get 300% bonous otherwise you will get 200%</p>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
@@ -1605,7 +1619,7 @@
 
     <!--====== BRAND PART START ======-->
 
-    <section class="brand-area">
+    {{-- <section class="brand-area">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -1663,7 +1677,7 @@
         <div class="banefits-color-2">
             <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
         </div>
-    </section>
+    </section> --}}
 
     <!--====== BRAND PART ENDS ======-->
 

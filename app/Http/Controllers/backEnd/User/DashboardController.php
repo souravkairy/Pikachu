@@ -23,9 +23,36 @@ class DashboardController extends Controller
         $commisionData = CommisionSetting::find(1);
         $user_id = Auth::id();
         $user_data = User::find($user_id);
+        $packageData = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
           //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
         //     $user_data->save();
-        $packageData = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
+        if ( $user_data->ref_link == null) {
+            // print_r('nait');
+            // exit();
+            $user_data['remaining_balance'] = 0;
+            $user_data['ref_commision'] = 0;
+            $user_data->save();
+            $firstLevelIncome = [];
+            $secondLevelIncome = [];
+            $thirdLevelIncome = [];
+            $withdraw_status_list = [''];
+            $withdraw_status_list = Withdraw::where('user_id',$user_id)->select('wallet_address','withdraw_amount','status','created_at','updated_at')->get();
+            $header = view('backend/user/elements/_header');
+            $sidebar = view('backend/user/elements/_sidebar');
+            $footer = view('backend/user/elements/_footer');
+            $content = view('backend/user/pages/dashboard')
+                ->with('activePackages', $packageData)
+                ->with('user_data', $user_data)
+                ->with('firstLevelIncome', $firstLevelIncome)
+                ->with('secondLevelIncome', $secondLevelIncome)
+                ->with('thirdLevelIncome', $thirdLevelIncome)
+                ->with('withdraw_status_list', $withdraw_status_list);
+            return view('backend/user/dashboard/index', compact('header', 'sidebar', 'footer', 'content'));
+
+
+        }
+
+
         $reflink = $user_data->ref_link;
         $level1 = User::where('ref_from', $reflink)->where('status', 1)->select('ref_link')->get();
         $level2 = User::whereIn('ref_from', $level1)->where('status', 1)->select('ref_link')->get();
@@ -35,9 +62,9 @@ class DashboardController extends Controller
         $secondLevelIncome = User::whereIn('ref_from', $level1)->where('status', 1)->select('ref_commision', 'traiding_bonous')->get();
         $thirdLevelIncome = User::whereIn('ref_from', $level2)->where('status', 1)->select('ref_commision', 'traiding_bonous')->get();
 
-        // if (sizeof($firstLevelIncome) == 0 && sizeof($secondLevelIncome) == 0 && sizeof($thirdLevelIncome) == 0) {
-        if (sizeof($thirdLevelIncome) == 0 && sizeof($secondLevelIncome) == 0) {
-//first level calculation
+        if(sizeof($thirdLevelIncome) == 0 && sizeof($secondLevelIncome) == 0) {
+
+        //first level calculation
             $cTotal1 = 0;
             foreach ($firstLevelIncome as $data) {
                 $total = $data->ref_commision + $data->traiding_bonous;

@@ -11,6 +11,8 @@
 //     exit();
 // }
 
+// print_r($firstLevelIncome);
+//    exit();
     if ($user_data->p_ref_commision >= $user_data->ref_commision) {
         $ref_commission = $user_data->p_ref_commision - $user_data->ref_commision;
     } else {
@@ -179,15 +181,19 @@
                                                         <p class="mb-2">DownLine Members</p>
                                                         <li>
                                                             <h6 class="text-black">First Level :
-                                                                {{ $firstLevelIncome->count() ?? 'No one' }}p</h6>
+                                                                <?php echo sizeOf($firstLevelIncome) ?>
+                                                                {{-- {{ $firstLevelIncome->count() ?? 'No one' }}p --}}
+                                                            </h6>
                                                         </li>
                                                         <li>
                                                             <h6 class="text-black">Second Level :
-                                                                {{ $secondLevelIncome->count() ?? 'No one' }}p</h6>
+                                                                <?php echo sizeOf($secondLevelIncome) ?>
+                                                                {{-- {{ $secondLevelIncome->count() ?? 'No one' }}p</h6> --}}
                                                         </li>
                                                         <li>
                                                             <h6 class="text-black">Third Level :
-                                                                {{ $thirdLevelIncome->count() ?? 'No one' }}p</h6>
+                                                                <?php echo sizeOf($thirdLevelIncome) ?>
+                                                                {{-- {{ $thirdLevelIncome->count() ?? 'No one' }}p</h6> --}}
                                                         </li>
                                                     </div>
                                                 </div>
