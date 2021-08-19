@@ -6,6 +6,7 @@
     $package_name = session::get('package_name');
     $package_price = session::get('package_price');
     $userId = session::get('userId');
+    $chrage = DB::table('site_setting')->first();
     // $dff = session::get('dff');
 @endphp
              <!--**********************************
@@ -37,13 +38,13 @@
                                                     <div class="col-sm-4">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Price</p>
-                                                            <h4 class="text-black">{{$package_price}}$ + 9$ charge</h4>
+                                                            <h4 class="text-black">{{$package_price}}$ + {{$chrage->package_buy_charge}}$ charge</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Total</p>
-                                                            <h4 class="text-black">{{$package_price + 9 }}$</h4>
+                                                            <h4 class="text-black">{{$package_price + $chrage->package_buy_charge }}$</h4>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">

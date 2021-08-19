@@ -23,6 +23,7 @@ class DashboardController extends Controller
         $commisionData = CommisionSetting::find(1);
         $user_id = Auth::id();
         $user_data = User::find($user_id);
+         $reflink = $user_data->ref_link;
         $packageData = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
           //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
         //     $user_data->save();
@@ -51,7 +52,6 @@ class DashboardController extends Controller
 
 
         }
-
 
         $reflink = $user_data->ref_link;
         $level1 = User::where('ref_from', $reflink)->where('status', 1)->select('ref_link')->get();
