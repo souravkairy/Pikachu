@@ -2,22 +2,36 @@
 @section('content')
 <?php
 
-// if (count($activePackages) == 0) {
-//     print_r('ase');
-//     exit();
-// }
-// else {
-//     print_r('nai');
-//     exit();
+// print_r($activePackages);
+// exit();
+
+// if ($activePackages == ['']) {
+//    echo "faka";
+//    exit();
+// } else {
+//    echo "oise na";
+//    exit();
 // }
 
-// print_r($firstLevelIncome);
-//    exit();
-    if ($user_data->p_ref_commision >= $user_data->ref_commision) {
-        $ref_commission = $user_data->p_ref_commision - $user_data->ref_commision;
-    } else {
-        $ref_commission = $user_data->ref_commision;
-    }
+
+
+
+
+$today = date("Y/m/d H:i:s");
+$expire = $user_data->next_withdraw_date; //from database
+
+$today_time = strtotime($today);
+$expire_time = strtotime($expire);
+$ref_commission = $user_data->ref_commision;
+
+// if ($user_data->p_ref_commision >= $user_data->ref_commision) {
+//     echo "faka";
+//     exit();
+//         $calculation = floatval( $user_data->p_ref_commision) - floatval($user_data->ref_commision);
+//         $ref_commission =  round(floatval($calculation),2);
+//     } else {
+//         $ref_commission = $user_data->ref_commision;
+//     }
 ?>
     <div class="content-body">
         <div class="container-fluid">
@@ -260,6 +274,7 @@
                                                 </ul>
                                             </div>
                                         @endif
+                                        @if ($expire_time < $today_time)
                                         <form action="{{ url('withdraw_request') }}" method="POST">
                                             @csrf
                                             <div class="form-wrapper">
@@ -268,7 +283,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">Amount USDT</span>
                                                         </div>
-                                                        <input type="text" class="form-control" placeholder="742.2"
+                                                        <input type="text" class="form-control" placeholder="Minimum 20$"
                                                             name="withdraw_amount">
                                                         <input type="hidden"
                                                             value="{{ $user_data->wallet_address ?? null }}"
@@ -292,6 +307,18 @@
                                                 </div>
                                             </div>
                                         </form>
+                                        @else
+                                            <div class="row pt-5 align-items-center">
+                                                <div class="col-sm-12 mb-2">
+                                                    <p class="mb-0 fs-16 text-danger">Your withdraw section will enable after 7 days of last withdraw, Thank You</p>
+                                                </div>
+                                                {{-- <div class="col-sm-6 mb-2">
+                                                    <button type="submit" class="btn btn-primary w-100">Withdraw
+                                                        Now</button>
+                                                </div> --}}
+                                            </div>
+                                        @endif
+
                                     </div>
                                 </div>
                             </div>

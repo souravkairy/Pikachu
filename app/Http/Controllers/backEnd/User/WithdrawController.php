@@ -21,7 +21,8 @@ class WithdrawController extends Controller
             $r_balance = $request->remaining_balance;
             $w_amount = $request->withdraw_amount;
 
-            if ($r_balance >= $w_amount) {
+            if ($r_balance >= $w_amount &&  $w_amount > 0 ) {
+               if ( 20 <= $w_amount) {
                 $charge = ($w_amount*5)/100;
                 $withamn = $w_amount - $charge;
 
@@ -30,17 +31,21 @@ class WithdrawController extends Controller
                 $data['withdraw_amount'] = $withamn;
                 $data['customer_id'] = $request->customer_id;
                 $data['wallet_address'] = $request->wallet_address;
-                $data['created_at'] = date("Y/m/d H:i:s");
+                $today = $data['created_at'] = date("Y/m/d H:i:s");
                 $data->save();
 
                 $user_data = User::find($request->user_id);
                 $user_data['remaining_balance'] =  $r_balance - $w_amount;
+                $user_data['next_withdraw_date'] =  date('Y/m/d H:i:s', strtotime($today . ' +7 day'));
                 $insert = $user_data->save();
-
 
                 if ($insert) {
                     return redirect('user-wallet');
                 }
+               }
+               else {
+                return redirect('user-wallet');
+               };
             }
             else{
                 return redirect('user-wallet');

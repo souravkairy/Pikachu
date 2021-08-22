@@ -2,6 +2,7 @@
 <html lang="en">
 @php
     $pack = DB::table('packages_setting')->get();
+    $bonous = DB::table('commisions_setting')->first();
 
 @endphp
 <head>
@@ -548,8 +549,9 @@
                             aria-labelledby="v-pills-home-tab">
                             <div class="stakeholders-thumb mt-55">
                                 <div class="circle">
-                                    <h3 class="squareText mr-2">Referal Comission</h3>
-                                    <h3 class="squareText mr-2">Trading Bonous</h3>
+                                    <p class="squareText p-3 text-center">300% with total income including referal bonous & trading bonous</p>
+                                    <p class="squareText p-3 text-center">Only, After 2 active account below your referal link you will get 300% bonous otherwise you will get 200%</p>
+
                                 </div>
                             </div>
                         </div>
@@ -557,7 +559,7 @@
                             aria-labelledby="v-pills-profile-tab">
                             <div class="stakeholders-thumb mt-55">
                                 <div class="circle">
-                                    <h3 class="squareText mr-2">12% (From level One)</h3>
+                                    <h3 class="squareText mr-2">{{$bonous->levelOnePer}}% (From level One)</h3>
                                 </div>
                             </div>
                         </div>
@@ -565,7 +567,7 @@
                             aria-labelledby="v-pills-messages-tab">
                             <div class="stakeholders-thumb mt-55">
                                 <div class="circle">
-                                    <h3 class="squareText mr-2">8% (From Level Two)</h3>
+                                    <h3 class="squareText mr-2">{{$bonous->levelTwoPer}}% (From Level Two)</h3>
                                 </div>
                             </div>
                         </div>
@@ -573,7 +575,7 @@
                             aria-labelledby="v-pills-settings-tab">
                             <div class="stakeholders-thumb mt-55">
                                 <div class="circle">
-                                    <h3 class="squareText mr-2">5% (From Third level)</h3>
+                                    <h3 class="squareText mr-2">{{$bonous->levelThreePer}}% (From Third level)</h3>
                                 </div>
                             </div>
                         </div>
@@ -1717,14 +1719,19 @@
                         @csrf
                         <div class="contact-box">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="input-box mt-10">
-                                        <input type="text" placeholder="Name" name="name">
+                                        <input type="text" placeholder="Customer Id (Id Have)" name="customer_id">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-box mt-10">
-                                        <input type="text" placeholder="Email Address" name="email" >
+                                        <input type="text" placeholder="Name" name="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-box mt-10">
+                                        <input type="text" placeholder="Email Address" name="email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">

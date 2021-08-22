@@ -45,7 +45,18 @@ class WalletSettingController extends Controller
             $data['qrCode'] = '/qrCode/' . $fileName1;
             $insert = $data->save();
             if ($insert) {
-                return redirect()->back();
+                $notification=array(
+                    'message'=>'successfull',
+                    'alert-type'=>'success'
+                    );
+                return Redirect()->back()->with($notification);
+            }
+            else{
+                $notification=array(
+                    'message'=>'error',
+                    'alert-type'=>'error'
+                    );
+                return Redirect()->back()->with($notification);
             }
         }
     }

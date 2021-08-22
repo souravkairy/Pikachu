@@ -47,9 +47,6 @@ class WorkStationController extends Controller
         foreach ($active_packs as $item) {
             $pack_id = $item->package_id;
             $pack_data = PackageSetting::where('id',$pack_id)->get();
-
-
-
             foreach ($pack_data as $item) {
                 $trading_rate = $item->trading_rate;
                 $user_data['task_status'] = 2;
@@ -65,6 +62,11 @@ class WorkStationController extends Controller
         //         }
             }
         }
-        return redirect('/user-wallet');
+        $notification=array(
+            'message'=>'Your work is done for today, Thank you',
+            'alert-type'=>'success'
+            );
+        return Redirect('/user-wallet')->with($notification);
+        // return redirect('/user-wallet');
     }
 }

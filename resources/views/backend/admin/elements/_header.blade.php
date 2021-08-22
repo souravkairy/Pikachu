@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('BackEnd/assets/images/favicon.png')}}">
 	<link rel="stylesheet" href="{{asset('BackEnd/assets/vendor/chartist/css/chartist.min.css')}}">
     <link href="{{asset('BackEnd/assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 	<link href="{{asset('BackEnd/assets/vendor/owl-carousel/owl.carousel.css')}}" rel="stylesheet">
     <link href="{{asset('BackEnd/assets/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('BackEnd/assets/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">

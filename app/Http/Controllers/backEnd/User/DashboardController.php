@@ -27,6 +27,8 @@ class DashboardController extends Controller
         $packageData = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
           //     $user_data['remaining_balance'] =$user_data->remaining_balance + $total_commision;
         //     $user_data->save();
+
+        //for new user , lavel calculation
         if ( $user_data->ref_link == null) {
             // print_r('nait');
             // exit();
@@ -49,8 +51,6 @@ class DashboardController extends Controller
                 ->with('thirdLevelIncome', $thirdLevelIncome)
                 ->with('withdraw_status_list', $withdraw_status_list);
             return view('backend/user/dashboard/index', compact('header', 'sidebar', 'footer', 'content'));
-
-
         }
 
         $reflink = $user_data->ref_link;
@@ -202,6 +202,7 @@ class DashboardController extends Controller
             $user_data['remaining_balance'] = 0;
             $user_data['p_ref_commision'] = $total_commision;
             $user_data['traiding_bonous'] = 0;
+            $user_data['ref_commision'] = 0;
             $user_data->save();
 
 
@@ -230,7 +231,18 @@ class DashboardController extends Controller
         $insert = $user_data->save();
 
         if ($insert) {
-            return redirect()->back();
+            $notification=array(
+                'message'=>'Wallet address updated successfully',
+                'alert-type'=>'success'
+                );
+            return Redirect()->back()->with($notification);
+        }
+        else{
+            $notification=array(
+                'message'=>'Somethingd is wrong',
+                'alert-type'=>'error'
+                );
+            return Redirect()->back()->with($notification);
         }
 
     }
