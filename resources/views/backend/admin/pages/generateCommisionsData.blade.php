@@ -28,7 +28,7 @@
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form method="POST" action="{{ url('update-commisions') }}">
+                                <form method="POST" action="{{ url('update-traiding-bonous') }}">
                                     @csrf
                                     <div class="form-group">
                                         <label for="">Todays Commission</label>

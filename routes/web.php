@@ -84,7 +84,7 @@ Route::get('/completed-', 'App\Http\Controllers\backEnd\Admin\WithdrawController
 
 //generate trading bonous route --------------------------------
 Route::get('/generate-traiding-bonous', 'App\Http\Controllers\backEnd\Admin\CommisionsSettingController@generate_trading_bonous');
-Route::post('/update-commisions', 'App\Http\Controllers\backEnd\Admin\CommisionsSettingController@update_trading_bonous');
+Route::post('/update-traiding-bonous', 'App\Http\Controllers\backEnd\Admin\CommisionsSettingController@update_trading_bonous');
 
 
 //user section route------------------------------------------//////////
