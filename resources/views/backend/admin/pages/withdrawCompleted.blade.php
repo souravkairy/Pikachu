@@ -63,7 +63,7 @@
                                                             </svg>
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">-------</a>
+                                                            <a class="dropdown-item" href="{{url('view-completed-withdraw/'.$item->id)}}">View</a>
                                                         </div>
                                                     </div>
                                                 </td>

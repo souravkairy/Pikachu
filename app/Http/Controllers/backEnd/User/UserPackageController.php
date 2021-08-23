@@ -68,7 +68,6 @@ class UserPackageController extends Controller
     }
     public function package_buying_processtwo(request $request)
     {
-
         $user_id = $request->user_id;
         $packageId = $request->package_id;
         $package_name = $request->package_name;
@@ -86,8 +85,6 @@ class UserPackageController extends Controller
     }
     public function process_completed(request $request)
     {
-
-
         $validated = $request->validate([
             'user_id' => 'required',
             'package_id' => 'required',
@@ -124,7 +121,12 @@ class UserPackageController extends Controller
                 session::put('package_name', '');
                 session::put('package_price', '');
                 session::put('userId', '');
-                return redirect('/user-wallet');
+
+                $notification=array(
+                    'message'=>'Thank you for purchase, The package will activated after verification. Stay Tuned',
+                    'alert-type'=>'success'
+                    );
+                return Redirect('/user-wallet')->with($notification);
             }
         }
     }

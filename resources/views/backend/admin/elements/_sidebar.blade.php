@@ -61,6 +61,11 @@ exit();
                 </li>
                 @else
                 @endif
+                <li><a href="{!!url('generate-traiding-bonous')!!}" class="ai-icon" aria-expanded="false">
+                        <i class="flaticon-381-settings-1"></i>
+                        <span class="nav-text">Generate Bonous</span>
+                    </a>
+                </li>
                 @if(Auth::user()->wallet == 1)
                 <li><a href="{!! url('wallet-setting') !!}" aria-expanded="false">
                         <i class="flaticon-003-diamond"></i>

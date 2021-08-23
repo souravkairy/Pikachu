@@ -42,7 +42,11 @@ class WorkStationController extends Controller
 
             $updateWorkStatus = User::query()->update(['task_status' => 1]);
             if ($updateWorkStatus) {
-                return redirect()->back();
+                $notification=array(
+                    'message'=>'Work Station Updated successfully',
+                    'alert-type'=>'success'
+                    );
+                return Redirect()->back()->with($notification);
             }
         }
     }

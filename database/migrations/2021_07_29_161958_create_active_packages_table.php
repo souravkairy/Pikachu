@@ -19,7 +19,7 @@ class CreateActivePackagesTable extends Migration
             $table->string('package_id');
             $table->string('customer_id')->nullable();
             $table->string('package_name');
-            $table->string('traiding_limit');
+            $table->string('traiding_limit')->nullable();
             $table->string('package_price');
             $table->string('screen_shot');
             $table->string('txnId');

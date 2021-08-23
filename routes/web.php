@@ -74,16 +74,21 @@ Route::get('/declineUser/{id}', 'App\Http\Controllers\backEnd\Admin\UserListCont
 Route::get('/active-packages', 'App\Http\Controllers\backEnd\Admin\UserListController@active_packages');
 Route::get('/de-actived-packages', 'App\Http\Controllers\backEnd\Admin\UserListController@de_active_packages');
 
-
 //withdraw request list route --------------------------------
-
 Route::get('/pending-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@pending_withdraw');
-Route::get('/confirm-withdraw/{id}', 'App\Http\Controllers\backEnd\Admin\WithdrawController@confirm_withdraw');
+Route::get('/view-withdraw/{id}', 'App\Http\Controllers\backEnd\Admin\WithdrawController@view_withdraw');
+Route::get('/view-completed-withdraw/{id}', 'App\Http\Controllers\backEnd\Admin\WithdrawController@view_completed_withdraw');
+Route::post('/confirm-withdraw', 'App\Http\Controllers\backEnd\Admin\WithdrawController@confirm_withdraw');
 Route::get('/completed-withdraw-list', 'App\Http\Controllers\backEnd\Admin\WithdrawController@completed_withdraw');
 Route::get('/completed-', 'App\Http\Controllers\backEnd\Admin\WithdrawController@completed_withdraw');
 
+//generate trading bonous route --------------------------------
+Route::get('/generate-traiding-bonous', 'App\Http\Controllers\backEnd\Admin\CommisionsSettingController@generate_trading_bonous');
+Route::post('/update-commisions', 'App\Http\Controllers\backEnd\Admin\CommisionsSettingController@update_trading_bonous');
 
-//user section route------------------------------------------
+
+//user section route------------------------------------------//////////
+///////////////////////////
 Route::get('/user-wallet', 'App\Http\Controllers\backEnd\User\DashboardController@index')->middleware('verified');
 Route::post('/update-wallet-address', 'App\Http\Controllers\backEnd\User\DashboardController@update_wallet_address');
 Route::get('/user-profile', 'App\Http\Controllers\backEnd\User\UserProfileController@index')->middleware('verified');

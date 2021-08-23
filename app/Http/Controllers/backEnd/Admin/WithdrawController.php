@@ -21,13 +21,47 @@ class WithdrawController extends Controller
         $content = view('backend/admin/pages/pendingwithdrawRequest')->with('pendingwithdrawRequest',$pendingwithdrawRequest);
         return view('backend/admin/dashboard/index',compact('header','sidebar','footer','content'));
     }
-    public function confirm_withdraw($id){
+    public function view_withdraw($id)
+    {
+        $viewwithdraw = Withdraw::find($id);
+        $header = view('backend/admin/elements/_header');
+        $sidebar = view('backend/admin/elements/_sidebar');
+        $footer = view('backend/admin/elements/_footer');
+        $content = view('backend/admin/pages/viewwithdraw')->with('viewwithdraw',$viewwithdraw);
+        return view('backend/admin/dashboard/index',compact('header','sidebar','footer','content'));
+    }
+    public function view_completed_withdraw($id)
+    {
+        $completedwithdraw = Withdraw::find($id);
+        $header = view('backend/admin/elements/_header');
+        $sidebar = view('backend/admin/elements/_sidebar');
+        $footer = view('backend/admin/elements/_footer');
+        $content = view('backend/admin/pages/completedwithdraw')->with('completedwithdraw',$completedwithdraw);
+        return view('backend/admin/dashboard/index',compact('header','sidebar','footer','content'));
+    }
+
+
+    public function confirm_withdraw(request $request){
+
+        $id = $request->id;
         $update_withdraw_status = Withdraw::find($id);
         $update_withdraw_status['status'] = 3;
+        $update_withdraw_status['transection_txnId'] = $request->transection_txnId;
         $update_withdraw_status['updated_at'] = date("Y/m/d H:i:s");
         $success = $update_withdraw_status->save();
         if ($success) {
-            return redirect()->back();
+            $notification=array(
+                'message'=>'withdraw successfull',
+                'alert-type'=>'success'
+                );
+            return Redirect('pending-withdraw-list')->with($notification);
+        }
+        else{
+            $notification=array(
+                'message'=>'error',
+                'alert-type'=>'error'
+                );
+            return Redirect('pending-withdraw-list')->with($notification);
         }
 
     }

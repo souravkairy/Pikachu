@@ -2,6 +2,8 @@
 <html lang="en">
 @php
     $pack = DB::table('packages_setting')->get();
+    $bonous = DB::table('commisions_setting')->first();
+
 @endphp
 <head>
 
@@ -465,12 +467,11 @@
                 @forelse ($pack as $item)
                 <div class="col-lg-4">
                     <div class="token-sale-item mt-30 text-center">
-                        <div class="circle-1">
-                            <strong></strong>
+                        <div class="circle">
+                            <h3 class="cicleText">300%</h3>
                         </div>
                         <span>{{$item->package_name}}</span>
                         <p>{{$item->package_price}}$</p>
-                        <p>{{$item->trading_rate}}$ Daily</p>
 
                     </div>
                 </div>
@@ -546,32 +547,46 @@
                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                             aria-labelledby="v-pills-home-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-1.png')}}" alt="">
+                                <div class="circle">
+                                    <p class="squareText p-3 text-center">300% with total income including referal bonous & trading bonous</p>
+                                    <p class="squareText p-3 text-center">Only, After 2 active account below your referal link you will get 300% bonous otherwise you will get 200%</p>
+
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                             aria-labelledby="v-pills-profile-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-2.png')}}" alt="">
+                                <div class="circle">
+                                    <h3 class="squareText mr-2">{{$bonous->levelOnePer}}% (From level One)</h3>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
                             aria-labelledby="v-pills-messages-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-3.png')}}" alt="">
+                                <div class="circle">
+                                    <h3 class="squareText mr-2">{{$bonous->levelTwoPer}}% (From Level Two)</h3>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
                             aria-labelledby="v-pills-settings-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-4.png')}}" alt="">
+                                <div class="circle">
+                                    <h3 class="squareText mr-2">{{$bonous->levelThreePer}}% (From Third level)</h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-5-tab">
+                        <div class="tab-pane fade" id="v-pills-5" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
                             <div class="stakeholders-thumb mt-55">
-                                <img src="{{asset('FrontEnd/assets/images/stakeholders-5.png')}}" alt="">
+                                <div class="circle">
+                                    <p class="squareText p-3 text-center">Only, After 2 active account below your referal link you will get 300% bonous otherwise you will get 200%</p>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
@@ -1605,7 +1620,7 @@
 
     <!--====== BRAND PART START ======-->
 
-    <section class="brand-area">
+    {{-- <section class="brand-area">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -1663,7 +1678,7 @@
         <div class="banefits-color-2">
             <img src="{{asset('FrontEnd/assets/images/shape/color-bg-4.png')}}" alt="">
         </div>
-    </section>
+    </section> --}}
 
     <!--====== BRAND PART ENDS ======-->
 
@@ -1703,14 +1718,19 @@
                         @csrf
                         <div class="contact-box">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="input-box mt-10">
-                                        <input type="text" placeholder="Name" name="name">
+                                        <input type="text" placeholder="Customer Id (Id Have)" name="customer_id">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="input-box mt-10">
-                                        <input type="text" placeholder="Email Address" name="email" >
+                                        <input type="text" placeholder="Name" name="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-box mt-10">
+                                        <input type="text" placeholder="Email Address" name="email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
