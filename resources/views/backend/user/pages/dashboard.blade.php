@@ -1,22 +1,8 @@
 @extends('backend.admin.dashboard.index')
 @section('content')
 <?php
-
-// print_r($activePackages);
-// exit();
-
-// if ($activePackages == ['']) {
-//    echo "faka";
-//    exit();
-// } else {
-//    echo "oise na";
-//    exit();
-// }
-
-
-
-
-
+$id = 1;
+$idtwo = 1;
 $today = date("Y/m/d H:i:s");
 $expire = $user_data->next_withdraw_date; //from database
 
@@ -24,14 +10,6 @@ $today_time = strtotime($today);
 $expire_time = strtotime($expire);
 $ref_commission = $user_data->ref_commision;
 
-// if ($user_data->p_ref_commision >= $user_data->ref_commision) {
-//     echo "faka";
-//     exit();
-//         $calculation = floatval( $user_data->p_ref_commision) - floatval($user_data->ref_commision);
-//         $ref_commission =  round(floatval($calculation),2);
-//     } else {
-//         $ref_commission = $user_data->ref_commision;
-//     }
 ?>
     <div class="content-body">
         <div class="container-fluid">
@@ -430,31 +408,31 @@ $ref_commission = $user_data->ref_commision;
                                     </div>
                                     <div class="card-body tab-content p-0">
                                         <div class="tab-pane active show fade" id="monthly">
-                                            <div class="table-responsive">
+                                            <div class="table">
                                                 <table class="table shadow-hover card-table border-no tbl-btn short-one">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Sl-No</th>
+                                                            <th>Request Date</th>
+                                                            <th>Gross</th>
+                                                            <th>Net Withdraw</th>
+                                                            <th>Wallet</th>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </thead>
                                                     <tbody>
                                                         @forelse ($withdraw_status_list as $item)
                                                             @if ($item->status == 'pending')
                                                                 <tr>
                                                                     <td>
-                                                                        <span>
-                                                                            <svg width="63" height="63" viewBox="0 0 63 63"
-                                                                                fill="none"
-                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                <rect width="63" height="63" rx="14"
-                                                                                    fill="#625794" />
-                                                                                <path
-                                                                                    d="M25.4813 24.6343L25.4813 24.6343L30.3544 19.7376C30.3571 19.7348 30.3596 19.7323 30.3619 19.7301M25.4813 24.6343L30.7116 20.0875L30.3587 19.7333C30.368 19.7241 30.3756 19.7172 30.3789 19.7143L30.38 19.7133C30.3775 19.7155 30.3709 19.7214 30.3627 19.7293C30.3625 19.7295 30.3622 19.7298 30.3619 19.7301M25.4813 24.6343C24.9214 25.197 24.9234 26.1071 25.4862 26.6672C26.0489 27.2273 26.9591 27.2251 27.5191 26.6624L27.5192 26.6624L29.9377 24.232M25.4813 24.6343L29.9377 24.232M30.3619 19.7301C30.9212 19.1741 31.8279 19.1724 32.389 19.7304C32.3902 19.7316 32.3914 19.7329 32.3927 19.7341L32.3941 19.7356L32.4062 19.7477L37.2691 24.6342L36.9147 24.9869L37.2692 24.6342C37.829 25.1968 37.8271 26.107 37.2642 26.6672C36.7015 27.2272 35.7914 27.225 35.2314 26.6623L35.2313 26.6623L32.8127 24.232L32.8127 42.875C32.8127 43.6689 32.1692 44.3125 31.3752 44.3125C30.5813 44.3125 29.9377 43.6689 29.9377 42.875L29.9377 24.232M30.3619 19.7301C30.3605 19.7315 30.3591 19.7329 30.3577 19.7343L29.9377 24.232M32.3927 19.7342C32.3932 19.7347 32.3937 19.7351 32.3941 19.7356L32.3927 19.7342Z"
-                                                                                    fill="white" stroke="white" />
-                                                                            </svg>
-                                                                        </span>
+                                                                        {{$idtwo}}
                                                                     </td>
                                                                     <td>
-                                                                        <span class="font-w600 text-black">Topup</span>
+                                                                        <h6 class="text-black">{{ $item->created_at }}</h6>
                                                                     </td>
                                                                     <td>
                                                                         <span
-                                                                            class="text-black">{{ $item->created_at }}</span>
+                                                                            class="font-w600 text-black">{{ $item->gross_amount }}$</span>
                                                                     </td>
                                                                     <td>
                                                                         <span
@@ -462,46 +440,53 @@ $ref_commission = $user_data->ref_commision;
                                                                     </td>
                                                                     <td>
                                                                         <span
-                                                                            class="badge badge-light float-right">Pending</span>
+                                                                            class="font-w600 text-black">{{ $item->wallet_address}}</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span
+                                                                            class="badge badge-success">Completed</span>
                                                                     </td>
                                                                 </tr>
                                                             @endif
-
+                                                            @php
+                                                                $idtwo++
+                                                            @endphp
                                                         @empty
                                                         <tr>
-                                                            <td><p class="text-danger">No Withdraw is pending now</p></td>
+                                                            <td><p class="text-danger">No Withdraw is Completed now</p></td>
                                                         </tr>
                                                         @endforelse
+
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="Weekly">
-                                            <div class="table-responsive">
+                                            <div class="table">
                                                 <table class="table shadow-hover card-table border-no tbl-btn short-one">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Sl-No</th>
+                                                            <th>Release Date</th>
+                                                            <th>Gross</th>
+                                                            <th>Net Withdraw</th>
+                                                            <th>Txn Id</th>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </thead>
                                                     <tbody>
                                                         @forelse ($withdraw_status_list as $item)
                                                             @if ($item->status == 'done')
                                                                 <tr>
                                                                     <td>
-                                                                        <span>
-                                                                            <svg width="63" height="63" viewBox="0 0 63 63"
-                                                                                fill="none"
-                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                <rect width="63" height="63" rx="14"
-                                                                                    fill="#625794" />
-                                                                                <path
-                                                                                    d="M25.4813 24.6343L25.4813 24.6343L30.3544 19.7376C30.3571 19.7348 30.3596 19.7323 30.3619 19.7301M25.4813 24.6343L30.7116 20.0875L30.3587 19.7333C30.368 19.7241 30.3756 19.7172 30.3789 19.7143L30.38 19.7133C30.3775 19.7155 30.3709 19.7214 30.3627 19.7293C30.3625 19.7295 30.3622 19.7298 30.3619 19.7301M25.4813 24.6343C24.9214 25.197 24.9234 26.1071 25.4862 26.6672C26.0489 27.2273 26.9591 27.2251 27.5191 26.6624L27.5192 26.6624L29.9377 24.232M25.4813 24.6343L29.9377 24.232M30.3619 19.7301C30.9212 19.1741 31.8279 19.1724 32.389 19.7304C32.3902 19.7316 32.3914 19.7329 32.3927 19.7341L32.3941 19.7356L32.4062 19.7477L37.2691 24.6342L36.9147 24.9869L37.2692 24.6342C37.829 25.1968 37.8271 26.107 37.2642 26.6672C36.7015 27.2272 35.7914 27.225 35.2314 26.6623L35.2313 26.6623L32.8127 24.232L32.8127 42.875C32.8127 43.6689 32.1692 44.3125 31.3752 44.3125C30.5813 44.3125 29.9377 43.6689 29.9377 42.875L29.9377 24.232M30.3619 19.7301C30.3605 19.7315 30.3591 19.7329 30.3577 19.7343L29.9377 24.232M32.3927 19.7342C32.3932 19.7347 32.3937 19.7351 32.3941 19.7356L32.3927 19.7342Z"
-                                                                                    fill="white" stroke="white" />
-                                                                            </svg>
-                                                                        </span>
+                                                                        {{$id}}
                                                                     </td>
                                                                     <td>
-                                                                        <span class="font-w600 text-black">Topup</span>
+                                                                        <h6 class="text-black">{{ $item->updated_at }}</h6>
                                                                     </td>
                                                                     <td>
                                                                         <span
-                                                                            class="text-black">{{ $item->updated_at }}</span>
+                                                                            class="font-w600 text-black">{{ $item->gross_amount }}$</span>
                                                                     </td>
                                                                     <td>
                                                                         <span
@@ -509,11 +494,17 @@ $ref_commission = $user_data->ref_commision;
                                                                     </td>
                                                                     <td>
                                                                         <span
-                                                                            class="badge badge-success float-right">Completed</span>
+                                                                            class="font-w600 text-black">{{ $item->transection_txnId}}</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span
+                                                                            class="badge badge-success">Completed</span>
                                                                     </td>
                                                                 </tr>
                                                             @endif
-
+                                                            @php
+                                                                $id++
+                                                            @endphp
                                                         @empty
                                                         <tr>
                                                             <td><p class="text-danger">No Withdraw is Completed now</p></td>

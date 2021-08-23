@@ -29,27 +29,27 @@
                                         <div class="row align-items-end">
                                             <div class="col-xl-6 col-lg-12 col-xxl-12">
                                                 <div class="row">
-                                                    <div class="col-sm-4">
+                                                    <div class="col-sm-3">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Package</p>
-                                                            <h4 class="text-black">{{$package_name}}</h4>
+                                                            <h6 class="text-black">{{$package_name}}</h6>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-4">
+                                                    <div class="col-sm-7">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Price</p>
-                                                            <h4 class="text-black">{{$package_price}}$ + {{$chrage->package_buy_charge}}$ charge</h4>
+                                                            <h6 class="text-black">{{$package_price}}$ + {{$chrage->package_buy_charge}}$ Software Fee</h6>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-4">
+                                                    <div class="col-sm-2">
                                                         <div class="mb-4">
                                                             <p class="mb-2">Total</p>
-                                                            <h4 class="text-black">{{$package_price + $chrage->package_buy_charge }}$</h4>
+                                                            <h6 class="text-black">{{$package_price + $chrage->package_buy_charge }}$</h6>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="mb-4">
-                                                            <p class="mb-2">Wallet Address</p>
+                                                            <p class="mb-2">Wallet Address (trc 20)</p>
                                                             <div class="row">
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" value="{{$walletAddress->wallet_address}}" id="myInput" readonly>

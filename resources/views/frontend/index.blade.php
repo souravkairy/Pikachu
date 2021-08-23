@@ -472,7 +472,6 @@
                         </div>
                         <span>{{$item->package_name}}</span>
                         <p>{{$item->package_price}}$</p>
-                        <p>{{$item->trading_rate}}$ Daily</p>
 
                     </div>
                 </div>

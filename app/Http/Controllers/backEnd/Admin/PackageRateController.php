@@ -28,14 +28,12 @@ class PackageRateController extends Controller
         $validated = $request->validate([
             'package_name' => 'required|unique:packages_setting',
             'package_price' => 'required',
-            'trading_rate' => 'required',
         ]);
         if ($validated) {
 
             $data = new PackageSetting;
             $data['package_name'] = $request->package_name;
             $data['package_price'] = $request->package_price;
-            $data['trading_rate'] = $request->trading_rate;
             $data['created_at'] = date("Y/m/d H:i:s");
 
             $insert =  $data->save();

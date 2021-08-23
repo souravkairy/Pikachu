@@ -39,7 +39,7 @@ class DashboardController extends Controller
             $secondLevelIncome = [];
             $thirdLevelIncome = [];
             $withdraw_status_list = [''];
-            $withdraw_status_list = Withdraw::where('user_id',$user_id)->select('wallet_address','withdraw_amount','status','created_at','updated_at')->get();
+            $withdraw_status_list = Withdraw::where('user_id',$user_id)->get();
             $header = view('backend/user/elements/_header');
             $sidebar = view('backend/user/elements/_sidebar');
             $footer = view('backend/user/elements/_footer');
@@ -209,7 +209,7 @@ class DashboardController extends Controller
         }
 
        // $activePackages = ActivePackage::where('user_id', $user_id)->where('status', 1)->get();
-        $withdraw_status_list = Withdraw::where('user_id',$user_id)->select('wallet_address','withdraw_amount','status','created_at','updated_at')->get();
+        $withdraw_status_list = Withdraw::where('user_id',$user_id)->get();
         $header = view('backend/user/elements/_header');
         $sidebar = view('backend/user/elements/_sidebar');
         $footer = view('backend/user/elements/_footer');

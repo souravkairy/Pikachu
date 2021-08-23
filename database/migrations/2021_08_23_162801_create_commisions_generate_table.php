@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePackagesSettingTable extends Migration
+class CreateCommisionsGenerateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatePackagesSettingTable extends Migration
      */
     public function up()
     {
-        Schema::create('packages_setting', function (Blueprint $table) {
+        Schema::create('commisions_generate', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('package_name');
-            $table->string('package_price');
+            $table->string('comission_percantage');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatePackagesSettingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('packages_setting');
+        Schema::dropIfExists('commisions_generate');
     }
 }
