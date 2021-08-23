@@ -16,6 +16,7 @@ class CreateWalletSettingTable extends Migration
         Schema::create('wallet_setting', function (Blueprint $table) {
             $table->increments('id');
             $table->string('wallet_title');
+            $table->string('qrCode');
             $table->string('wallet_address');
             $table->timestamps();
         });

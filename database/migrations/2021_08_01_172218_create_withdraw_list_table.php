@@ -19,6 +19,8 @@ class CreateWithdrawListTable extends Migration
             $table->string('wallet_address');
             $table->string('customer_id');
             $table->string('withdraw_amount');
+            $table->string('gross_amount');
+            $table->string('transection_txnId')->nullable();
             $table->enum('status', ['pending','processing','done']);
             $table->timestamps();
         });

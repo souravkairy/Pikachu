@@ -17,7 +17,6 @@ class CreatePackagesSettingTable extends Migration
             $table->increments('id');
             $table->string('package_name');
             $table->string('package_price');
-            $table->string('trading_rate');
             $table->timestamps();
         });
     }

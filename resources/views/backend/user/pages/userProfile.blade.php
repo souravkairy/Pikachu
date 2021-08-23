@@ -46,18 +46,19 @@
 															<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
 														</div>
 														<div class="modal-body">
-															<form class="comment-form">
+															<form class="comment-form" method="POST" action="{{url('contact-message')}}">
+                                                                @csrf
 																<div class="row">
 																	<div class="col-lg-12">
 																		<div class="form-group">
 																			<label class="text-black font-w600">Cutomer Id <span class="required">*</span></label>
-																			<input type="text" class="form-control" value="Author" name="Author" placeholder="Author">
+																			<input type="text" class="form-control" value="{{ Auth::user()->ref_link }}" name="customer_id" readonly>
 																		</div>
 																	</div>
 																	<div class="col-lg-12">
 																		<div class="form-group">
 																			<label class="text-black font-w600">Message<span class="required">*</span></label>
-																			<textarea rows="8" class="form-control" name="comment" placeholder="Comment"></textarea>
+																			<textarea rows="8" class="form-control" name="message" placeholder="Comment"></textarea>
 																		</div>
 																	</div>
 																	<div class="col-lg-12">

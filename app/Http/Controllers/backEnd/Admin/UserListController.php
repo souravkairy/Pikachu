@@ -104,6 +104,9 @@ class UserListController extends Controller
             $package_data['status'] = 1;
             $package_data['customer_id'] = $ss->customer_id;
             $insert = $package_data->save();
+            $user_data = User::find($user_id);
+            $user_data['status'] = 1;
+            $user_data->save();
         }
         else{
 

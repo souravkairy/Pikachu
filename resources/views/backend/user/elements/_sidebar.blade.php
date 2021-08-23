@@ -25,10 +25,10 @@
 						</a>
                     </li>
                     @if (Auth::user()->status == 1)
-                    <li><a href="{!!url('user-add-member')!!}" aria-expanded="false">
+                    {{-- <li><a href="{!!url('user-add-member')!!}" aria-expanded="false">
                         <i class="flaticon-061-puzzle"></i>
                         <span class="nav-text">Add Member</span>
-                    </a>
+                    </a> --}}
                     </li>
                     <li><a href="{!!url('downline-members')!!}" aria-expanded="false">
                         <i class="flaticon-381-network"></i>

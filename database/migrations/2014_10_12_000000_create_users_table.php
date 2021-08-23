@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('traiding_bonous')->default(0);
             $table->string('remaining_balance')->default(0);
             $table->string('wallet_address')->nullable();
+            $table->string('next_withdraw_date')->nullable();
             $table->enum('task_status', ['pending', 'completed']);
             $table->integer('status');
             $table->timestamp('email_verified_at')->nullable();

@@ -19,6 +19,7 @@ class FrontEndController extends Controller
         if ($validate) {
             $data = new Contact;
             $data['name'] = $request->name;
+            $data['customer_id'] = $request->customer_id;
             $data['email'] = $request->email;
             $data['message'] = $request->message;
             $data['created_at'] = date("Y/m/d H:i:s");;
